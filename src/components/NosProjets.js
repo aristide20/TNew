@@ -1,5 +1,7 @@
 import {Typography, Box, Container, useMediaQuery, Grid, Card, CardMedia, CardContent } from '@mui/material';
 import { color } from "../theme";
+import fond from "../assets/Nouveau dossier/fond04.jpg";
+import fond2 from "../assets/Nouveau dossier/materielchantier.jpg";
 
 
 const NosProjets = () => {
@@ -28,7 +30,7 @@ const NosProjets = () => {
                         <Card sx={{ maxWidth: 345, borderRadius:"15px" }} raised={true}>
                             <CardMedia component="img"
                                        height="300"
-                                       image="/static/images/cards/contemplative-reptile.jpg"
+                                       image={fond}
                                        alt="green iguana"/>
                             <CardContent>
                                   <Typography variant="body2" color="text.secondary">
@@ -42,7 +44,7 @@ const NosProjets = () => {
                         <Card sx={{ maxWidth: 345, borderRadius:"15px" }} raised={true}>
                             <CardMedia component="img"
                                        height="300"
-                                       image="/static/images/cards/contemplative-reptile.jpg"
+                                       image={fond2}
                                        alt="green iguana"/>
                             <CardContent>
                                   <Typography variant="body2" color="text.secondary">
@@ -56,7 +58,7 @@ const NosProjets = () => {
                         <Card sx={{ maxWidth: 345, borderRadius:"15px" }} raised={true}>
                             <CardMedia component="img"
                                        height="300"
-                                       image="/static/images/cards/contemplative-reptile.jpg"
+                                       image={fond}
                                        alt="green iguana"/>
                             <CardContent>
                                   <Typography variant="body2" color="text.secondary">
@@ -70,7 +72,7 @@ const NosProjets = () => {
                         <Card sx={{ maxWidth: 345, borderRadius:"15px" }} raised={true}>
                             <CardMedia component="img"
                                        height="300"
-                                       image="/static/images/cards/contemplative-reptile.jpg"
+                                       image={fond2}
                                        alt="green iguana"/>
                             <CardContent>
                                   <Typography variant="body2" color="text.secondary">

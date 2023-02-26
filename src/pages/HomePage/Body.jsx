@@ -11,29 +11,35 @@ import fondImage from "../../assets/fond01b.jpg";
 import { useNavigate } from 'react-router-dom';
 import MotDirection from "../../components/motDirection";
 import image1 from "../../assets/Truck01.png";
+//import { loginStatut } from '../../state/UserSlice';
+//import { useDispatch } from "react-redux";
 
 
 
 const Body = () => {
  
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
-    const isSmallScreen2 = useMediaQuery("(min-width: 600px)");
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isSmallScreen2 = useMediaQuery("(min-width: 800px)");
+    //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
     const color1 = color.blue.niveau100;
     const color2 = color.gray.niveau100;
     const color4 = color.gray.niveau20;
     const color0 = color.white.niveau0;
     const navigate = useNavigate();
 
+    //const dispatch = useDispatch();
+    //dispatch(loginStatut(false));
+
 
     return(
-      <Box position="relative" sx={{ width:"100%", flexGrow:1, minWidth:"400px", marginTop:"70px"}} >
+      <Box position="relative" sx={{ width:"100%", flexGrow:1, marginTop:"70px"}} >
            <CssBaseline />
            <Box sx={{ width:"100%",  
                       color: "gray"}}>
                         <img src={fondImage} alt="fond" width="100%"  zindex={-10} />
-                <Box position="absolute" sx={{zindex:10, top: isSmallScreen2 ? "130px" : "50px", 
-                                                         left:isSmallScreen2 ? "150px" : "20px"}}>
+                <Box position="absolute" sx={{zindex:10, top: isSmallScreen2 ? "4%" : "2%", 
+                                                         left:isSmallScreen2 ? "12%" : "6%"}}>
                     <Grid container spacing={4} justifyContent="center" alignItems="center" >
                          <Grid item xs={isSmallScreen ? 3 : isSmallScreen2 ? 6 : 12}>
                                 <Carte />
@@ -44,7 +50,7 @@ const Body = () => {
                                     justifyContent= {isSmallScreen2 ? "center" : "flex-start"}
                                     alignItems={isSmallScreen2 ? "center" : "flex-start"}
                                     spacing={2}>
-                                  <Typography variant="h2" sx={{ fontWeight:"bold", color:isSmallScreen2 ? color0 : color1 }}>
+                                  <Typography variant={isSmallScreen2 ? "h2" : "h3"} sx={{ fontWeight:"bold", color:isSmallScreen2 ? color0 : color1 }}>
                                                 TRANSAF Transport et Services D'Afrique (SARL)
                                   </Typography>
                                   <Container>
@@ -75,13 +81,13 @@ const Body = () => {
                     </Grid>
                     </Box>
                </Box> 
-                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen2 ? "530px" : "1000px", 
-                                                        left:isSmallScreen2 ? "380px" : "15px", 
+                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen2 ? "18%" : "16.25%", 
+                                                        left:isSmallScreen2 ? "27%" : "4%", 
                                                         width: isSmallScreen2 ? "610px" : "450px", 
                                                         padding: isSmallScreen2 ? "40px" : "25px", 
                                                         borderRadius:"10px"}}>
-                             <Paper elevation={10} sx={{backgroundColor:color1, width:"100%", borderRadius:"10px"}}> 
-                                    <Typography variant="h4" sx={{ color: color0, padding:"25px", textAlign:"center", fontWeight:"bold" }}>
+                             <Paper elevation={10} sx={{backgroundColor:color1, width:isSmallScreen2 ? "100%" : "80%", borderRadius:"10px"}}> 
+                                    <Typography variant={isSmallScreen2 ? "h4" : "h5"} sx={{ color: color0, padding:"25px", textAlign:"center", fontWeight:"bold" }}>
                                                Sécurité, Délais et Services! <br />
                                                Restez Zen, on s'occupe de tout !
                                      </Typography>
@@ -90,7 +96,7 @@ const Body = () => {
                <Box sx={{ width:"100%",  
                           paddingTop: "50px",
                           paddingBottom: "50px",
-                          marginTop: isSmallScreen2 ? "-10px" : "900px",
+                          marginTop: isSmallScreen ? "-10px" : "180%",
                           backgroundColor: color4}}>
                           <SatisfiedClients />
                </Box>
@@ -108,11 +114,13 @@ const Body = () => {
                           color: "black"}}>
                           <NewsLetter />
                </Box>
-               <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "620px" : "380px", 
-                                                          left: isSmallScreen2 ? "1000px" : "320px"}}>
+               <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "20%" : "7%", 
+                                                          left: isSmallScreen2 ? "80%" : "60%"}}>
                     <img src={image1} alt="" width= {isSmallScreen2 ? "60%" : "120%"} />
                 </Box>
-                <Box position="absolute" sx={{width:"20%", top:"2670px", left:"100px"}}>
+                <Box position="absolute" sx={{width:isSmallScreen2 ? "25%" : "70%", 
+                                             top:isSmallScreen2 ? "34%" : "28.8%", 
+                                             left:isSmallScreen2 ? "30%" : "25%"}}>
                     <img src={image1} alt="" width="60%" />
                 </Box>
                {!isSmallScreen && isMobileMenuToggledState && <MobileMenuBox />}

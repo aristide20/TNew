@@ -69,9 +69,11 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function PrimarySearchAppBar() {
 
   const dispatch = useDispatch();
-  const userLoggedIn = useSelector((state) => state.UserReducer.user);
-  const isPartenaire = userLoggedIn ? userLoggedIn.isPartner : false;
-  console.log(isPartenaire);
+  //const userLoggedIn = useSelector((state) => state.UserReducer.user);
+  const userLoggedIn = useSelector((state) => state.persistedReducer.user);
+  const isPartenaire = userLoggedIn ? userLoggedIn.isPartner ? true : false : false;
+  const name = userLoggedIn ? userLoggedIn.fullName : "";
+ // console.log(isPartenaire);
 
     const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -91,8 +93,8 @@ export default function PrimarySearchAppBar() {
   const handleMenuClose1 = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+    navigate('/connexion');
     dispatch(setLogout());
-    navigate('/connexion')
   };
 
   const handleMenuClose2 = () => {
@@ -182,7 +184,9 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{backgroundColor:color1 }}>
         <Toolbar>
-           
+           <Typography>
+                   Welcome {name}
+           </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -208,7 +212,7 @@ export default function PrimarySearchAppBar() {
                  <Badge>
               <HailIcon />
               </Badge>
-              <Typography sx={{fontSize:"16px"}} >{NavBarUserData.label03}</Typography>
+              <Typography sx={{fontSize:"16px"}} >{isPartenaire ? NavBarUserData.label04 : NavBarUserData.label03}</Typography>
             </IconButton>
             <IconButton
               size="large"

@@ -29,7 +29,7 @@ const Body = () => {
  
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
     const isSmallScreen2 = useMediaQuery("(min-width: 600px)");
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
     const color3 = color.gray.niveau100;
     const color4 = color.gray.niveau20;
         
@@ -65,13 +65,14 @@ const Body = () => {
                               </Grid>
                         </Grid>
                     </Box>
-                    <Box position="absolute" sx={{zIndex:20, width:isSmallScreen2 ? "600px" : "400px", 
-                                                             height:"500px",
-                                                             top: isSmallScreen2 ? "590px" : "680px",
-                                                             left: isSmallScreen2 ? "380px" : "30px",
+                    <Box position="absolute" sx={{zIndex:20, width:isSmallScreen2 ? "50%" : "400px", 
+                                                             height:isSmallScreen2 ? "100%" : "400px",
+                                                             top: isSmallScreen2 ? "18%" : "680px",
+                                                             left: isSmallScreen2 ? "25%" : "30px",
                                                              borderRadius:"15px"}}>
                          <Paper elevation={10} sx={{padding:"20px", textAlign:"center", bgcolor:color3, borderRadius:"15px"}}>
-                                <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify"}}>
+                                <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
+                                            fontSize:isSmallScreen2 ?"20px" : "16px"}}>
                                              Nous mettons un accent particulier sur la sécurité des biens et personnes, 
                                              c'est pourquoi vous bénéficié automatiquement de toutes nos formations en 
                                              logistique et transport une fois inscrit à notre réseau. Toutefois, nous 

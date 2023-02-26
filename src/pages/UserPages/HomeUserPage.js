@@ -2,7 +2,7 @@
 import { color } from '../../theme';
 import { Button, Typography, 
          Box, useMediaQuery, Paper, Dialog, DialogActions, 
-          DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+          DialogContent, DialogContentText, DialogTitle, Container } from '@mui/material';
 import { useSelector } from "react-redux";
 import {useState } from 'react';
 //import { useDispatch } from "react-redux";
@@ -13,6 +13,8 @@ import FormCommand from '../../components/FormCommand02';
 import fond01 from "../../assets/fondLogo01.png";
 import fond02 from "../../assets/fondLogo02.png";
 
+//import * as api from "../../api/index";
+
 
 const Body = () => {
 
@@ -20,13 +22,28 @@ const Body = () => {
     //const navigate = useNavigate();
     const color1 = color.white.niveau0;
     const color2 = color.blue.niveau100;
-    const user = useSelector((state) => state.UserReducer.user) 
+    //const user = useSelector((state) => state.UserReducer.user);
+    const user = useSelector((state) => state.persistedReducer.user);
+    //const commandes = useSelector((state) => state.persistedReducer.commandes);
     //const Commandes = useSelector((state) => state.UserReducer.commandes)
     const isNonMobile = useMediaQuery("(min-width:800px)");
+    //const dispatch = useDispatch();
+    //dispatch(loginStatut(false));
     //const pbox = isNonMobile ? "30px" : "10px";
     //console.log(Commandes);
     //const topLogo = isNonMobile ? "40px" : "-40px";
     //const leftLogo = isNonMobile ? "180px" : "100px";
+
+   /* useEffect(() => {
+       const ComData = api.fetchCommands()
+        
+    }, []) */
+/*
+    const CommData = api.FetchCommands();
+    console.log(CommData)
+    console.log(commandes) */
+    
+
 
     const [open, setOpen] = useState(false);
 
@@ -56,7 +73,7 @@ const Body = () => {
                                             display:"flex", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
                         <Button variant="text" sx={{color:color1, fontWeight:"bold"}}>
-                                Devenir Partenaire
+                                { user !== null ? user.isPartner ?"Liste Vehicules" : "Devenir Partenaire" : "vide"}
                         </Button>    
                   </Paper>
              </Box>
@@ -91,7 +108,16 @@ const Body = () => {
                                             height:isNonMobile ? "450px" : "600px",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
+                           {user !== null ? user.isPartner ? 
+                             <Container>
+                                       user.
+                             </Container>
+                             : 
+                             <Container>
 
+                             </Container>
+                             : <Typography> Vide!! Pas de Compte</Typography>
+                             }
                   </Paper>
              </Box>
         </Box>
@@ -99,90 +125,3 @@ const Body = () => {
 }
 
 export default Body;
-
-
-/**
- * 
- *  <Container sx={{padding:pbox, width:"90%"}}>
-                 <Grid container spacing={4}>
-                       <Grid item xs={ isNonMobile ? 7 : 12} >
-                            
-                       </Grid>
-                       <Grid item xs={ isNonMobile ? 2 : 0} ></Grid>
-                       <Grid item xs={ isNonMobile ? 3 : 12} >
-                           <Paper elevation={10} sx={{width:"80%", height:"50px", borderRadius:"8px",
-                                                      display:"flex", justifyContent:"center", alignItems:"center"}}>
-                                <Button variant="text">
-                                        Devenir Partenaire
-                                </Button>
-                           </Paper>
-                       </Grid>
-                       <Grid item xs={ isNonMobile ? 9 : 0} ></Grid>
-                       <Grid item xs={ isNonMobile ? 3 : 12} >
-                       <Paper elevation={10} sx={{width:"80%", height:"50px", borderRadius:"8px",
-                                                      display:"flex", justifyContent:"center", alignItems:"center"}}>
-                                <Button variant="text" onClick={handleClickOpen}>
-                                        Commander un Camion ou un Engin BTP
-                                </Button>
-                                <Dialog open={open} onClose={handleClose}>
-                                     <DialogTitle>Commande</DialogTitle>
-                                     <DialogContent>
-                                                <DialogContentText>
-                                                           Precisez nous vos besoins et un agent vous contactera dans 
-                                                           l'heure pour finaliser votre commande!!
-                                                </DialogContentText>
-                                                <FormCommand />
-                                     </DialogContent>
-                                     <DialogActions>
-                                                <Button onClick={handleClose}>Annuler</Button>
-                                                <Button onClick={handleClose}>Confirmer</Button>
-                                     </DialogActions>
-                                </Dialog>
-                           </Paper>
-                       </Grid>
-                       <Grid item xs={8}>
-                            <Typography variant="h4" sx={{color:color2, fontWeight:"bold"}}>
-                                     Tableau de Bord de vos commandes
-                             </Typography>
-                       </Grid>
-                       <Grid item xs={12} >
-                             <Paper elevation={10} sx={{padding:"4%", minHeight:"400px"}}>
-                                    { Commandes.length === 0 ?
-                                      <Stack sx={{display:"flex", flexDirection:"column",
-                                                      justifyContent:"center", alignItems:"center"}}>
-                                                 <Typography variant="h2" sx={{color:color.gray.niveau40}}>
-                                                            Oups...Pas de commandes!!
-                                                 </Typography>
-                                                 <Button variant="contained" onClick={handleClickOpen}>
-                                                         Commander un Camion ou un Engin BTP
-                                                 </Button>
-                                                 <Dialog open={open} onClose={handleClose}>
-                                                       <DialogTitle>Commande</DialogTitle>
-                                                               <DialogContent>
-                                                                       <DialogContentText>
-                                                                                Precisez nous vos besoins et un agent 
-                                                                                vous contactera dans 
-                                                                                l'heure pour finaliser votre commande!!
-                                                                       </DialogContentText>
-                                                                        <FormCommand />
-                                                               </DialogContent>
-                                                       <DialogActions>
-                                                                <Button onClick={handleClose}>Annuler</Button>
-                                                                <Button onClick={handleClose}>Confirmer</Button>
-                                                       </DialogActions>
-                                               </Dialog>
-                                      </Stack> :
-                                      <Container>
-
-                                      </Container> }
-                             </Paper>
-                       </Grid>
-                       <Grid item xs={ isNonMobile ? 3 : 0} ></Grid>
-                 </Grid>       
-            </Container>
-            <Box position="absolute" sx={{zindex:10, top:topLogo, left:leftLogo, width:"200px", borderRadius:"10px"}}>
-                 <Paper elevation={10} sx={{width:"100%", backgroundColor:color2}}>
-                        <img src={logo} alt="logo" width="100%"  /> 
-                 </Paper>
-            </Box>
- */

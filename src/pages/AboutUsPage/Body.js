@@ -12,7 +12,6 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
-import TitlebarImageList from "../../components/AboutBox1";
 import CamionList from "../../components/CamionList";
 import image0 from "../../assets/Truck01.png";
 import NewsLetter from "../../components/NewsLetter";
@@ -26,18 +25,19 @@ const Body = () => {
     const background4 = color.gray.niveau100;
     const isScreenToBig = useMediaQuery("(min-width:1200px)");
     const isScreenBig = useMediaQuery("(min-width:800px)");
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
     const top4 = isScreenToBig ? "0%" : isScreenBig ? "35%" : "5%";
     const top5 = isScreenToBig ? "25%" : isScreenBig ? "40%" : "10%";
     const top6 = isScreenToBig ? "65%" : isScreenBig ? "60%" : "90%";
-    const top7 = isScreenBig ? "100px" : "600px";
+    const top7 = isScreenBig ? "100px" : "50px";
     const top8 = isScreenToBig ? "100px" : isScreenBig ? "200px": "200px";
         
         return(
           <Box position="static" sx={{backgroundColor: background, width:"100%", flexGrow:1, marginTop:"90px"}}> 
                <CssBaseline />
-               <Box sx={{backgroundColor: background2, width:"100%", minHeight:"350px", paddingLeft:top5}}>
-                    <Box sx={{width:top6, paddingTop:top7 }}>
+               <Box sx={{backgroundColor: background2, width:"100%", minHeight:"300px", paddingLeft:top5}}>
+                    <Box sx={{width:top6, paddingTop:top7, paddingBottom:isScreenBig ? "50px" : "150px" }}>
                                <Typography variant="h4" sx={{textAlign:"left", fontWeight:"bold", color:background3}}>
                                            Notre Objectif: <br />
                                            Devenir dans les 10 (dix) prochaines années le leader de la logistique 
@@ -45,8 +45,11 @@ const Body = () => {
                                </Typography>
                     </Box>
                </Box>
-               <Box sx={{backgroundColor: background, width:"100%", minHeight:"700px", paddingLeft:top4}} >
-                    <Box sx={{width:isScreenToBig ? "100%" : isScreenBig ? "100%" : "90%", paddingTop:"50px"}}>
+               <Box sx={{backgroundColor: background, width:"100%", minHeight:"700px", paddingLeft:top4,
+                         paddingTop:isScreenToBig ? "8%" : isScreenBig ? "10%" : "40%",
+                         paddingBottom:isScreenToBig ? "5%" : isScreenBig ? "10%" : "10%"}} >
+                    <Box sx={{width:isScreenToBig ? "100%" : isScreenBig ? "100%" : "90%", paddingTop:"50px",
+                              paddingBottom:isScreenToBig ? "8%" : isScreenBig ? "8%" : "8%"}}>
                          <Grid container spacing={2}>
                               <Grid item xs={isScreenToBig ? 3 : isScreenBig ? 6 : 12}>
                                     <Paper elevation={5} sx={{bgcolor:background3, width:"100%", height:"400px",
@@ -242,10 +245,8 @@ const Body = () => {
                 </Box>
                 <Box sx={{backgroundColor: background, width:"100%", minHeight:"150px"}}>
                      <Typography variant="h4" sx={{textAlign:"center", fontWeight: "bold", color:"black"}}>
-                                Plus de 350 Vehicules pour couvrir tous vos besoins
-                     </Typography>
-                     <TitlebarImageList />
-                     
+                                Plus de 100 Vehicules pour couvrir tous vos besoins
+                     </Typography> 
                 </Box>
                 <Box sx={{backgroundColor: background, width:"100%"}}>
                      <CamionList />
@@ -253,16 +254,17 @@ const Body = () => {
                 <Box sx={{backgroundColor: background, width:"100%"}}>
                     
                 </Box>
-                <Box position="absolute" sx={{zIndex:10, left:"50px", top:"160px"}}>
-                     
+                <Box position="absolute" sx={{top:isScreenBig ? "160%" : "400%", 
+                                              left: isScreenBig ? "30%" : "30%" }}>
+                     <img src={image0} alt="" width={isScreenBig ? "30%" : "50%"}  />
                 </Box>
-                <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "80px", 
-                                                         top:isScreenToBig ? "240px" : isScreenBig ? "200px" : "200px"}}>
+                <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "25%", 
+                                                         top:isScreenToBig ? "35%" : "80%"}}>
                      <ContactBox1 />
                 </Box>
-                <Box position="absolute" sx={{top:isScreenBig ? "280px" : "550px", 
-                                              left: isScreenBig ? "50px" : "180px" }}>
-                     <img src={image0} alt="" width={isScreenBig ? "20%" : "60%"}  />
+                <Box position="absolute" sx={{top:isScreenBig ? "50%" : "400%", 
+                                              left: isScreenBig ? "3%" : "30%" }}>
+                     <img src={image0} alt="" width={isScreenBig ? "20%" : "50%"}  />
                 </Box>
                 <Box>
                     <NewsLetter />

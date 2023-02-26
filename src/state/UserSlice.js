@@ -67,13 +67,25 @@ const UserSlice = createSlice({
 								state.commandes = action.payload;
 								if(state.user) {
 									try {
-										const AllCommandes = api.getAllCommands()
-										console.log(AllCommandes);
+										//const AllCommandes = api.FetchCommands()
+										//console.log(AllCommandes);
 									} catch (error) {
 										
 									}
 								}
 							},
+							 getCommands: (state, action) => {
+									const Com = api.fetchCommands().then(
+										(resp) => { state.commandes = resp.data.commandes;
+											        console.log(state.commandes)
+											        //console.log(resp.data);
+												    // var data = resp.data.commandes;
+													//console.log(data);
+													//dispatch(getCommands(data))
+													 })
+								
+								
+							         },
                              deleteCommand: (state) => { 
 
 							 },
@@ -122,7 +134,8 @@ const UserSlice = createSlice({
 export const { setLogin, 
 	           setLogout, 
 			   makeCommand,  
-			   deleteCommand, 
+			   deleteCommand,
+			   getCommands, 
 			   modifyCommand, 
 			   updateVehicule, 
 			   setVehicule,

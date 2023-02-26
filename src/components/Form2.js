@@ -20,6 +20,8 @@ import { useNavigate } from "react-router-dom";
 //import EditOutlinedIcon  from "@mui/icons-material/EditOutlined"
 //import Dropzone from "dropzone";
 import * as api from "../api/index";
+import { getCommands } from '../state/UserSlice';
+//import jwt from 'jwt-decode';
 
 /*
 const registerSchema = yup.object().shape({
@@ -80,25 +82,31 @@ const Form2 = () => {
     const [pageType, setPageType] = useState("register");
     const [pageType2, setPageType2] = useState("particulier");
     const [pageType3, setPageType3] = useState("client");
+    const [typeClient, setTypeClient] = useState("particulier");
+    const [typeCompte, setTypeCompte] = useState("client");
+
     const [user, setUser] = useState(initialValuesRegister);
     const [userLogin, setUserLogin] = useState(initialValuesLogin);
     const [vehicule, setVehicule] = useState(initialValueVehicule);
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false);
 
     const isLogin = pageType === "login";
     const isRegister = pageType === "register";
     const isEnterprise = pageType2 === "entreprise";
     const isPartenaire = pageType3 === "partenaire";
+    
    // const [isRegistered, setIsRegistered] = useState(false);
 
     //const dispatch = useDispatch();
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const Error = useSelector((state) => state.UserReducer.loginError);
-    const Statut = useSelector((state) => state.UserReducer.loginStatut);
-    const registerButton = useSelector((state) => state.UserReducer.loginButton);
-    const UserLoggedIn = useSelector((state) => state.UserReducer.user)
-    console.log(UserLoggedIn)
+    //const Error = useSelector((state) => state.UserReducer.loginError);
+    //const Statut = useSelector((state) => state.UserReducer.loginStatut);
+    const Statut = useSelector((state) => state.persistedReducer.loginStatut);
+    const registerButton = useSelector((state) => state.persistedReducer.loginButton);
+    //const registerButton = useSelector((state) => state.UserReducer.loginButton);
+    //const UserLoggedIn = useSelector((state) => state.UserReducer.user);
+    //console.log(user.isPartner, user.isMoralPerson);
 
 
     const handleSubmit = async (e) => {
@@ -107,15 +115,14 @@ const Form2 = () => {
         if(isRegister) {
             if(isPartenaire) {
                 
-                console.log(vehicule)
-                console.log(user)
+                console.log(vehicule);
+                console.log(user);
                 try {
-                    const resp = api.registerUser(user)
-                    const resVehicule = api.createVehicule(vehicule)
-                    dispatch(loginStatut(true))
-                    console.log(resp)
-                    console.log(resVehicule)
-                    //setUser(initialValuesRegister)
+                    const resp = api.registerUser(user);
+                    const resVehicule = api.createVehicule(vehicule);
+                    console.log(resp);
+                    console.log(resVehicule);
+                    setUser(initialValuesRegister)
                     setPageType("login");
                 } catch (error) {
                     console.log(error)
@@ -133,24 +140,34 @@ const Form2 = () => {
             try {
                 const resp = api.loginUser(userLogin)
                 .then((response) => {
-                    if(response.data) { dispatch(loginSuccess());
-                                        dispatch(loginStatut(true));
+                    if(response.data) { 
+                                        //const token = response.data.token;
+                                        //const user = jwt(token);
+                                        //localStorage.setItem('token', token);
+                                        dispatch(setLogin(response.data));
+                                        dispatch(getCommands())
+                                        console.log(response.data);
+                                        //console.log(token);
+                                        //console.log(user);
+                                        setError(false);
+                                        dispatch(loginSuccess());
                                         setUserLogin(initialValuesLogin);
                                         navigate('/Accueil/user'); 
-                                        console.log(response.data);
-                                        dispatch(setLogin(response.data));}
+                                        }
                     else {
                          setError(true)
                          console.log(error)
                     }
                 })
-                console.log(resp)
+                //console.log(resp);
                 
             } catch (error) {
                 dispatch(loginError());
                 console.log(error)
             }
         }
+        dispatch(loginStatut(true));
+        //setTimeout(dispatch(loginStatut(false)), 2000)
     }
     
  
@@ -179,22 +196,23 @@ const Form2 = () => {
                      
                       >
                      <Container sx={{display:"flex", flexDirection:"column", 
-                                    justifyContent:"center", alignItem:"center"}}>
+                                    justifyContent:"center", alignItems:"center"}}>
                      {isRegister && 
                      <FormControl>
                          <FormLabel id="demo-controlled-radio-buttons-group"> Type de Compte</FormLabel>
                               <RadioGroup aria-labelledby="demo-controlled-radio-buttons-group"
                                           name="controlled-radio-buttons-group"
-                                          value={user.isPartner}
-                                          onChange={(e) => {setUser({...user, isPartner: e.target.checked});
+                                          value={typeCompte}
+                                          onChange={(e) => {setTypeCompte(e.target.value);
+                                                            setUser({...user, isPartner: typeCompte === "client" ? true : false});
                                                             setPageType3(isPartenaire ? "client" : "partenaire" );} }>
                                     <Grid container spacing={4} justifyContent="center" alignItems="center">
                                           <Grid item xs={isNonMobile?2 : 0}></Grid>
                                           <Grid item xs={isNonMobile?4 : 12}>
-                                              <FormControlLabel checked={!user.isPartner} control={<Radio />} label="Compte Client" />
+                                              <FormControlLabel value="client" control={<Radio />} label="Compte Client" />
                                           </Grid>
                                           <Grid item xs={isNonMobile?4 : 12}>
-                                              <FormControlLabel checked={user.isPartner} control={<Radio />} label="Compte Partenaire" />
+                                              <FormControlLabel value="partenaire" control={<Radio />} label="Compte Partenaire" />
                                           </Grid>
                                           <Grid item xs={isNonMobile?2 : 0}></Grid>
                                     </Grid>
@@ -205,16 +223,17 @@ const Form2 = () => {
                            <FormLabel id="demo-controlled-radio-buttons-group"> Type de Client</FormLabel>
                                 <RadioGroup aria-labelledby="demo-controlled-radio-buttons-group"
                                             name="controlled-radio-buttons-group"
-                                            value={user.isMoralPerson}
-                                            onChange={(e) => {setUser({...user, isMoralPerson: e.target.checked});
-                                                             setPageType2(isEnterprise ? "particulier" : "entreprise" );}}>
+                                            value={typeClient}
+                                            onChange={(e) => {setTypeClient(e.target.value);
+                                                              setUser({...user, isMoralPerson: typeClient === "particulier" ? true : false});
+                                                              setPageType2(isEnterprise ? "particulier" : "entreprise" );}}>
                                       <Grid container spacing={4} justifyContent="center" alignItems="center">
                                             <Grid item xs={isNonMobile?2 : 0}></Grid>
                                             <Grid item xs={isNonMobile?4 : 12}>
-                                                <FormControlLabel value={false} control={<Radio />} label="Vous etes un Particulier" />
+                                                <FormControlLabel value="particulier" control={<Radio />} label="Vous etes un Particulier" />
                                             </Grid>
                                             <Grid item xs={isNonMobile?4 : 12}>
-                                                <FormControlLabel value={true} control={<Radio />} label="Vous etes une entreprise" />
+                                                <FormControlLabel value="entreprise" control={<Radio />} label="Vous etes une entreprise" />
                                             </Grid>
                                             <Grid item xs={isNonMobile?2 : 0}></Grid>
                                       </Grid>
@@ -359,9 +378,10 @@ const Form2 = () => {
                                {isLogin ? "LOGIN" : "REGISTER"}
                         </Button>
                           }
-                           { Statut && (Error ?
-                            <Alert severity="error"> Credentials Errors </Alert> :
-                           <Alert severity="success"> Login Successfully </Alert>)}
+                           { Statut && (error ? 
+                            (<Alert severity="success"> Login successfully </Alert>) :
+                            (<Alert severity="error"> Credentials Errors </Alert>) 
+                          ) }
                           <Typography onClick={() => {setPageType( isLogin ? "register" : "login");}}
                                       sx={{ textDecoration: "underline",
                                             color: color1,

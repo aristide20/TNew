@@ -11,6 +11,11 @@ const Footer= ()=>{
  const isSmallScreen = useMediaQuery("(min-width: 1000px)");
  const isSmallScreen2 = useMediaQuery("(min-width: 700px)");
  const navigate = useNavigate();
+ const url = 'https://wa.me/message/JFJ4OHKASUDFA1'
+
+ function openInNewTab(url) {
+        window.open(url, '_blank').focus();
+      }
 
     return(
         <Box position="static" sx={{ width:"100%", 
@@ -65,6 +70,7 @@ const Footer= ()=>{
                                                    <Grid   >
                                                          <Button variant="text" 
                                                                  startIcon={FooterData.contacts.logoWhatsapp} 
+                                                                 onClick={() => openInNewTab('https://wa.me/message/JFJ4OHKASUDFA1')}
                                                                  sx={{textTransform:"lowercase", color:"white"}} >
                                                                  {FooterData.contacts.contactWhatsapp}
                                                          </Button>    

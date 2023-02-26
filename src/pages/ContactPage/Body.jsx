@@ -46,7 +46,8 @@ const Contact = ({exitVariants, revealVariants})=>{
     };
 
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
 
     const color1 = color.gray.niveau100;
 

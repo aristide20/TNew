@@ -17,7 +17,9 @@ const NavBarHome = () => {
     const navigate = useNavigate();
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
     const backgroundcolor = color.blue.niveau100;
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
+   
     const menu = useSelector((state) => state.MenuReducer.menu);
     //console.log(isMobileMenuToggledState)
 

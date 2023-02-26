@@ -27,7 +27,8 @@ const Body = () => {
     const navigate = useNavigate();
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
     const isSmallScreen2 = useMediaQuery("(min-width: 600px)");
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
 
         
         return(
@@ -38,7 +39,7 @@ const Body = () => {
                                 <Grid item xs={isSmallScreen ? 1 : 0}></Grid>
                                 <Grid item xs={isSmallScreen ? 6 : isSmallScreen2 ? 7 : 12}>
                                      <Stack dirction="column" spacing={2}>
-                                          <Typography variant="h3" sx={{color:"white", fontWeight:"bold", textAlign:"center"}}>
+                                          <Typography variant={isSmallScreen ? "h3" : "h4"} sx={{color:"white", fontWeight:"bold", textAlign:"center"}}>
                                                   Restez Zen ! < br/>
                                                    nous assurons le transport de vos marchandises et colis 
                                                   conformément à vos exigences et recommandations.

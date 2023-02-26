@@ -18,8 +18,8 @@ const Body = () => {
     const color2 = color.gray.niveau100;
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
     const isSmallScreen2 = useMediaQuery("(min-width: 600px)");
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
-
+    //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
     const hauteur = isSmallScreen2 ? "350px" : "700px";
     const haut1 = isSmallScreen2 ? "700px" : "1000px";
     const haut2 = isSmallScreen2 ? "200px" : "130px";
@@ -83,8 +83,8 @@ const Body = () => {
                     <img src={image1} alt="" width="60%" />
                 </Box>
                 <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 
-                                              top:isSmallScreen2 ? "2500px" : "5680px", 
-                                              left:isSmallScreen2 ? "100px" : "160px"}}>
+                                              top:isSmallScreen2 ? "2500px" : "73.6%", 
+                                              left:isSmallScreen2 ? "100px" : "30%"}}>
                     <img src={image1} alt="" width="50%" />
                 </Box>
                 <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 

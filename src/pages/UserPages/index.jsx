@@ -4,10 +4,12 @@ import NavBarUser from '../navBar/NavBarUser';
 import Footer from '../../components/FooterUser';
 import Body from './HomeUserPage';
 import { motion } from 'framer-motion';
+//import { useSelector } from "react-redux";
 
 
 const HomeUserPage = () => {
 
+    //const user = useSelector((state) => state.UserReducer.user);
     
     return (
         <motion.div initial={{opacity: 0, width:0}}

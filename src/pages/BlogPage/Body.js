@@ -10,7 +10,8 @@ const Body = () => {
 
     const color1 = color.gray.niveau40;
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
     const color2 = color.blue.niveau100;
         
         return(

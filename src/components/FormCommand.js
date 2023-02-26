@@ -16,7 +16,8 @@ const FormCommand = () => {
     villeArrivee:"",
     typeVehicule:"Camion de Transport",
     nomVehicule:""});
-    const user = useSelector((state) => state.UserReducer.user);
+    //const user = useSelector((state) => state.UserReducer.user);
+    const user = useSelector((state) => state.persistedReducer.user);
     const dispatch = useDispatch();
     const color1 = color.blue.niveau100;
     const color3 = color.gray.niveau20;

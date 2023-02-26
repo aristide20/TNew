@@ -21,12 +21,12 @@ const background2 = color.gray.niveau100;
         <Box>
              <Grid container >
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"350px"}}>
-                              <img src={camion10} alt="" height="350px" />
+                         <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"350px", width:"100%"}}>
+                              <img src={camion10} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Container sx={{backgroundColor: background1, display:"flex", height:"350px",
+                         <Container sx={{backgroundColor: background1, display:"flex", height:"350px", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"30px",
@@ -34,7 +34,7 @@ const background2 = color.gray.niveau100;
                                          +100
                               </Typography>
                               <Typography variant="paragraph" sx={{textAlign:"center", color:"white", paddingBottom:"30px"}}>
-                                         Avec une flotte de plus de 200 Camions de transport (Camion Benne 20t & 30t, 
+                                         Avec une flotte de plus de 100 Camions de transport (Camion Benne 20t & 30t, 
                                          Semi-remorque, citerne...) et engins de BTP (Pelle chargeuse, tractopelle, 
                                          bulldozer...), vous trouverez toujours le vehicule dont vous avez besoin chez nous!!
                               </Typography>
@@ -44,12 +44,12 @@ const background2 = color.gray.niveau100;
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px"}}>
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
                               <img src={btp01} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background2, display:"flex", height:"350px",
+                        <Container sx={{backgroundColor: background2, display:"flex", height:"350px", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"30px",
@@ -67,12 +67,12 @@ const background2 = color.gray.niveau100;
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center",height:"350px"}}>
-                              <img src={personne01} alt="" height="350px" width="450"/>
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center",height:"350px", width:"100%"}}>
+                              <img src={personne01} alt="" height="350px" width="100%"/>
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background2, display:"flex", height:"350px",
+                        <Container sx={{backgroundColor: background2, display:"flex", height:"350px", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"40px",
@@ -92,12 +92,12 @@ const background2 = color.gray.niveau100;
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px"}}>
-                              <img src={chantier} alt="" height="350px" />
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
+                              <img src={chantier} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background1, display:"flex", height:"350px",
+                        <Container sx={{backgroundColor: background1, display:"flex", height:"350px", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"40px",
@@ -105,7 +105,7 @@ const background2 = color.gray.niveau100;
                                          +90%
                               </Typography>
                               <Typography variant="paragraph" sx={{textAlign:"center", color:"white", paddingBottom:"40px"}}>
-                                         Neuf clients su 10 nous recommandent, alors pourquoi pas vous?? <br />
+                                         09 clients su 10 nous recommandent, alors pourquoi pas vous?? <br />
                                          Rejoignez notre communauté de clients et partenaires satisfaits
                                          qui ont fait confiance à notre Expertise!!
                               </Typography>
@@ -117,8 +117,8 @@ const background2 = color.gray.niveau100;
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px"}}>
-                              <img src={happy} alt="" height="350px" width="450px" />
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
+                              <img src={happy} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
              </Grid>

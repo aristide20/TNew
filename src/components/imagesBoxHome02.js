@@ -1,5 +1,5 @@
 import { Button, Typography, Box, Container, useMediaQuery, Grid } from '@mui/material';
-import camion10 from "../assets/camion01b.PNG";
+import camion10 from "../assets/Nouveau dossier/vehicules2.png";
 import camion02 from "../assets/camion02B.PNG";
 //import personne01 from "../assets/teleconseiller1.jpg";
 import team from "../assets/team01.jpg";
@@ -8,7 +8,7 @@ import { color } from '../theme';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
-import worker from "../assets/worker01.PNG";
+import worker from "../assets/Nouveau dossier/DG2.png";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -25,20 +25,20 @@ const navigate = useNavigate();
         <Box>
              <Grid container >
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"350px"}}>
+                         <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"350px", width:"100%"}}>
                               <img src={camion10} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
                          <Container sx={{backgroundColor: background1, display:"flex", height:"350px",
-                                         flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+                                         flexDirection:"column", justifyContent:"center", alignItems:"center", width:"100%"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"30px",
                                                             paddingBottom:"20px"}}>
                                          +100
                               </Typography>
                               <Typography variant="paragraph" sx={{textAlign:"center", color:"white", paddingBottom:"30px"}}>
-                                         Avec une flotte de plus de 200 Camions de transport (Camion Benne 20t & 30t, 
+                                         Avec une flotte de plus de 100 Camions de transport (Camion Benne 20t & 30t, 
                                          Semi-remorque, citerne...) et engins de BTP (Pelle chargeuse, tractopelle, 
                                          bulldozer...), vous trouverez toujours le vehicule dont vous avez besoin chez nous!!
                               </Typography>
@@ -50,12 +50,12 @@ const navigate = useNavigate();
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px"}}>
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
                               <img src={camion02} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background2, display:"flex", height:"350px",
+                        <Container sx={{backgroundColor: background2, display:"flex", height:"350px", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"30px",
@@ -74,7 +74,7 @@ const navigate = useNavigate();
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center",height:"350px"}}>
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center",height:"350px", width:"100%"}}>
                               <img src={team} alt="" height="350px" width="100%"/>
                          </Box>
                    </Grid>
@@ -100,12 +100,12 @@ const navigate = useNavigate();
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{ height:"350px"}}>
+                         <Box sx={{ height:"350px", width:"100%"}}>
                               <img src={btp02} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background1, display:"flex", height:"350px",
+                        <Container sx={{backgroundColor: background1, display:"flex", height:"350px", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"40px",
@@ -113,7 +113,7 @@ const navigate = useNavigate();
                                          +90%
                               </Typography>
                               <Typography variant="paragraph" sx={{textAlign:"center", color:"white", paddingBottom:"40px"}}>
-                                         Neuf clients su 10 nous recommandent, alors pourquoi pas vous?? <br />
+                                         09 clients sur 10 nous recommandent, alors pourquoi pas vous?? <br />
                                          Rejoignez notre communauté de clients et partenaires satisfaits
                                          qui ont fait confiance à notre Expertise!!
                               </Typography>
@@ -126,7 +126,7 @@ const navigate = useNavigate();
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px"}}>
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
                               <img src={worker} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
