@@ -34,7 +34,7 @@ const Body = () => {
         return(
           <Box position="static" sx={{backgroundColor:"white", width:"100%", paddingBottom:"100px", marginTop:"90px"}} >
               <CssBaseline />
-               <Box sx={{backgroundColor: color1, width:"100%", padding:"50px"}}>
+               <Box sx={{backgroundColor: color1, width:"100%", padding:isSmallScreen ? "50px" : "5%"}}>
                     <Grid container justifyContent="center" alignItems="center" spacing={2}>
                                 <Grid item xs={isSmallScreen ? 1 : 0}></Grid>
                                 <Grid item xs={isSmallScreen ? 6 : isSmallScreen2 ? 7 : 12}>
@@ -136,8 +136,8 @@ const Body = () => {
 
                     </Grid>
                 </Box>
-                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "670px" : "190%", 
-                                                           left: isSmallScreen2 ? "100px" : "40%"}}>
+                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "670px" : "200%", 
+                                                           left: isSmallScreen2 ? "100px" : "30%"}}>
                     <img src={image1} alt="" width="80%" />
                 </Box>
                    {!isSmallScreen && isMobileMenuToggledState && <MobileMenuBox />}
