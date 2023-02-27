@@ -68,8 +68,8 @@ const Body = () => {
                                                   src={DAF} />
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
                                                    "............................................" < br/>
-                                                  <strong> Kevine Audrey Nounkeu </strong>  < br/>
-                                                  <strong> Directrice des Affaires Financieres </strong> 
+                                                  <strong> Kevine Audrey Nounkeu <br/> </strong>  
+                                                  <strong> Directrice des Affaires Financières </strong> 
                                        </Typography>
                                  </Stack>
                             </Paper>
@@ -80,7 +80,7 @@ const Body = () => {
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2}
                                         justifyContent="center" alignItems="center">
                                        <Avatar sx={{ bgcolor: deepPurple[500], width: 180 ,
-                                           height: 180 }} src={DC} />
+                                           height: 180 }} src={DE} />
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
                                                   "............................................" < br/>
                                                   <strong> MBIANJEU SERGE WILLY </strong>  < br/>
@@ -96,7 +96,7 @@ const Body = () => {
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2}
                                          justifyContent="center" alignItems="center">
                                        <Avatar sx={{ bgcolor: deepPurple[500], width: 180 , 
-                                           height: 180 }} src={DE} />
+                                           height: 180 }} src={DC} />
                                         <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
                                                "............................................" < br/>
                                                   <strong> NJEZANG EPHRAIM  </strong>  < br/>
