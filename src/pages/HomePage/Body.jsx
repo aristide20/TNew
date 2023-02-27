@@ -83,8 +83,8 @@ const Body = () => {
                </Box> 
                   <Box position="absolute" sx={{zIndex:10, top: isSmallScreen2 ? "18%" : "16.25%", 
                                                         left:isSmallScreen2 ? "27%" : "4%", 
-                                                        width: isSmallScreen2 ? "610px" : "450px", 
-                                                        padding: isSmallScreen2 ? "40px" : "25px", 
+                                                        width: isSmallScreen2 ? "610px" : "90%", 
+                                                        padding: isSmallScreen2 ? "40px" : "15px", 
                                                         borderRadius:"10px"}}>
                              <Paper elevation={10} sx={{backgroundColor:color1, width:isSmallScreen2 ? "100%" : "80%", borderRadius:"10px"}}> 
                                     <Typography variant={isSmallScreen2 ? "h4" : "h5"} sx={{ color: color0, padding:"25px", textAlign:"center", fontWeight:"bold" }}>

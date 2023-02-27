@@ -43,7 +43,7 @@ const Body = () => {
                         <Grid container spacing={4} justifyContent="center" alignItems="center">
                               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 0}></Grid>
                               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12}>
-                                    <Typography variant={isSmallScreen ? "h4" : "h3"} sx={{fontWeight:"bold", 
+                                    <Typography variant={isSmallScreen ? "h4" : "h5"} sx={{fontWeight:"bold", 
                                                                   color:color2, 
                                                                   textAlign:"center", 
                                                                   paddingBottom:"30px"}}>
@@ -67,8 +67,8 @@ const Body = () => {
                     </Box>
                     <Box position="absolute" sx={{zIndex:20, width:isSmallScreen2 ? "50%" : "90%", 
                                                              height:isSmallScreen2 ? "100%" : "500px",
-                                                             top: isSmallScreen2 ? "18%" : "680px",
-                                                             left: isSmallScreen2 ? "25%" : "5px",
+                                                             top: isSmallScreen2 ? "18%" : "700px",
+                                                             left: isSmallScreen2 ? "25%" : "10px",
                                                              borderRadius:"15px"}}>
                          <Paper elevation={10} sx={{padding:"20px", textAlign:"center", bgcolor:color3, borderRadius:"15px"}}>
                                 <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
@@ -86,9 +86,9 @@ const Body = () => {
                    {!isSmallScreen && 
                     <Box sx={{ marginTop:"-10px", backgroundColor:color1, width:"100%",
                                 height:"600px", paddingTop:"50px", paddingBottom:"100px"}}>
-                        <Box sx={{ backgroundColor:color1, width:"80%", 
-                                   height:"600px", paddingTop:"50px", paddingBottom:"100px",
-                                   paddingLeft:"80px"}}>
+                        <Box sx={{ backgroundColor:color1, width:"90%", 
+                                   height:"600px", paddingTop:"10px", paddingBottom:"50px",
+                                   paddingLeft:"10px"}}>
                              <Form /> 
                         </Box>
                     </Box>}
