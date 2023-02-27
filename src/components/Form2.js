@@ -140,36 +140,26 @@ const Form2 = () => {
             }      
         } 
         if(isLogin) {
-        
-            try {
-                 api.loginUser(userLogin).then((response) => {
-                    console.log(response)
-                    if(response.data) { 
+                 const resp = api.loginUser(userLogin).then((resp) => {
+                     
                                         //const token = response.data.token;
                                         //const user = jwt(token);
                                         //localStorage.setItem('token', token);
-                                        dispatch(setLogin(response.data));
+                                        dispatch(setLogin(resp.data));
                                         dispatch(getCommands())
-                                        console.log(response.data);
+                                        console.log(resp);
                                         //console.log(token);
                                         //console.log(user);
                                         setError(false);
                                         dispatch(loginSuccess());
                                         setUserLogin(initialValuesLogin);
                                         navigate('/Accueil/user'); 
-                                        }
-                    else {
-                         setError(true)
-                         console.log(error)
-                    }
-                })
+                }).catch( (error) => {
+                    setError(true)
+                    dispatch(loginError());
+                    console.log(error)})
                 //console.log(resp);
-                
-            } catch (error) {
-                dispatch(loginError());
-                console.log(error)
-            }
-        }
+        }        
         dispatch(loginStatut(false));
         //setTimeout(dispatch(loginStatut(false)), 2000)
     }
