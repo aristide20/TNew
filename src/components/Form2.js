@@ -142,8 +142,8 @@ const Form2 = () => {
         if(isLogin) {
         
             try {
-                 api.loginUser(userLogin)
-                .then((response) => {
+                 api.loginUser(userLogin).then((response) => {
+                    console.log(response)
                     if(response.data) { 
                                         //const token = response.data.token;
                                         //const user = jwt(token);
@@ -170,7 +170,7 @@ const Form2 = () => {
                 console.log(error)
             }
         }
-        dispatch(loginStatut(true));
+        dispatch(loginStatut(false));
         //setTimeout(dispatch(loginStatut(false)), 2000)
     }
     
