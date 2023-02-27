@@ -258,7 +258,7 @@ const Body = () => {
                                               left: isScreenBig ? "30%" : "30%" }}>
                      <img src={image0} alt="" width={isScreenBig ? "30%" : "50%"}  />
                 </Box>
-                <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "20%", 
+                <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "10%", 
                                                          top:isScreenToBig ? "35%" : "105%"}}>
                      <ContactBox1 />
                 </Box>

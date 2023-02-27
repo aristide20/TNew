@@ -63,7 +63,7 @@ const navigate = useNavigate();
                                          Une Equipe Dynamique et Qualifiée
                               </Typography>
                               <Typography variant="paragraph" sx={{textAlign:"center", color:"white", paddingBottom:"30px"}}>
-                                         prete a tous les efforts pour fournir les meilleurs services aux meilleurs prix!!
+                                        prête à tous les efforts pour fournir les meilleurs services aux meilleurs prix!!
                               </Typography>
                               <Button size="medium" 
                                       endIcon={<ForwardToInboxIcon />}
