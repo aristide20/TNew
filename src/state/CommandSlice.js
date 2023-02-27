@@ -58,9 +58,10 @@ const CommandSlice = createSlice({
            createCommand: (state, action) => {
               
                     api.createCommand(action.payload).then((resp) => {
-                            state = {...state, ...resp.data}
                             console.log(resp.data)
-                    }) .catch((error) => console.error(error) )
+                            state = {...state,...resp.data}
+                            console.log(resp.data)
+                    }).catch((error) => console.error(error) )
                        
            }
     }

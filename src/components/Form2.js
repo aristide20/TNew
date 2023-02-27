@@ -129,12 +129,14 @@ const Form2 = () => {
                 }
             }
             else {
-                const resp = api.registerUser(user).then((response) => {
-                    if(response.data) return resp
-                }).catch( console.error(error))
-                console.log(resp);
-                //setUser(initialValuesRegister)
-                setPageType("login");
+                try {
+                    api.registerUser(user)
+                    setUser(initialValuesRegister)
+                    setPageType("login");
+                } catch (error) {
+                    console.error(error)
+                }
+               
             }      
         } 
         if(isLogin) {
