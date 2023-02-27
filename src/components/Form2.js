@@ -118,10 +118,10 @@ const Form2 = () => {
                 console.log(vehicule);
                 console.log(user);
                 try {
-                    const resp = api.registerUser(user);
-                    const resVehicule = api.createVehicule(vehicule);
-                    console.log(resp);
-                    console.log(resVehicule);
+                    api.registerUser(user);
+                    api.createVehicule(vehicule);
+                    //console.log(resp);
+                   //console.log(resVehicule);
                     setUser(initialValuesRegister)
                     setPageType("login");
                 } catch (error) {

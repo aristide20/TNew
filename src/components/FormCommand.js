@@ -29,7 +29,7 @@ const FormCommand = () => {
 
 
     const validate = useSelector((state) => state.CommandReducer.isEnAttente) 
-    console.log(validate)
+    //console.log(validate)
 
      const navigate = useNavigate();
 

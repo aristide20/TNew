@@ -48,7 +48,9 @@ const VehiculeSlice = createSlice({
            },
            createVehicule: (state, action) => {
                 try {
-                    api.createCommand(action.payload)
+                    api.createCommand(action.payload).then((resp) => { state = {...state, ...resp.data}
+                                                   console.log(state)}
+                                          ).catch((error) => console.log(error))
                 } catch (error) {
                     console.log(error)
                 }
