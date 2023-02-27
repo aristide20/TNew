@@ -109,7 +109,7 @@ const Form2 = () => {
     //console.log(user.isPartner, user.isMoralPerson);
 
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         
         if(isRegister) {

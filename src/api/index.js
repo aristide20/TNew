@@ -18,7 +18,7 @@ import axiosConfig from './axiosConfig';
 
 export const registerUser = async (userData) => { await axiosConfig.post('/auth/register', userData) }
 
-export const loginUser = async (userData) => { return await axiosConfig.post('/auth/login', userData) }
+export const loginUser = async (userData) => { await axiosConfig.post('/auth/login', userData) }
 
 export const fetchUsers = async () => { 
          const {data} = await axiosConfig.get('/admin/users', { headers: {Accept: 'application/json',}} )

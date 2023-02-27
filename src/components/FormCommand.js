@@ -34,7 +34,8 @@ const FormCommand = () => {
      const navigate = useNavigate();
 
 
-   const handleSubmit = async (e) => {
+   const handleSubmit =  (e) => {
+          e.preventDefault();
          dispatch( createCommand(infoCommand))
          dispatch( setCommand(infoCommand))
    }
