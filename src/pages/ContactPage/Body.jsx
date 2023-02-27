@@ -73,19 +73,19 @@ const Contact = ({exitVariants, revealVariants})=>{
                         <FaGlobeAfrica /> Yaounde / Douala
                     </div>
                     <div >
-                        <IoIosMail /> aristidembidapro@gmail.com
+                        <IoIosMail /> infos@transaf.net
                     </div>
                     <div >
-                        <TbWorld /> www.elematexpertise.com
+                        <TbWorld /> www.transaf.net
                     </div>
                     <div >
-                        <ImLocation /> 1ère rue à droite après la salle des fêtes Le Majestic Fidjrossè
+                        <ImLocation /> 
                     </div>
                     <div >
-                        <FaCalendarAlt /> Lundi - Vendredi, 8:00 - 20:30
+                        <FaCalendarAlt /> Lundi - Samedi, 8:00 - 20:30
                     </div>
                     <div >
-                        <FaPhoneAlt /> Téléphone: +(237) 693 883 768
+                        <FaPhoneAlt /> Téléphone: +(237) 620 794 661
                     </div>                        
                 </motion.div>
                 <motion.form className="contact-details-right" ref={form} onSubmit={sendEmail}
