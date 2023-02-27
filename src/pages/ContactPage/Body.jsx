@@ -33,7 +33,7 @@ const Contact = ({exitVariants, revealVariants})=>{
      const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_0eundgk', 'contact_form', form.current, 'Kx4WwsPiv2BZLEz_t')//
+        emailjs.sendForm('service_43vfpkj', 'template_uhq6mqo', form.current, '6nu68ndHGumm477Io')//
         .then((result) => {
             console.log(result.text);
             console.log("Ahbon?.");
