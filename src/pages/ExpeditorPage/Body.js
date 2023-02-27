@@ -39,8 +39,9 @@ const Body = () => {
                                 <Grid item xs={isSmallScreen ? 1 : 0}></Grid>
                                 <Grid item xs={isSmallScreen ? 6 : isSmallScreen2 ? 7 : 12}>
                                      <Stack dirction="column" spacing={2}>
-                                          <Typography variant={isSmallScreen ? "h3" : "h5"} sx={{color:"white", fontWeight:"bold", textAlign:"justify"}}>
-                                                  Restez Zen ! < br/>
+                                          <Typography variant={isSmallScreen ? "h3" : "h5"} sx={{color:"white", fontWeight:"bold", textAlign:"left"}}>
+                                                  Restez Zen !! < br/>
+                                                  < br />
                                                    nous assurons le transport de vos marchandises et colis 
                                                   conformément à vos exigences et recommandations.
                                          </Typography>
@@ -135,8 +136,8 @@ const Body = () => {
 
                     </Grid>
                 </Box>
-                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "670px" : "150%", 
-                                                           left: isSmallScreen2 ? "100px" : "30%"}}>
+                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "670px" : "190%", 
+                                                           left: isSmallScreen2 ? "100px" : "40%"}}>
                     <img src={image1} alt="" width="80%" />
                 </Box>
                    {!isSmallScreen && isMobileMenuToggledState && <MobileMenuBox />}
