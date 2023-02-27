@@ -156,7 +156,7 @@ const Body = () => {
                             <Box>
                                  <Button variant="contained" 
                                          size="large" 
-                                         onClick={() => navigate('/Etape-2')}
+                                         onClick={() => navigate('/connexion')}
                                          sx={{background:color1, color:"white"}}>
                                         DEMANDER Mon Devis
                                  </Button>
