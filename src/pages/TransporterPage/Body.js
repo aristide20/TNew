@@ -92,7 +92,7 @@ const Body = () => {
                              <Form /> 
                         </Box>
                     </Box>}
-                   <Box sx={{ marginTop:isNomMobile ? "-10px" : "150px", paddingTop:"100px", bgcolor:color4 }}>
+                   <Box sx={{ marginTop:isSmallScreen ? "-10px" : "150px", paddingTop:"100px", bgcolor:color4 }}>
                       <SatisfiedClients />
                 </Box>
                 <Box sx={{paddingTop:"80px"}}>
