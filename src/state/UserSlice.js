@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import * as api from "../api/index";
+//import * as api from "../api/index";
 				
 const initialState = { 
 	user:null,
@@ -75,14 +75,14 @@ const UserSlice = createSlice({
 								}
 							},
 							 getCommands: (state, action) => {
-									const Com = api.fetchCommands().then(
+									/* api.fetchCommands().then(
 										(resp) => { state.commandes = resp.data.commandes;
 											        console.log(state.commandes)
 											        //console.log(resp.data);
 												    // var data = resp.data.commandes;
 													//console.log(data);
 													//dispatch(getCommands(data))
-													 })
+													 })*/
 								
 								
 							         },

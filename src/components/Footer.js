@@ -11,7 +11,7 @@ const Footer= ()=>{
  const isSmallScreen = useMediaQuery("(min-width: 1000px)");
  const isSmallScreen2 = useMediaQuery("(min-width: 700px)");
  const navigate = useNavigate();
- const url = 'https://wa.me/message/JFJ4OHKASUDFA1'
+ //const url = 'https://wa.me/message/JFJ4OHKASUDFA1'
 
  function openInNewTab(url) {
         window.open(url, '_blank').focus();

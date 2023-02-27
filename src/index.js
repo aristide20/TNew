@@ -12,6 +12,7 @@ import MenuReducer from './state/menuSlice.js';
 import UserReducer from './state/UserSlice.js';
 import CommandReducer from "./state/CommandSlice.js";
 import VehiculeReducer from "./state/VehiculeSlice.js";
+import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 
 const persistConfig = {key: "root", storage, version: 1};
@@ -29,8 +30,11 @@ const store = configureStore({
                 serializableCheck: {
                      ignoreActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
                 },
+                devTools: false
            }),
 });
+
+if(Process.env.NODE_ENV === 'production') disableReactDevTools()
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -138,7 +138,7 @@ const Form2 = () => {
         if(isLogin) {
         
             try {
-                const resp = api.loginUser(userLogin)
+                 api.loginUser(userLogin)
                 .then((response) => {
                     if(response.data) { 
                                         //const token = response.data.token;
