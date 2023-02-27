@@ -34,7 +34,7 @@ const store = configureStore({
            }),
 });
 
-if(Process.env.NODE_ENV === 'production') disableReactDevTools()
+if(process.env.NODE_ENV === 'production') disableReactDevTools()
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
