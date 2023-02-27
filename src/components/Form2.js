@@ -129,7 +129,9 @@ const Form2 = () => {
                 }
             }
             else {
-                const resp = api.registerUser(user) ;
+                const resp = api.registerUser(user).then((response) => {
+                    if(response.data) return resp
+                }).catch( console.error(error))
                 console.log(resp);
                 //setUser(initialValuesRegister)
                 setPageType("login");

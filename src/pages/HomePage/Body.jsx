@@ -96,7 +96,7 @@ const Body = () => {
                <Box sx={{ width:"100%",  
                           paddingTop: "50px",
                           paddingBottom: "50px",
-                          marginTop: isSmallScreen ? "-10px" : "180%",
+                          marginTop: isSmallScreen ? "-10px" : "250%",
                           backgroundColor: color4}}>
                           <SatisfiedClients />
                </Box>

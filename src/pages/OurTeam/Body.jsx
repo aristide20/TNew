@@ -26,18 +26,18 @@ const Body = () => {
             <Box sx={{width:"100%"}}>
                  <img src={isNonMobile ? fond1 : fond2} alt="" width="100%" />
             </Box>
-            <Box position="absolute" sx={{top: isNonMobile ? "130px" : "650px", 
+            <Box position="absolute" sx={{top: isNonMobile ? "130px" : "550px", 
                                           left: isNonMobile ? "600px" : "30px",
                                           width: isNonMobile ? "50%" : "90%"}} >
                  <Typography variant={ isNonMobile ? "h2" : "h4"} sx={{fontWeight:"bold", textAlign:"center"}}>
                             Une Equipe de professionnels dévoués à la satisfaction de leurs clients!!!
                  </Typography>
             </Box>
-            <Box position="absolute" sx={{top: isNonMobile ? "520px" : "290px", 
+            <Box position="absolute" sx={{top: isNonMobile ? "520px" : "250px", 
                                           left: isNonMobile ? "760px" : "100px"}}>
                    <img src={image1} alt="" width={isNonMobile ? "60%" : "80%"}/>
             </Box>
-            <Box position="absolute" sx={{top: isNonMobile ? "520px" : "980px", 
+            <Box position="absolute" sx={{top: isNonMobile ? "520px" : "850px", 
                                           left: isNonMobile ? "760px" : "100px"}}>
                    <img src={image1} alt="" width={isNonMobile ? "60%" : "80%"} />
             </Box>

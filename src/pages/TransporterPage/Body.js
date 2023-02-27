@@ -43,7 +43,7 @@ const Body = () => {
                         <Grid container spacing={4} justifyContent="center" alignItems="center">
                               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 0}></Grid>
                               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12}>
-                                    <Typography variant="h4" sx={{fontWeight:"bold", 
+                                    <Typography variant={isSmallScreen ? "h4" : "h3"} sx={{fontWeight:"bold", 
                                                                   color:color2, 
                                                                   textAlign:"center", 
                                                                   paddingBottom:"30px"}}>
@@ -53,7 +53,7 @@ const Body = () => {
                               </Grid>
                               <Grid item xs={isSmallScreen ? 4 : 0}>
                                   {isSmallScreen  && 
-                                  <Container sx={{ display:"flex", 
+                                  <Box sx={{ display:"flex", 
                                                    justifyContent:"center", 
                                                    alignItems:"center",
                                                    paddingTop:"50px",
@@ -61,14 +61,14 @@ const Body = () => {
                                                    width:"100%",
                                                    height:"500px"}}> 
                                               <Form />
-                                  </Container>}
+                                  </Box>}
                               </Grid>
                         </Grid>
                     </Box>
-                    <Box position="absolute" sx={{zIndex:20, width:isSmallScreen2 ? "50%" : "400px", 
-                                                             height:isSmallScreen2 ? "100%" : "400px",
+                    <Box position="absolute" sx={{zIndex:20, width:isSmallScreen2 ? "50%" : "90%", 
+                                                             height:isSmallScreen2 ? "100%" : "500px",
                                                              top: isSmallScreen2 ? "18%" : "680px",
-                                                             left: isSmallScreen2 ? "25%" : "30px",
+                                                             left: isSmallScreen2 ? "25%" : "5px",
                                                              borderRadius:"15px"}}>
                          <Paper elevation={10} sx={{padding:"20px", textAlign:"center", bgcolor:color3, borderRadius:"15px"}}>
                                 <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
@@ -92,7 +92,7 @@ const Body = () => {
                              <Form /> 
                         </Box>
                     </Box>}
-                   <Box sx={{ marginTop:"-10px", paddingTop:"100px", bgcolor:color4 }}>
+                   <Box sx={{ marginTop:isNomMobile ? "-10px" : "150px", paddingTop:"100px", bgcolor:color4 }}>
                       <SatisfiedClients />
                 </Box>
                 <Box sx={{paddingTop:"80px"}}>
