@@ -21,12 +21,12 @@ const background2 = color.gray.niveau100;
         <Box>
              <Grid container >
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"350px", width:"100%"}}>
-                              <img src={camion10} alt="" height="350px" width="100%" />
+                         <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"25rem", width:"100%"}}>
+                              <img src={camion10} alt="" height="100%" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Container sx={{backgroundColor: background1, display:"flex", height:"350px", width:"100%",
+                         <Container sx={{backgroundColor: background1, display:"flex", height:"25rem", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"30px",
@@ -44,12 +44,12 @@ const background2 = color.gray.niveau100;
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
-                              <img src={btp01} alt="" height="350px" width="100%" />
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"25rem", width:"100%"}}>
+                              <img src={btp01} alt="" height="100%" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background2, display:"flex", height:"350px", width:"100%",
+                        <Container sx={{backgroundColor: background2, display:"flex", height:"25rem", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"30px",
@@ -67,12 +67,12 @@ const background2 = color.gray.niveau100;
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center",height:"350px", width:"100%"}}>
-                              <img src={personne01} alt="" height="350px" width="100%"/>
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center",height:"25rem", width:"100%"}}>
+                              <img src={personne01} alt="" height="100%" width="100%"/>
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background2, display:"flex", height:"350px", width:"100%",
+                        <Container sx={{backgroundColor: background2, display:"flex", height:"25rem", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"40px",
@@ -92,12 +92,12 @@ const background2 = color.gray.niveau100;
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
-                              <img src={chantier} alt="" height="350px" width="100%" />
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"25rem", width:"100%"}}>
+                              <img src={chantier} alt="" height="100%" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background1, display:"flex", height:"350px", width:"100%",
+                        <Container sx={{backgroundColor: background1, display:"flex", height:"25rem", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"40px",
@@ -117,8 +117,8 @@ const background2 = color.gray.niveau100;
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
-                              <img src={happy} alt="" height="350px" width="100%" />
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"25rem", width:"100%"}}>
+                              <img src={happy} alt="" height="100%" width="100%" />
                          </Box>
                    </Grid>
              </Grid>
