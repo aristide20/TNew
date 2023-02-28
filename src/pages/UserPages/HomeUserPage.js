@@ -63,14 +63,14 @@ const Body = () => {
         <Box position="relative" sx={{minHeight:"700px", width:"100%"}}>
              <img src={isNonMobile2 ? fond01 : fond02 } alt="logo"  width="100%"  />
              <Box position="absolute" sx={{top:isNonMobile ? "30%" : "25%",
-                                           left:isNonMobile ? "30%" : "4%",
+                                           left:isNonMobile ? "20%" : "4%",
                                            width:isNonMobile2 ? "60%" : "90%" }} >
                  <Typography variant="h4" sx={{color:color2, fontWeight:"bold"}}>
                             Tableau de Bord de vos commandes
                 </Typography>
              </Box>
              <Box position="absolute" sx={{top:isNonMobile ? "100px" : "100px",
-                                           left:isNonMobile ? "1000px" : "265px" }} >
+                                           left:isNonMobile ? "1000px" : "165px" }} >
                   <Paper elevation={5} sx={{width:isNonMobile ? "200px" : "180px",
                                             height:isNonMobile ? "70px" : "50px",
                                             display:"flex", justifyContent:"center",
@@ -81,7 +81,7 @@ const Body = () => {
                   </Paper>
              </Box>
              <Box position="absolute" sx={{top:isNonMobile ? "190px" : "180px",
-                                            left:isNonMobile ? "1000px" : "265px" }} >
+                                            left:isNonMobile ? "1000px" : "165px" }} >
                  <Paper elevation={5} sx={{width:isNonMobile ? "200px" : "180px",
                                             height:isNonMobile ? "70px" : "50px",
                                             display:"flex", justifyContent:"center",
@@ -106,10 +106,10 @@ const Body = () => {
                   </Paper>
              </Box>
              <Box position="absolute" sx={{top:isNonMobile ? "50%" : "80%",
-                                           left:isNonMobile ? "20%" : "5%",
+                                           left:isNonMobile ? "10%" : "5%",
                                            width:"100%" }} >
-                  <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "95%",
-                                            height:isNonMobile ? "60%" : "90%",
+                  <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "90%",
+                                            minHeight: "500px",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
                            {user !== undefined ? user.isPartner ? 
