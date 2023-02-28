@@ -40,14 +40,15 @@ const Body = () => {
                    <Box>
                         <img src={isSmallScreen2 ? fond : fond2} alt="fond" width="100%" zindex={-10} />
                    </Box>
-                   <Box position="absolute" sx={{marginTop:"-10px", top:"80px", right:"50px"}}>
+                   <Box position="absolute" sx={{marginTop:"-10px", top:"100px", right: isSmallScreen2 ? "50px" : "35px"}}>
                         <Grid container spacing={4} justifyContent="center" alignItems="center">
                               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 0}></Grid>
                               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12}>
                                     <Typography variant={isSmallScreen ? "h4" : "h5"} sx={{fontWeight:"bold", 
                                                                   color:color2, 
-                                                                  textAlign:"center", 
-                                                                  paddingBottom:"30px"}}>
+                                                                  textAlign:"center",
+                                                                  paddingTop:"30px", 
+                                                                  paddingBottom:"10px"}}>
                                                Vous êtes transporteur? <br />
                                                Inscrivez votre camion en un clic et commencez a gagner de l'argent!!
                                     </Typography>
@@ -56,8 +57,8 @@ const Body = () => {
                                  <Box sx={{ display:"flex", 
                                                    justifyContent:"center", 
                                                    alignItems:"center",
-                                                   paddingTop:"50px",
-                                                   paddingBottom:"100px",
+                                                   paddingTop:"20px",
+                                                   paddingBottom:"50px",
                                                    width:"100%",
                                                    height:"500px"}}> 
                                               <Form />
@@ -68,13 +69,13 @@ const Body = () => {
                    <Box sx={{ marginTop:isSmallScreen ? "-10px" : "-10px", paddingTop:"50px", bgcolor:color4 }}>
                       <SatisfiedClients />
                 </Box>
-                <Box sx={{paddingTop:"80px"}}>
+                <Box sx={{paddingTop:"0px"}}>
                       <ImagesBoxHome />
                 </Box>
                 <Box sx={{paddingTop: isSmallScreen2 ? "30px" : "40px", paddingBottom:"60px"}}>
                     <Grid container spacing={3}>
                           <Grid item xs={isSmallScreen2 ? 3 : 0} >
-                                <Box sx={{paddingTop:"200px", paddingLeft:"80px"}}> 
+                                <Box sx={{paddingTop:isSmallScreen2 ? "200px" : "80px", paddingLeft:"80px"}}> 
                                      <img src={image1} alt="" width="80%" />
                                 </Box>
                           </Grid>
@@ -164,15 +165,15 @@ const Body = () => {
                          <Button variant="contained"
                                  size="large"
                                  onClick={() => { navigate('/connexion')}}
-                                 sx={{bgcolor:color2}}> 
+                                 sx={{bgcolor:color2, color:color1, marginBottom:"50px"}}> 
                                    Devenir Partenaire
                          </Button>
                     </Box>
-                <Box position="absolute" sx={{width:"20%", top:isSmallScreen2 ? "620px" : "40px", 
+                <Box position="absolute" sx={{width:"20%", top:isSmallScreen2 ? "620px" : "240px", 
                                                            left:isSmallScreen2 ? "1000px" : "300px"}}>
                     <img src={image1} alt="" width="50%" />
                 </Box>
-                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "2750px": "1600px", 
+                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "2750px": "1200px", 
                                                            left: isSmallScreen2 ? "1000px" : "300px"}}>
                     <img src={image1} alt="" width="50%" />
                 </Box>

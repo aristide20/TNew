@@ -23,7 +23,7 @@ const Body = () => {
                         NOS SOLUTIONS
             </Typography>
             <Stack direction="column" display="flex" justifyContent="center" alignItems="center" spacing={4}>
-                   <Container sx={{width:"70%", paddingBottom:"50px"}}>
+                   <Container sx={{width:isNonMobile ? "70%" : "85%", paddingBottom:"50px"}}>
                             <Typography variant="h5" sx={{paddingBottom:"30px"}}>
                                        Solution transport et livraison 
                             </Typography>
@@ -49,20 +49,22 @@ const Body = () => {
                                   </Typography>
                             </Paper>
                     </Container>
-                    <Container sx={{width:"70%", paddingBottom:"50px"}}>
+                    <Container sx={{width:isNonMobile ? "70%" : "85%", paddingBottom:"50px"}}>
                             <Typography variant="h5" sx={{paddingBottom:"30px"}}>
                                          Service d'entreposage (bientôt) 
                             </Typography>
-                            <Paper elevation={10} sx={{borderRadius:"20px", padding:isNonMobile ? "50px" : "10px"}}>
-                            
+                            <Paper elevation={10} sx={{borderRadius:"20px", padding:isNonMobile ? "50px" : "10px",
+                                                        minHeight:"80px"}}>
+                                    <Typography> Coming Soon </Typography>
                             </Paper>
                     </Container>
-                    <Container sx={{width:"70%", paddingBottom:"50px"}}>
+                    <Container sx={{width:isNonMobile ? "70%" : "85%", paddingBottom:"50px"}}>
                             <Typography variant="h5" sx={{paddingBottom:"30px"}}>
                                        Location
                             </Typography>
-                            <Paper elevation={10} sx={{borderRadius:"20px", padding:isNonMobile ? "50px" : "10px"}}>
-                            
+                            <Paper elevation={10} sx={{borderRadius:"20px", padding:isNonMobile ? "50px" : "10px",
+                                                        minHeight:"80px"}}>
+                                    <Typography> Coming Soon </Typography>
                             </Paper>
                     </Container>
             </Stack>

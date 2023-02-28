@@ -86,7 +86,7 @@ const Body = () => {
                     </Grid>
                     </Box>
                </Box> 
-                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen ? "15%" : isSmallScreen2 ? "15%" : "17%", 
+                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen ? "16.8%" : isSmallScreen2 ? "15%" : "17%", 
                                                         left:isSmallScreen2 ? "27%" : "6%", 
                                                         width: isSmallScreen2 ? "40%" : "90%", 
                                                         padding: isSmallScreen2 ? "40px" : "10px", 

@@ -74,9 +74,7 @@ const Body = () => {
               <Box >
                    <CommandEnginsBox />
               </Box>
-              <Box>
-                   <NosProjets />
-              </Box>
+              
               <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 
                                             top:isSmallScreen2 ? "620px" : "920px", 
                                              left:isSmallScreen2 ? "100px" : "100px"}}>
@@ -98,3 +96,12 @@ const Body = () => {
     }
     
     export default Body;
+
+    /**
+     * 
+     * <Box>
+                   <NosProjets />
+              </Box>
+
+              
+     */

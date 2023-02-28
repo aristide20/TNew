@@ -47,7 +47,7 @@ const Body = () => {
                       paddingRight: isNonMobile ? "50px" : "25px"}}>
                  <Grid container spacing={4}>
                       <Grid item xs={isNonMobile ? 4 : 12}>
-                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"65%"}}>
+                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:isNonMobile ? "65%" : "80%"}}>
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2} 
                                         justifyContent="center" alignItems="center">
                                        <Avatar sx={{ bgcolor: deepOrange[500], width: 180 , 
@@ -62,7 +62,7 @@ const Body = () => {
                             </Paper>
                       </Grid>
                       <Grid item xs={isNonMobile ? 4 : 12}>
-                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"65%", 
+                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:isNonMobile ? "65%" : "80%", 
                                    marginTop:isNonMobile ? "20px" : "0px"}}>
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2}
                                          justifyContent="center" alignItems="center">
@@ -78,7 +78,7 @@ const Body = () => {
                             </Paper>
                       </Grid>
                       <Grid item xs={isNonMobile ? 4 : 12}>
-                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"65%",
+                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:isNonMobile ? "65%" : "80%",
                                   marginTop:isNonMobile ? "40px" : "0px"}}>
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2}
                                         justifyContent="center" alignItems="center">
@@ -95,7 +95,7 @@ const Body = () => {
                       </Grid>
                       <Grid item xs={isNonMobile ? 2 : 0}></Grid>
                       <Grid item xs={isNonMobile ? 4 : 12}>
-                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"65%"}}>
+                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:isNonMobile ? "65%" : "80%"}}>
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2}
                                          justifyContent="center" alignItems="center">
                                        <Avatar sx={{ bgcolor: deepPurple[500], width: 180 , 
@@ -110,7 +110,7 @@ const Body = () => {
                             </Paper>
                       </Grid>
                       <Grid item xs={isNonMobile ? 4 : 12}>
-                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"65%",
+                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:isNonMobile ? "65%" : "80%",
                                    marginTop:isNonMobile ? "20px" : "0px"}}>
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2}
                                         justifyContent="center" alignItems="center"
