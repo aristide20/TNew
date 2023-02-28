@@ -95,7 +95,7 @@ export default function PrimarySearchAppBar() {
     setAnchorEl(null);
     handleMobileMenuClose();
     navigate('/connexion');
-    dispatch(setLogout());
+    //dispatch(setLogout());
   };
 
   const handleMenuClose2 = () => {

@@ -4,7 +4,8 @@ import { color } from '../../theme';
 import { Box,  useMediaQuery } from '@mui/material';
 import { useSelector } from "react-redux";
 //import {useState } from 'react';
-//import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setLogout } from "../../state/UserSlice";
 import Form from "../../components/Form2";
 
 
@@ -18,6 +19,10 @@ const Body = () => {
     //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
     const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
    // const color1 = color.blue.niveau100;
+
+   const dispatch = useDispatch();
+   // On commence par vider le state global user avant de login
+   dispatch(setLogout());
         
     return(
           <Box position="static" sx={{backgroundColor: color2,
