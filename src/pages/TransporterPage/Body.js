@@ -51,8 +51,7 @@ const Body = () => {
                                                Inscrivez votre camion en un clic et commencez a gagner de l'argent!!
                                     </Typography>
                               </Grid>
-                              <Grid item xs={isSmallScreen ? 4 : 0}>
-                                  {isSmallScreen  && 
+                              <Grid item xs={isSmallScreen ? 4 : 0}> 
                                   <Box sx={{ display:"flex", 
                                                    justifyContent:"center", 
                                                    alignItems:"center",
@@ -61,16 +60,13 @@ const Body = () => {
                                                    width:"100%",
                                                    height:"500px"}}> 
                                               <Form />
-                                  </Box>}
+                                  </Box>
                               </Grid>
                         </Grid>
                     </Box>
-                    <Box position="absolute" sx={{zIndex:20, width:isSmallScreen2 ? "50%" : "90%", 
-                                                             height:isSmallScreen2 ? "100%" : "500px",
-                                                             top: isSmallScreen2 ? "18%" : "700px",
-                                                             left: isSmallScreen2 ? "25%" : "10px",
-                                                             borderRadius:"15px"}}>
-                         <Paper elevation={10} sx={{padding:"20px", textAlign:"center", bgcolor:color3, borderRadius:"15px"}}>
+                    <Box position="relative" sx={{ width:"100%", display:"flex", flexDirection:"coloumn", 
+                                                   justifyContent:"center", alignItems:"center" }}>
+                         <Paper elevation={10} sx={{padding:"20px", textAlign:"justify", bgcolor:color3, borderRadius:"15px"}}>
                                 <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
                                             fontSize:isSmallScreen2 ?"20px" : "16px"}}>
                                              Nous mettons un accent particulier sur la sécurité des biens et personnes, 
@@ -83,16 +79,8 @@ const Body = () => {
                                     </Typography>
                          </Paper>
                     </Box>
-                   {!isSmallScreen && 
-                    <Box sx={{ marginTop:"-10px", backgroundColor:color1, width:"100%",
-                                height:"600px", paddingTop:"50px", paddingBottom:"100px"}}>
-                        <Box sx={{ backgroundColor:color1, width:"90%", 
-                                   height:"600px", paddingTop:"50px", paddingBottom:"50px",
-                                   paddingLeft:"30px"}}>
-                             <Form /> 
-                        </Box>
-                    </Box>}
-                   <Box sx={{ marginTop:isSmallScreen ? "-10px" : "150px", paddingTop:"100px", bgcolor:color4 }}>
+                  
+                   <Box sx={{ marginTop:isSmallScreen ? "-10px" : "10px", paddingTop:"100px", bgcolor:color4 }}>
                       <SatisfiedClients />
                 </Box>
                 <Box sx={{paddingTop:"80px"}}>

@@ -25,12 +25,12 @@ const navigate = useNavigate();
         <Box>
              <Grid container >
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"25rem", width:"100%"}}>
+                         <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"20rem", width:"100%"}}>
                               <img src={worker} alt="" height="100%" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Container sx={{backgroundColor: background1, display:"flex", height:"25rem",
+                         <Container sx={{backgroundColor: background1, display:"flex", height:"20rem",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center", width:"100%"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"30px",
@@ -50,7 +50,7 @@ const navigate = useNavigate();
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"25rem", width:"100%"}}>
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"20rem", width:"100%"}}>
                               <img src={camion02} alt="" height="100%" width="100%" />
                          </Box>
                    </Grid>
@@ -100,12 +100,12 @@ const navigate = useNavigate();
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{ height:"25rem", width:"100%"}}>
+                         <Box sx={{ height:"20rem", width:"100%"}}>
                               <img src={btp02} alt="" height="100%" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                        <Container sx={{backgroundColor: background1, display:"flex", height:"25rem", width:"100%",
+                        <Container sx={{backgroundColor: background1, display:"flex", height:"20rem", width:"100%",
                                          flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                               <Typography variant="h3" sx={{textAlign:"center", fontWeight:"bold", 
                                                             color:"white", paddingTop:"40px",
@@ -126,7 +126,7 @@ const navigate = useNavigate();
                          </Container>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
-                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"25rem", width:"100%"}}>
+                         <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"20rem", width:"100%"}}>
                               <img src={camion10} alt="" height="100%" width="100%" />
                          </Box>
                    </Grid>
