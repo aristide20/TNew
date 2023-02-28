@@ -86,9 +86,9 @@ const Body = () => {
                     </Grid>
                     </Box>
                </Box> 
-                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen ? "20%" : isSmallScreen2 ? "18%" : "16.25%", 
+                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen ? "15%" : isSmallScreen2 ? "15%" : "17%", 
                                                         left:isSmallScreen2 ? "27%" : "6%", 
-                                                        width: isSmallScreen2 ? "50%" : "90%", 
+                                                        width: isSmallScreen2 ? "40%" : "90%", 
                                                         padding: isSmallScreen2 ? "40px" : "10px", 
                                                         borderRadius:"10px"}}>
                              <Paper elevation={10} sx={{backgroundColor:color1, width:isSmallScreen2 ? "100%" : "100%", borderRadius:"10px"}}> 
@@ -112,7 +112,7 @@ const Body = () => {
                           paddingBottom: "100px",
                           color: "gray"}}>
                           <ImagesBoxHome />
-                     <Box>
+                     <Box sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
                           <MotDirection />
                      </Box>
                </Box>

@@ -39,7 +39,8 @@ const NewsLetter = () => {
                               borderStyle: "groove",
                               paddingTop:"20px",
                               borderRadius:"10px",
-                              minHeight: "100px"}}>
+                              minHeight: "100px",
+                              paddingBottom:"20px"}}>
 
                        <form onSubmit={handleSubmit}> 
 

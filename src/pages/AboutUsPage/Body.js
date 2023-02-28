@@ -38,7 +38,8 @@ const Body = () => {
                <CssBaseline />
                <Box sx={{backgroundColor: background2, width:"100%", minHeight:"300px", paddingLeft:top5}}>
                     <Box sx={{width:top6, paddingTop:top7, paddingBottom:isScreenBig ? "50px" : "150px" }}>
-                               <Typography variant="h4" sx={{textAlign:"left", fontWeight:"bold", color:background3}}>
+                               <Typography variant={isScreenBig ? "h4" : "h5"} 
+                                           sx={{textAlign:"left", fontWeight:"bold", color:background3}}>
                                            Notre Objectif: <br />
                                            Devenir dans les 10 (dix) prochaines années le leader de la logistique 
                                            terrestre et maritime d'Afrique centrale.
@@ -131,7 +132,7 @@ const Body = () => {
                          </Grid>     
                     </Box>
                     <Box sx={{marginTop: top8, flexGrow:1, marginBottom:"80px"}}>
-                         <Grid container>
+                         <Grid container justifyContent="center" alignItems="center" spacing={0} >
                                <Grid item xs={isScreenToBig ? 3 : isScreenBig? 6 : 12}>
                                     <Box sx={{width:"100%", height:"100%"}}>
                                          <img src={image1} alt="image01" width="100%" height="100%" />

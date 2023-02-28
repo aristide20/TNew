@@ -64,29 +64,13 @@ const Body = () => {
                               </Grid>
                         </Grid>
                     </Box>
-                    <Box position="relative" sx={{ width:"100%", display:"flex", flexDirection:"coloumn", 
-                                                   justifyContent:"center", alignItems:"center" }}>
-                         <Paper elevation={10} sx={{padding:"20px", textAlign:"justify", bgcolor:color3, borderRadius:"15px"}}>
-                                <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
-                                            fontSize:isSmallScreen2 ?"20px" : "16px"}}>
-                                             Nous mettons un accent particulier sur la sécurité des biens et personnes, 
-                                             c'est pourquoi vous bénéficié automatiquement de toutes nos formations en 
-                                             logistique et transport une fois inscrit à notre réseau. Toutefois, nous 
-                                             n'acceptons que des véhicules à jours sur le plan technique et 
-                                             administratif <br />
-                                             Pour faire partie de notre flotte et bénéficier de notre marché, 
-                                             Inscrivez votre camion et faites partie de nos partenaires.
-                                    </Typography>
-                         </Paper>
-                    </Box>
-                  
-                   <Box sx={{ marginTop:isSmallScreen ? "-10px" : "10px", paddingTop:"100px", bgcolor:color4 }}>
+                   <Box sx={{ marginTop:isSmallScreen ? "-10px" : "-10px", paddingTop:"100px", bgcolor:color4 }}>
                       <SatisfiedClients />
                 </Box>
                 <Box sx={{paddingTop:"80px"}}>
                       <ImagesBoxHome />
                 </Box>
-                <Box sx={{paddingTop: isSmallScreen2 ? "100px" : "40px", paddingBottom:"60px"}}>
+                <Box sx={{paddingTop: isSmallScreen2 ? "30px" : "40px", paddingBottom:"60px"}}>
                     <Grid container spacing={3}>
                           <Grid item xs={isSmallScreen2 ? 3 : 0} >
                                 <Box sx={{paddingTop:"200px", paddingLeft:"80px"}}> 
@@ -157,6 +141,30 @@ const Body = () => {
 
                     </Grid>
                 </Box>
+                <Box position="relative" sx={{ width:"100%", display:"flex", flexDirection:"column", bgcolor:color1, padding:"20px", 
+                                                   justifyContent:"center", alignItems:"center" }}>
+                         <Paper elevation={10} sx={{padding:"20px", textAlign:"justify", bgcolor:color1, width:isSmallScreen2 ? "60%" : "90%" }}>
+                                <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
+                                            fontSize:isSmallScreen2 ?"20px" : "16px"}}>
+                                             Nous mettons un accent particulier sur la sécurité des biens et personnes, 
+                                             c'est pourquoi vous bénéficié automatiquement de toutes nos formations en 
+                                             logistique et transport une fois inscrit à notre réseau. Toutefois, nous 
+                                             n'acceptons que des véhicules à jours sur le plan technique et 
+                                             administratif <br />
+                                             
+                                    </Typography>
+                         </Paper>
+                         <Typography sx={{color:color2, marginTop:"20px", marginBottom:"20px"}}> 
+                                     Pour faire partie de notre flotte et bénéficier de notre marché, 
+                                    Inscrivez votre camion et faites partie de nos partenaires.
+                         </Typography>
+                         <Button variant="contained"
+                                 size="large"
+                                 onClick={() => { navigate('/connexion')}}
+                                 sx={{bgcolor:color1}}> 
+                                   Devenir Partenaire
+                         </Button>
+                    </Box>
                 <Box position="absolute" sx={{width:"20%", top:isSmallScreen2 ? "620px" : "40px", 
                                                            left:isSmallScreen2 ? "1000px" : "300px"}}>
                     <img src={image1} alt="" width="50%" />
