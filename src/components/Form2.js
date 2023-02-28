@@ -142,14 +142,17 @@ const Form2 = () => {
         if(isLogin) {
 
             try { 
-                const { access_token } = api.loginUser(userLogin).then((Response) => {dispatch(setLogin(Response));
-                                                                                      console.log(Response); })
-                dispatch(getCommands())
-                console.log(access_token);
-                setError(false);
-                dispatch(loginSuccess());
-                setUserLogin(initialValuesLogin);
-                navigate('/Accueil');
+                const { access_token } = api.loginUser(userLogin).then((Response) => {
+                    console.log(Response); 
+                    dispatch(setLogin(Response.data));
+                    dispatch(getCommands())
+                    console.log(access_token);
+                    setError(false);
+                    dispatch(loginSuccess());
+                    setUserLogin(initialValuesLogin);
+                    navigate('/Accueil');                                                                
+                                                                                    })
+               
                 
             } catch (error) {
                 setError(true)
