@@ -84,11 +84,12 @@ const Body = () => {
                </Box> 
                   <Box position="absolute" sx={{zIndex:10, top: isSmallScreen2 ? "18%" : "16.25%", 
                                                         left:isSmallScreen2 ? "27%" : "6%", 
-                                                        width: isSmallScreen2 ? "610px" : "90%", 
-                                                        padding: isSmallScreen2 ? "40px" : "15px", 
+                                                        width: isSmallScreen2 ? "60%" : "90%", 
+                                                        padding: isSmallScreen2 ? "40px" : "10px", 
                                                         borderRadius:"10px"}}>
                              <Paper elevation={10} sx={{backgroundColor:color1, width:isSmallScreen2 ? "100%" : "80%", borderRadius:"10px"}}> 
-                                    <Typography variant={isSmallScreen2 ? "h4" : "h5"} sx={{ color: color0, padding:"25px", textAlign:"center", fontWeight:"bold" }}>
+                                    <Typography variant={isSmallScreen2 ? "h4" : "h5"} 
+                                                sx={{ color: color0, padding:"25px", textAlign:"center", fontWeight:"bold" }}>
                                                Sécurité, Délais et Services! <br />
                                                Restez Zen, on s'occupe de tout !
                                      </Typography>

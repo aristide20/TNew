@@ -19,8 +19,9 @@ const MotDirection = () => {
                          
                     </Grid> 
                     <Grid item xs={ isNonMobile ? 6 : 12 } >
-                          <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px"}}>
-                                 <Stack direction={isNonMobile ? "row" : "column"} spacing={isNonMobile ? 8 : 4}>
+                          <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"90%"}}>
+                                 <Stack direction={isNonMobile ? "row" : "column"} spacing={isNonMobile ? 8 : 4}
+                                        justifyContent="center" alignItems="center">
                                        <Avatar sx={{ bgcolor: deepOrange[500], width: isNonMobile ? 180 : 180, 
                                                                                height: isNonMobile ? 180 : 180 }} 
                                                                                src={DG} />

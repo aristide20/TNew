@@ -26,7 +26,7 @@ const navigate = useNavigate();
              <Grid container >
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
                          <Box sx={{display:"flex", justifyContent:"flex-end", alignItems:"center", height:"350px", width:"100%"}}>
-                              <img src={camion10} alt="" height="350px" width="100%" />
+                              <img src={worker} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
@@ -127,7 +127,7 @@ const navigate = useNavigate();
                    </Grid>
                    <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 6 : 12}>
                          <Box sx={{display:"flex", justifyContent:"flex-start", alignItems:"center", height:"350px", width:"100%"}}>
-                              <img src={worker} alt="" height="350px" width="100%" />
+                              <img src={camion10} alt="" height="350px" width="100%" />
                          </Box>
                    </Grid>
              </Grid>
