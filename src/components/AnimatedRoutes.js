@@ -40,7 +40,7 @@ function AnimatedRoutes() {
                   <Route path="/Recrutement"  element={<Recrutement />} />
 
                   <Route path="/connexion"  element={<UserLoginPage />} />  
-                  <Route path="/Accueil/user"  element={<HomeUserPage />} />
+                  <Route path="/Accueil"  element={<HomeUserPage />} />
                   
         </Routes>
     </AnimatePresence>

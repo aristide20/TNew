@@ -142,14 +142,14 @@ const Form2 = () => {
         if(isLogin) {
 
             try { 
-                const {access_token} = api.loginUser(userLogin).unwrap()
+                const {access_token} = api.loginUser(userLogin)
                 dispatch(setLogin(access_token));
                 dispatch(getCommands())
                 console.log(access_token);
                 setError(false);
                 dispatch(loginSuccess());
                 setUserLogin(initialValuesLogin);
-                navigate('/Accueil/user');
+                navigate('/Accueil');
                 
             } catch (error) {
                 setError(true)
