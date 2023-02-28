@@ -26,7 +26,9 @@ const Body = () => {
     const user = useSelector((state) => state.persistedReducer.user);
     //const commandes = useSelector((state) => state.persistedReducer.commandes);
     //const Commandes = useSelector((state) => state.UserReducer.commandes)
-    const isNonMobile = useMediaQuery("(min-width:800px)");
+    const isNonMobile = useMediaQuery("(min-width:900px)");
+    const isNonMobile2 = useMediaQuery("(min-width:600px)");
+    //const isNonMobile3 = useMediaQuery("(min-width:400px)");
     //const dispatch = useDispatch();
     //dispatch(loginStatut(false));
     //const pbox = isNonMobile ? "30px" : "10px";
@@ -59,9 +61,10 @@ const Body = () => {
 
     return (
         <Box position="relative" sx={{minHeight:"700px", width:"100%"}}>
-             <img src={isNonMobile ? fond01 : fond02 } alt="logo" width="100%"  />
-             <Box position="absolute" sx={{top:isNonMobile ? "300px" : "280px",
-                                           left:isNonMobile ? "400px" : "60px" }} >
+             <img src={isNonMobile2 ? fond01 : fond02 } alt="logo"  width="100%"  />
+             <Box position="absolute" sx={{top:isNonMobile ? "30%" : "25%",
+                                           left:isNonMobile ? "30%" : "4%",
+                                           width:isNonMobile2 ? "60%" : "90%" }} >
                  <Typography variant="h4" sx={{color:color2, fontWeight:"bold"}}>
                             Tableau de Bord de vos commandes
                 </Typography>
@@ -102,10 +105,11 @@ const Body = () => {
                                 </Dialog>
                   </Paper>
              </Box>
-             <Box position="absolute" sx={{top:isNonMobile ? "400px" : "400px",
-                                           left:isNonMobile ? "200px" : "30px" }} >
-                  <Paper elevation={5} sx={{width:isNonMobile ? "950px" : "400px",
-                                            height:isNonMobile ? "450px" : "600px",
+             <Box position="absolute" sx={{top:isNonMobile ? "50%" : "80%",
+                                           left:isNonMobile ? "20%" : "5%",
+                                           width:"100%" }} >
+                  <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "95%",
+                                            height:isNonMobile ? "60%" : "90%",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
                            {user !== undefined ? user.isPartner ? 
