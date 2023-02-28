@@ -5,7 +5,8 @@ import App from './App';
 import { Provider } from 'react-redux';
 //import userReducer from './state/UserSlice';
 import {persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+//import storage from 'redux-persist/lib/storage';
+import sessionStorage from 'redux-persist/es/storage/session';
 import { PersistGate} from 'redux-persist/integration/react';
 import { configureStore } from '@reduxjs/toolkit';
 import MenuReducer from './state/menuSlice.js';
@@ -15,7 +16,7 @@ import VehiculeReducer from "./state/VehiculeSlice.js";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
 
 
-const persistConfig = {key: "root", storage, version: 1};
+const persistConfig = {key: "root", sessionStorage, version: 1};
 const persistedReducer = persistReducer(persistConfig, UserReducer);
 const store = configureStore({
      reducer: {

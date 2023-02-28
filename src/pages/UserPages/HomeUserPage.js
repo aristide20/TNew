@@ -73,7 +73,7 @@ const Body = () => {
                                             display:"flex", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
                         <Button variant="text" sx={{color:color1, fontWeight:"bold"}}>
-                                { user !== null ? user.isPartner ?"Liste Vehicules" : "Devenir Partenaire" : "vide"}
+                                { user !== undefined ? user.isPartner ?"Liste Vehicules" : "Devenir Partenaire" : "vide"}
                         </Button>    
                   </Paper>
              </Box>
@@ -108,7 +108,7 @@ const Body = () => {
                                             height:isNonMobile ? "450px" : "600px",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
-                           {user !== null ? user.isPartner ? 
+                           {user !== undefined ? user.isPartner ? 
                              <Container>
                                        user.
                              </Container>

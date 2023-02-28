@@ -71,8 +71,9 @@ export default function PrimarySearchAppBar() {
   const dispatch = useDispatch();
   //const userLoggedIn = useSelector((state) => state.UserReducer.user);
   const userLoggedIn = useSelector((state) => state.persistedReducer.user);
-  const isPartenaire = userLoggedIn ? userLoggedIn.isPartner ? true : false : false;
-  const name = userLoggedIn ? userLoggedIn.fullName : "";
+  console.log(userLoggedIn);
+  const isPartenaire = userLoggedIn !== undefined ? userLoggedIn.isPartner ? true : false : false;
+  const name = userLoggedIn !== undefined ? userLoggedIn.fullName : "";
  // console.log(isPartenaire);
 
     const navigate = useNavigate();
