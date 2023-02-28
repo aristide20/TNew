@@ -17,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 import SatisfiedClients from "../../components/SatisfiedClients";
 import ImagesBoxHome from "../../components/imagesBoxHome03";
 import fond from "../../assets/fondT02.png";
+import fond2 from "../../assets/fondT03.png";
 import Form from "../../components/Form4";
 import image1 from "../../assets/Truck01.png";
 
@@ -37,7 +38,7 @@ const Body = () => {
           <Box position="relative" sx={{backgroundColor: "white", width:"100%", marginTop:"90px"}} >
                    <CssBaseline />
                    <Box>
-                        <img src={fond} alt="fond" width="100%" zindex={-10} />
+                        <img src={isSmallScreen2 ? fond : fond2} alt="fond" width="100%" zindex={-10} />
                    </Box>
                    <Box position="absolute" sx={{marginTop:"-10px", top:"80px", right:"50px"}}>
                         <Grid container spacing={4} justifyContent="center" alignItems="center">
@@ -51,8 +52,8 @@ const Body = () => {
                                                Inscrivez votre camion en un clic et commencez a gagner de l'argent!!
                                     </Typography>
                               </Grid>
-                              <Grid item xs={isSmallScreen ? 4 : 0}> 
-                                  <Box sx={{ display:"flex", 
+                              <Grid item xs={isSmallScreen ? 4 : 12}> 
+                                 <Box sx={{ display:"flex", 
                                                    justifyContent:"center", 
                                                    alignItems:"center",
                                                    paddingTop:"50px",
@@ -64,7 +65,7 @@ const Body = () => {
                               </Grid>
                         </Grid>
                     </Box>
-                   <Box sx={{ marginTop:isSmallScreen ? "-10px" : "-10px", paddingTop:"100px", bgcolor:color4 }}>
+                   <Box sx={{ marginTop:isSmallScreen ? "-10px" : "-10px", paddingTop:"50px", bgcolor:color4 }}>
                       <SatisfiedClients />
                 </Box>
                 <Box sx={{paddingTop:"80px"}}>
@@ -141,9 +142,10 @@ const Body = () => {
 
                     </Grid>
                 </Box>
-                <Box position="relative" sx={{ width:"100%", display:"flex", flexDirection:"column", bgcolor:color1, padding:"20px", 
+                <Box sx={{ width:"100%", display:"flex", flexDirection:"column", bgcolor:color1, padding:"20px", 
                                                    justifyContent:"center", alignItems:"center" }}>
-                         <Paper elevation={10} sx={{padding:"20px", textAlign:"justify", bgcolor:color1, width:isSmallScreen2 ? "60%" : "90%" }}>
+                         <Paper elevation={10} sx={{padding:"20px", textAlign:"justify", bgcolor:color1, 
+                                                     width:isSmallScreen2 ? "60%" : "90%", marginTop:"40px" }}>
                                 <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
                                             fontSize:isSmallScreen2 ?"20px" : "16px"}}>
                                              Nous mettons un accent particulier sur la sécurité des biens et personnes, 
@@ -154,14 +156,15 @@ const Body = () => {
                                              
                                     </Typography>
                          </Paper>
-                         <Typography sx={{color:color2, marginTop:"20px", marginBottom:"20px"}}> 
+                         <Typography sx={{color:color2, marginTop:"20px", marginBottom:"20px",
+                                         width:isSmallScreen2 ? "40%" : "70%", textAlign:"center" }}> 
                                      Pour faire partie de notre flotte et bénéficier de notre marché, 
                                     Inscrivez votre camion et faites partie de nos partenaires.
                          </Typography>
                          <Button variant="contained"
                                  size="large"
                                  onClick={() => { navigate('/connexion')}}
-                                 sx={{bgcolor:color1}}> 
+                                 sx={{bgcolor:color2}}> 
                                    Devenir Partenaire
                          </Button>
                     </Box>
