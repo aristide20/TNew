@@ -108,7 +108,7 @@ const Body = () => {
                           <Grid item xs={isSmallScreen2 ? 6 : 12}>
                           
                           <Stack direction="column" spacing={4} justifyContent="center" alignItems="center">
-                                 <Typography variant="h5" textAlign="left" sx={{color:"black", fontWeight:"bold"}}>
+                                 <Typography variant="h5" textAlign="center" sx={{color:"black", fontWeight:"bold"}}>
                                           06 bonnes raisons de choir TRANSAF:
                                  </Typography>
                                  <Box >
@@ -171,11 +171,11 @@ const Body = () => {
                 </Box>
                 <Box position="absolute" sx={{width:"20%", top:isSmallScreen2 ? "620px" : "40px", 
                                                            left:isSmallScreen2 ? "1000px" : "300px"}}>
-                    <img src={image1} alt="" width="60%" />
+                    <img src={image1} alt="" width="50%" />
                 </Box>
-                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "2550px": "1600px", 
+                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "2750px": "1600px", 
                                                            left: isSmallScreen2 ? "1000px" : "300px"}}>
-                    <img src={image1} alt="" width="60%" />
+                    <img src={image1} alt="" width="50%" />
                 </Box>
                    {!isSmallScreen && isMobileMenuToggledState && <MobileMenuBox />}
           </Box>

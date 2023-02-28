@@ -42,10 +42,10 @@ const Body = () => {
                 <Box position="absolute" sx={{zindex:10, top: isSmallScreen2 ? "4%" : "2%", 
                                                          left:isSmallScreen2 ? "12%" : "6%"}}>
                     <Grid container spacing={4} justifyContent="center" alignItems="center" >
-                         <Grid item xs={isSmallScreen ? 3 : isSmallScreen2 ? 6 : 12}>
+                         <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12}>
                                 <Carte />
                         </Grid>
-                        <Grid item xs={isSmallScreen2 ? 6 : 12}>
+                        <Grid item xs={isSmallScreen2 ? 7 : 12}>
                              <Stack direction="column"
                                     display="flex"
                                     justifyContent= {isSmallScreen2 ? "center" : "flex-start"}
@@ -59,7 +59,7 @@ const Body = () => {
                                   </Typography>
                                   <Container>
                                              <Grid container spacing={2} justifyContent="center" alignItems="center">
-                                                   <Grid item xs={isSmallScreen ? 6 : 12}>
+                                                   <Grid item xs={isSmallScreen ? 5 : 12}>
                                                          <Button variant="contained"
                                                                  onClick={() => {navigate('/Expediteurs')} }
                                                                  sx={{backgroundColor:color0, color:color1,
@@ -67,7 +67,8 @@ const Body = () => {
                                                                     Commander un Camion
                                                          </Button>
                                                    </Grid> 
-                                                   <Grid item xs={isSmallScreen ? 6 : 12}>
+                                                   <Grid item xs={isSmallScreen ? 2 : 0}></Grid>
+                                                   <Grid item xs={isSmallScreen ? 5 : 12}>
                                                         <Button variant="contained"
                                                                 onClick={() => {navigate('/Transporteurs')} }
                                                                  sx={{backgroundColor:color2, color:"white",
@@ -79,7 +80,7 @@ const Body = () => {
                                   </Container>
                              </Stack>
                         </Grid>
-                        <Grid item xs={isSmallScreen ? 3 : 0}>
+                        <Grid item xs={isSmallScreen ? 1 : 0}>
                              
                         </Grid> 
                     </Grid>

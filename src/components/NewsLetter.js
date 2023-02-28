@@ -12,8 +12,8 @@ const NewsLetter = () => {
     const isScreenSmall = useMediaQuery("(min-width: 600px)");
     const [newsLetterEmail, setNewsLetterEmail] = useState("");
 
-    const handleSubmit = () => {
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
     }
 
 
@@ -23,9 +23,9 @@ const NewsLetter = () => {
                    paddingTop: "40px",
                    paddingBottom: "50px" }}>
 
-             <Container sx={{marginBottom: "50px", width:"60%"}}>
+             <Container sx={{marginBottom: "50px", width: isScreenBig ? "60%" : "85%"}}>
 
-                                   <Typography variant="h4" 
+                                   <Typography variant={ isScreenBig ? "h4" : "h6" }
                                                sx={{color:color1,
                                                     textAlign:"center"}}>
                                                Abonnez-vous et recevez les dernieres nouveautés 
