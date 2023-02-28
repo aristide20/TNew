@@ -64,7 +64,7 @@ const UserSlice = createSlice({
 								else { state.loginButton = false }
 							},
                              makeCommand: (state, action) => { 
-								state.commandes = action.payload;
+								state.commandes.push(action.payload) ;
 								if(state.user) {
 									try {
 										//const AllCommandes = api.FetchCommands()

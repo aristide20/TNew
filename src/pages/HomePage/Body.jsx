@@ -52,7 +52,10 @@ const Body = () => {
                                     alignItems={isSmallScreen2 ? "center" : "flex-start"}
                                     spacing={2}>
                                   <Typography variant={isSmallScreen2 ? "h2" : "h3"} sx={{ fontWeight:"bold", color:isSmallScreen2 ? color0 : color1 }}>
-                                                TRANSAF Transport et Services D'Afrique (SARL)
+                                                TRANSAF SARL 
+                                  </Typography>
+                                  <Typography variant={isSmallScreen2 ? "h4" : "h6"} sx={{ fontWeight:"bold", color:isSmallScreen2 ? color0 : color1 }}>
+                                                Transport et Services D'Afrique SARL
                                   </Typography>
                                   <Container>
                                              <Grid container spacing={2} justifyContent="center" alignItems="center">

@@ -173,7 +173,7 @@ const Body = () => {
                                                            left:isSmallScreen2 ? "1000px" : "300px"}}>
                     <img src={image1} alt="" width="60%" />
                 </Box>
-                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "2850px": "1600px", 
+                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "2550px": "1600px", 
                                                            left: isSmallScreen2 ? "1000px" : "300px"}}>
                     <img src={image1} alt="" width="60%" />
                 </Box>

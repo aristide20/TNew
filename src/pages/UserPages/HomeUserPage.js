@@ -107,7 +107,28 @@ const Body = () => {
                                             alignItems:"center", bgcolor:color2}}>
                                 {user !== undefined ? user.isPartner ? 
                                 <Container>
-                                       user.
+                                       <stack dirction="column" justifyContent="center" alignItems="center">
+                                             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                                                      <AccordionSummary expandIcon={<ExpandMoreIcon />}
+                                                                        aria-controls="panel1bh-content"
+                                                                        id="panel1bh-header"
+                                                                  >
+                                                                   <Typography sx={{ width: '33%', flexShrink: 0 }}>
+                                                                              Commande Id
+                                                                   </Typography>
+                                                                   <Typography sx={{ color: 'text.secondary' }}>
+                                                                               {}
+                                                                   </Typography>
+                                                      </AccordionSummary>
+                                                      <AccordionDetails>
+                                                                   <Typography>
+                                                                            Nulla facilisi. Phasellus sollicitudin nulla 
+                                                                            et quam mattis feugiat. Aliquam eget maximus 
+                                                                            est, id dignissim quam.
+                                                                   </Typography>
+                                                      </AccordionDetails>
+                                             </Accordion>
+                                       </stack>
                                 </Container>
                                             : 
                                 <Container>
