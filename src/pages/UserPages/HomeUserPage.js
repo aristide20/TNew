@@ -61,6 +61,14 @@ const Body = () => {
       setOpen(false);
     };
 
+
+    const [expanded, setExpanded] = useState(false);
+
+    const handleChange = (panel) => (event, isExpanded) => {
+      setExpanded(isExpanded ? panel : false);
+    };
+
+
     // <img src={isNonMobile2 ? fond01 : fond02 } alt="logo"  width="100%"  />
 
     return (

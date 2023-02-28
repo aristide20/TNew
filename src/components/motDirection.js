@@ -15,10 +15,10 @@ const MotDirection = () => {
         <Box sx={{bgcolor:color0, padding:isNonMobile ? "100px" : "10px", paddingBottom:"10px", 
                   paddingTop:isNonMobile ? "100px" : "50px"}}>
               <Grid container spacing={8} justifyContent="center" alignItems="center" >
-                    <Grid item xs={ isNonMobile ? 3 : 0 } > 
+                    <Grid item xs={ isNonMobile ? 2 : 0 } > 
                          
                     </Grid> 
-                    <Grid item xs={ isNonMobile ? 6 : 12 } >
+                    <Grid item xs={ isNonMobile ? 8 : 12 } >
                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"90%"}}>
                                  <Stack direction={isNonMobile ? "row" : "column"} spacing={isNonMobile ? 8 : 4}
                                         justifyContent="center" alignItems="center">
@@ -36,7 +36,7 @@ const MotDirection = () => {
                                  </Stack>
                           </Paper>
                     </Grid>
-                    <Grid item xs={ isNonMobile ? 3 : 0 } > 
+                    <Grid item xs={ isNonMobile ? 2 : 0 } > 
                          
                     </Grid>        
               </Grid>
