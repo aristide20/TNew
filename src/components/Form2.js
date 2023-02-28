@@ -142,7 +142,8 @@ const Form2 = () => {
         if(isLogin) {
 
             try { 
-                const { access_token } = api.loginUser(userLogin).then((Response) => {dispatch(setLogin(Response));})
+                const { access_token } = api.loginUser(userLogin).then((Response) => {dispatch(setLogin(Response));
+                                                                                      console.log(Response); })
                 dispatch(getCommands())
                 console.log(access_token);
                 setError(false);

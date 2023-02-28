@@ -82,7 +82,7 @@ const Body = () => {
                     </Grid>
                     </Box>
                </Box> 
-                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen2 ? "18%" : "16.25%", 
+                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen ? "20%" : isSmallScreen2 ? "18%" : "16.25%", 
                                                         left:isSmallScreen2 ? "27%" : "6%", 
                                                         width: isSmallScreen2 ? "50%" : "90%", 
                                                         padding: isSmallScreen2 ? "40px" : "10px", 
@@ -98,7 +98,7 @@ const Body = () => {
                <Box sx={{ width:"100%",  
                           paddingTop: "50px",
                           paddingBottom: "50px",
-                          marginTop: isSmallScreen ? "-10px" : isSmallScreen3 ? "60%" : isSmallScreen3 ? "150%" : "255%",
+                          marginTop: isSmallScreen ? "-10px" : isSmallScreen3 ? "60%" : isSmallScreen2 ? "150%" : "255%",
                           backgroundColor: color4}}>
                           <SatisfiedClients />
                </Box>
