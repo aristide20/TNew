@@ -20,15 +20,16 @@ const MotDirection = () => {
                     </Grid> 
                     <Grid item xs={ isNonMobile ? 6 : 12 } >
                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px"}}>
-                                 <Stack direction="row" spacing={isNonMobile ? 8 : 2}>
-                                       <Avatar sx={{ bgcolor: deepOrange[500], width: isNonMobile ? 180 : 100, 
-                                                                               height: isNonMobile ? 180 : 100 }} 
+                                 <Stack direction={isNonMobile ? "row" : "column"} spacing={isNonMobile ? 8 : 4}>
+                                       <Avatar sx={{ bgcolor: deepOrange[500], width: isNonMobile ? 180 : 180, 
+                                                                               height: isNonMobile ? 180 : 180 }} 
                                                                                src={DG} />
-                                       <Typography variant="paragraph" sx={{color:color5}}>
+                                       <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
                                                    « Vous méritez ce qu'il y a de mieux. C'est pourquoi notre objectif 
                                                    est de vous offrir un service de transport au standing international.»
                                                    < br/>
-                                                   <strong> Charkes MBADJI <br/> </strong>
+                                                   < br/>
+                                                   <strong> Charkes Peggy MBADJI <br/> </strong>
                                                     Directeur Général Transaf Sarl
                                        </Typography>
                                  </Stack>
