@@ -60,7 +60,8 @@ const Body = () => {
     // <img src={isNonMobile2 ? fond01 : fond02 } alt="logo"  width="100%"  />
 
     return (
-        <Box position="static" sx={{minHeight:"700px", width:"100%"}}>
+        <Box position="static" sx={{minHeight:"700px", width:"100%", marginTop:"100px",
+              padding:isNonMobile ? "50px" : isNonMobile2 ? "25px" : "10px", marginBottom:"50px"  }}>
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
                    <Grid item xs={ isNonMobile ? 9 : 3}></Grid>
                    <Grid item xs={isNonMobile ? 3 : 9}>
@@ -101,7 +102,7 @@ const Body = () => {
                    </Grid>
                    <Grid item xs={12}>
                          <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "90%",
-                                            minHeight: "500px",
+                                            minHeight: "400px",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
                                 {user !== undefined ? user.isPartner ? 
