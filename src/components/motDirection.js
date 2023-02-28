@@ -15,6 +15,9 @@ const MotDirection = () => {
         <Box sx={{bgcolor:color0, padding:isNonMobile ? "100px" : "10px", paddingBottom:"10px", 
                   paddingTop:isNonMobile ? "100px" : "50px"}}>
               <Grid container spacing={8} justifyContent="center" alignItems="center" >
+                    <Grid item xs={ isNonMobile ? 3 : 0 } > 
+                         
+                    </Grid> 
                     <Grid item xs={ isNonMobile ? 6 : 12 } >
                           <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px"}}>
                                  <Stack direction="row" spacing={isNonMobile ? 8 : 2}>
@@ -22,24 +25,17 @@ const MotDirection = () => {
                                                                                height: isNonMobile ? 180 : 100 }} 
                                                                                src={DG} />
                                        <Typography variant="paragraph" sx={{color:color5}}>
-                                                   Petit Mot du President Directeur General de TRANSAF Sarl 
-                                                   (Transport et Services d'Afrique)
+                                                   « Vous méritez ce qu'il y a de mieux. C'est pourquoi notre objectif 
+                                                   est de vous offrir un service de transport au standing international.»
+                                                   < br/>
+                                                   <strong> Charkes MBADJI <br/> </strong>
+                                                    Directeur Général Transaf Sarl
                                        </Typography>
                                  </Stack>
                           </Paper>
                     </Grid>
-                    <Grid item xs={ isNonMobile ? 6 : 12 } > 
-                         <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px"}}> 
-                               <Stack direction="row" spacing={isNonMobile ? 8 : 2}>
-                                     <Avatar sx={{ bgcolor: deepPurple[500],  width: isNonMobile ? 180 : 100, 
-                                                                              height: isNonMobile ? 180 : 100 }} 
-                                                                              src={DAF} />
-                                     <Typography variant="paragraph" sx={{color:color5}}>
-                                                   Petit Mot du Directeur General Adjoint de TRANSAF Sarl 
-                                                   (Transport et Services d'Afrique)
-                                       </Typography>   
-                                </Stack> 
-                          </Paper>
+                    <Grid item xs={ isNonMobile ? 3 : 0 } > 
+                         
                     </Grid>        
               </Grid>
         </Box>

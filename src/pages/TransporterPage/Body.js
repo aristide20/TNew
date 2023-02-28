@@ -87,8 +87,8 @@ const Body = () => {
                     <Box sx={{ marginTop:"-10px", backgroundColor:color1, width:"100%",
                                 height:"600px", paddingTop:"50px", paddingBottom:"100px"}}>
                         <Box sx={{ backgroundColor:color1, width:"90%", 
-                                   height:"600px", paddingTop:"10px", paddingBottom:"50px",
-                                   paddingLeft:"10px"}}>
+                                   height:"600px", paddingTop:"50px", paddingBottom:"50px",
+                                   paddingLeft:"30px"}}>
                              <Form /> 
                         </Box>
                     </Box>}
@@ -98,7 +98,7 @@ const Body = () => {
                 <Box sx={{paddingTop:"80px"}}>
                       <ImagesBoxHome />
                 </Box>
-                <Box sx={{paddingTop: "100px", paddingBottom:"60px"}}>
+                <Box sx={{paddingTop: isSmallScreen2 ? "100px" : "40px", paddingBottom:"60px"}}>
                     <Grid container spacing={3}>
                           <Grid item xs={isSmallScreen2 ? 3 : 0} >
                                 <Box sx={{paddingTop:"200px", paddingLeft:"80px"}}> 

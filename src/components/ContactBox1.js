@@ -10,6 +10,10 @@ export default function ContactBox1() {
     const color2 = color.blue.niveau100;
     const navigate = useNavigate();
     const isNonMobile = useMediaQuery("(min-width:600px)")
+
+    function openInNewTab(url) {
+        window.open(url, '_blank').focus();
+      }
     
 
     return (
@@ -23,6 +27,7 @@ export default function ContactBox1() {
                                      +(237) 620 79 46 61
                              </Button>
                              <Button variant="outlined" startIcon={<WhatsAppIcon />}
+                                      onClick={() => openInNewTab('https://wa.me/message/JFJ4OHKASUDFA1')}
                                      sx={{color:color2, fontSize:isNonMobile ? "20px" : "16px", borderColor:color2}}>
                                      +(237) 651 21 87 97
                              </Button>

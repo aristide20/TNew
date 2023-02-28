@@ -9,7 +9,8 @@ const Footer= ()=>{
 
  const background = color.gray.niveau100;
  const isSmallScreen = useMediaQuery("(min-width: 1000px)");
- const isSmallScreen2 = useMediaQuery("(min-width: 700px)");
+ const isSmallScreen3 = useMediaQuery("(min-width: 800px)");
+ const isSmallScreen2 = useMediaQuery("(min-width: 600px)");
  const navigate = useNavigate();
  //const url = 'https://wa.me/message/JFJ4OHKASUDFA1'
 
@@ -44,7 +45,7 @@ const Footer= ()=>{
                             alignItems="center"
                             rowSpacing={2}
                             columnSpacing={4}>
-                            <Grid item xs={isSmallScreen ? 3 : isSmallScreen2 ? 6 : 12}>
+                            <Grid item xs={isSmallScreen ? 3 : isSmallScreen3 ? 4 : isSmallScreen2 ? 6 : 12}>
                                   <Container>
                                              <Grid container
                                                    direction="column"
@@ -92,7 +93,7 @@ const Footer= ()=>{
                                            </Grid>
                                  </Container>
                         </Grid>
-                        <Grid item xs={isSmallScreen ? 3 : isSmallScreen2 ? 6 : 12}>
+                        <Grid item xs={isSmallScreen ? 3 : isSmallScreen3 ? 4 : isSmallScreen2 ? 6 : 12}>
                               <Container>
                                         <Grid container
                                               direction="column"
@@ -142,7 +143,7 @@ const Footer= ()=>{
                                        </Grid>
                              </Container>
                        </Grid>
-                       <Grid item xs={isSmallScreen ? 3 : isSmallScreen2 ? 6 : 12}>
+                       <Grid item xs={isSmallScreen ? 3 : isSmallScreen3 ? 4 : isSmallScreen2 ? 6 : 12}>
                             <Container>
                                        <Grid container
                                              direction="column"
@@ -192,7 +193,7 @@ const Footer= ()=>{
                                       </Grid>
                           </Container>
                    </Grid>
-                   <Grid item xs={isSmallScreen ? 3 : isSmallScreen2 ? 6 : 12}>
+                   <Grid item xs={isSmallScreen ? 3 : isSmallScreen3 ? 4 : isSmallScreen2 ? 6 : 12}>
                         <Container>
                                    <Grid container
                                          direction="column"

@@ -5,7 +5,6 @@ import { styled } from '@mui/material/styles';
 import logoE1 from "../assets/logoE01.jpg";
 import logoE2 from "../assets/logoE02.gif";
 import logoE3 from "../assets/logoE03.png";
-import logoE4 from "../assets/logoE04.avif";
 import logoE5 from "../assets/logoE05.jpg";
 import logoE6 from "../assets/logoE06.png";
 
@@ -60,11 +59,6 @@ const SatisfiedClients = () => {
                                           <Grid item xs={isScreenToBig ? 2 : isScreenBig ? 3 : isScreenSmall ? 4 : 6}>
                                                 <Item elevation={6} sx={{width:"150px", height:"100px"}}> 
                                                       <img src={logoE3} alt="logo" width="150px" height="100px"/>
-                                                </Item>
-                                          </Grid>
-                                          <Grid item xs={isScreenToBig ? 2 : isScreenBig ? 3 : isScreenSmall ? 4 : 6}>
-                                                <Item elevation={6} sx={{width:"150px", height:"100px"}}> 
-                                                      <img src={logoE4} alt="logo" width="150px" height="100px"/>
                                                 </Item>
                                           </Grid>
                                           <Grid item xs={isScreenToBig ? 2 : isScreenBig ? 3 : isScreenSmall ? 4 : 6}>

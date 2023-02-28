@@ -19,7 +19,8 @@ import image1 from "../../assets/Truck01.png";
 const Body = () => {
  
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
-    const isSmallScreen2 = useMediaQuery("(min-width: 800px)");
+    const isSmallScreen3 = useMediaQuery("(min-width: 800px)");
+    const isSmallScreen2 = useMediaQuery("(min-width: 600px)");
     //const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
     const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
     const color1 = color.blue.niveau100;
@@ -82,7 +83,7 @@ const Body = () => {
                     </Box>
                </Box> 
                   <Box position="absolute" sx={{zIndex:10, top: isSmallScreen2 ? "18%" : "16.25%", 
-                                                        left:isSmallScreen2 ? "27%" : "4%", 
+                                                        left:isSmallScreen2 ? "27%" : "6%", 
                                                         width: isSmallScreen2 ? "610px" : "90%", 
                                                         padding: isSmallScreen2 ? "40px" : "15px", 
                                                         borderRadius:"10px"}}>
@@ -96,7 +97,7 @@ const Body = () => {
                <Box sx={{ width:"100%",  
                           paddingTop: "50px",
                           paddingBottom: "50px",
-                          marginTop: isSmallScreen ? "-10px" : "250%",
+                          marginTop: isSmallScreen ? "-10px" : isSmallScreen3 ? "60%" : isSmallScreen3 ? "150%" : "255%",
                           backgroundColor: color4}}>
                           <SatisfiedClients />
                </Box>

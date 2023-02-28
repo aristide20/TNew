@@ -338,7 +338,7 @@ const Form2 = () => {
                                   </Grid>}
                                   { isRegister && isPartenaire && 
                                  <Grid item xs={isNonMobile ? 6 : 12} >
-                                     <TextField placeholder="Immatriculation Vehicule"
+                                     <TextField placeholder="Immatriculation"
                                                 type="text" 
                                                 fullWidth={true}
                                                 onChange={(e) => {setVehicule({...vehicule, Immatriculation:e.target.value,

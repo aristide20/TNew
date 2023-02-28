@@ -12,6 +12,10 @@ const CommandEnginsBox = () => {
     const isNonMobile = useMediaQuery("(min-width:800px)");
     //const isNonMobile2 = useMediaQuery("(min-width:500px)");
 
+    function openInNewTab(url) {
+      window.open(url, '_blank').focus();
+    }
+
     return (
         <Box sx={{paddingBottom:'100px', width:"100%", backgroundColor: color1}}>
               <Container sx={{ display:"flex", 
@@ -21,7 +25,7 @@ const CommandEnginsBox = () => {
                         <Typography variant="h5" sx={{color:color2, fontWeight:"bold", paddingBottom:"20px"}}>
                                    Commander les engins dont vous avez besoin
                         </Typography>
-                        <Box sx={{ width: isNonMobile ? "70%" : "60%", 
+                        <Box sx={{ width: isNonMobile ? "70%" : "90%", 
                                    backgroundColor:color4, 
                                    borderRadius:"10px",
                                    padding:"20px", 
@@ -33,7 +37,7 @@ const CommandEnginsBox = () => {
                                    <Grid item xs={isNonMobile ? 4 : 12}>
                                          <Button variant="outlined" size="large" startIcon={<PhoneIphoneIcon />}
                                                   sx={{borderColor:color3, color:color2}}>
-                                                 +(237) 696 098 293
+                                                 (+237) 620 794 661
                                          </Button>
                                    </Grid>
                                    <Grid item xs={isNonMobile ? 4 : 12}>
@@ -43,8 +47,9 @@ const CommandEnginsBox = () => {
                                    </Grid>
                                    <Grid item xs={isNonMobile ? 4 : 12}>
                                          <Button variant="outlined" size="large" startIcon={<WhatsAppIcon />} 
+                                                  onClick={() => openInNewTab('https://wa.me/message/JFJ4OHKASUDFA1')}
                                                  sx={{borderColor:color3, color:color2}}>
-                                                 +(237) 696 098 293
+                                                 (+237) 651 218 797
                                          </Button>
                                    </Grid>
                              </Grid>

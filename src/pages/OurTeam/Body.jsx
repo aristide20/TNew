@@ -41,7 +41,10 @@ const Body = () => {
                                           left: isNonMobile ? "760px" : "100px"}}>
                    <img src={image1} alt="" width={isNonMobile ? "60%" : "80%"} />
             </Box>
-            <Box sx={{paddingTop:"100px", paddingBottom:"100px", paddingLeft:"50px", paddingRight:"50px"}}>
+            <Box sx={{paddingTop: "100px" , 
+                      paddingBottom: "100px", 
+                      paddingLeft: isNonMobile ? "50px" : "25px", 
+                      paddingRight: isNonMobile ? "50px" : "25px"}}>
                  <Grid container spacing={4}>
                       <Grid item xs={isNonMobile ? 4 : 12}>
                            <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"65%"}}>
@@ -52,7 +55,7 @@ const Body = () => {
                                                       src={DG} />
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
                                                    "............................................" < br/>
-                                                  <strong> Charles Peggy Mbadji</strong>  < br/>
+                                                  <strong> Charles Peggy Mbadji <br/> </strong>  
                                                   <strong> Directeur General </strong> 
                                        </Typography>
                                  </Stack>
