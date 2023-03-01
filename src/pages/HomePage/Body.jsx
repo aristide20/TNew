@@ -82,7 +82,7 @@ const Body = () => {
                                              <Grid container spacing={2} justifyContent="center" alignItems="center">
                                                    <Grid item xs={isSmallScreen ? 5 : 12}>
                                                          <Button variant="contained"
-                                                                 onClick={() => {handleClickOpen} }
+                                                                 onClick={() => {handleClickOpen()} }
                                                                  sx={{backgroundColor:color0, color:color1,
                                                                       width:"250px", height:"40px", fontWeight:"bold"}}>
                                                                     Commander un Camion
