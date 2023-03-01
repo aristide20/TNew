@@ -8,6 +8,7 @@ import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import chantier from "../assets/camiontruck.jpg";
 import happy from "../assets/happiness.PNG";
+import { useNavigate } from "react-router-dom";
 
 
 const ImagesBoxHome03 = () => {
@@ -16,6 +17,8 @@ const isScreenToBig = useMediaQuery("(min-width: 1000px)");
 const isScreenBig = useMediaQuery("(min-width: 700px)");
 const background1 = color.blue.niveau100;
 const background2 = color.gray.niveau100;
+
+const navigate = useNavigate();
 
     return (
         <Box>
