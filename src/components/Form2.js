@@ -169,8 +169,8 @@ const Form2 = () => {
                             api.createVehicule(vehicule);
                             //console.log(resp);
                            //console.log(resVehicule);
-                            setUser(initialValuesRegister)
-                            setPageType("login");
+                            
+                            if(!emailError && !numberError) {setPageType("login"); setUser(initialValuesRegister) }
                         } catch (error) {
                             console.log(error)
                         }
@@ -178,8 +178,7 @@ const Form2 = () => {
                     else {
                         try {
                             api.registerUser(user)
-                            setUser(initialValuesRegister)
-                            setPageType("login");
+                            if(!emailError && !numberError) {setPageType("login"); setUser(initialValuesRegister) }
                         } catch (error) {
                             console.error(error)
                         }
@@ -196,8 +195,8 @@ const Form2 = () => {
                             console.log(access_token);
                             setError(false);
                             dispatch(loginSuccess());
-                            setUserLogin(initialValuesLogin);
-                            navigate('/Accueil');                                                                
+                            
+                            if(!emailError) {setPageType("login"); setUserLogin(initialValuesLogin); }                                                               
                                                                                             })
                        
                         
