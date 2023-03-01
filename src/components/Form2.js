@@ -156,12 +156,12 @@ const Form2 = () => {
         validate();
         console.log(numberError, emailError)
 
-        if(!emailError){
-            if(!numberError) {
-                 
-
-                if(isRegister) {
-                    if(isPartenaire) {
+        if(isRegister) {
+           if(validEmail.test(user.email)){
+                setEmailError(false);
+                if(validPhoneNumber.test(user.phoneNumber)) {
+                    setNumberError(false); 
+                       if(isPartenaire) {
                         
                         console.log(vehicule);
                         console.log(user);
@@ -186,30 +186,36 @@ const Form2 = () => {
                        
                     }      
                 } 
-                if(isLogin) {
-        
-                    try { 
-                        const { access_token } = api.loginUser(userLogin).then((Response) => {
-                            console.log(Response); 
-                            dispatch(setLogin(Response.data));
-                            dispatch(getCommands())
-                            console.log(access_token);
-                            setError(false);
-                            dispatch(loginSuccess());
-                            
-                            if(!emailError) {setPageType("login"); setUserLogin(initialValuesLogin); }                                                               
-                                                                                            })
-                       
-                        
-                    } catch (error) {
-                        setError(true)
-                        dispatch(loginError());
-                        console.log(error)
-                    }
-        
+                else { setNumberError(true); }
+                
+            }  
+             else { setEmailError(true); }
+            
+        }
+       
 
+        if(isLogin) {
+
+            if(validPhoneNumber.test(user.phoneNumber)) {
+                setNumberError(false);
+                try { 
+                    const { access_token } = api.loginUser(userLogin).then((Response) => {
+                        console.log(Response); 
+                        dispatch(setLogin(Response.data));
+                        dispatch(getCommands())
+                        console.log(access_token);
+                        setError(false);
+                        dispatch(loginSuccess());
+                        
+                        if(!emailError) {setPageType("login"); setUserLogin(initialValuesLogin); }                                                               
+                                                                                        })   
+                } catch (error) {
+                    setError(true)
+                    dispatch(loginError());
+                    console.log(error)
                 }
             }
+            else { setNumberError(true); }
         }
         
                
