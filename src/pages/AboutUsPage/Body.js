@@ -139,13 +139,13 @@ const Body = () => {
                                     </Box>
                                </Grid>
                                <Grid item xs={isScreenToBig ? 3 : isScreenBig? 6 : 12}>
-                                     <Box sx={{backgroundColor:background4, width:isScreenBig ? "100%" : "95%", 
+                                     <Box sx={{backgroundColor:background3, width:isScreenBig ? "100%" : "95%", 
                                                  height:"25rem"}}>
                                           <Stack direction="column"
                                                  justifyContent="center"
                                                  alignItems="center"
                                                  spacing={2}>
-                                                  <List sx={{ width: '100%', maxWidth: 360, bgcolor:'background.paper' }}
+                                                  <List sx={{ width: '100%', maxWidth: 360, bgcolor:background3 }}
                                                         component="nav"
                                                         aria-labelledby="nested-list-subheader" >
                                                         <ListItemButton>

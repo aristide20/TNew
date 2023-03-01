@@ -79,7 +79,7 @@ const Contact = ({exitVariants, revealVariants})=>{
                         <TbWorld /> www.transaf.net
                     </div>
                     <div >
-                        <ImLocation /> 
+                        <ImLocation /> Yaounde / Cameroun
                     </div>
                     <div >
                         <FaCalendarAlt /> Lundi - Samedi, 8:00 - 20:30

@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setLogin, loginSuccess, loginError, testLogin,  testRegister, loginStatut, setLogout } from "../state/UserSlice";
 //import { setLogin, setLogout} from "../state/UserSlice";
 import { color } from "../theme";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container } from "@mui/system";
 //import PropTypes from 'prop-types';
 //import { styled } from '@mui/material/styles';
@@ -21,6 +21,8 @@ import { useNavigate } from "react-router-dom";
 //import Dropzone from "dropzone";
 import * as api from "../api/index";
 import { getCommands } from '../state/UserSlice';
+import { validEmail, validPhoneNumber } from './Regex';
+import { motion } from "framer-motion";
 //import jwt from 'jwt-decode';
 
 /*
@@ -109,62 +111,108 @@ const Form2 = () => {
     //console.log(user.isPartner, user.isMoralPerson);
 
 
+
+    // Validation of phoneNumber and email format
+   const [emailError, setEmailError] = useState(false);
+   const [numberError, setNumberError] = useState(false);
+   const validate = () => {
+      if (!validEmail.test(user.email)) {
+         setEmailError(true);
+      }
+      if (!validPhoneNumber.test(user.phoneNumber)) {
+        setNumberError(true);
+      }
+   };
+   // end of validation
+    
+
+   //validation or errors messages
+   useEffect(function(){
+    if(emailError){
+        let cleanup = setTimeout(()=>{console.log("enter timeout"); setEmailError(false)}, 3000);
+        console.log("remove dialog")
+        return () => {
+            clearInterval(cleanup)
+        }
+    } 
+});
+
+    useEffect(function(){
+        if(numberError){
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setNumberError(false)}, 3000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup)
+             }
+          } 
+     })
+   //
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(setLogout())
-        
-        if(isRegister) {
-            if(isPartenaire) {
-                
-                console.log(vehicule);
-                console.log(user);
-                try {
-                    api.registerUser(user);
-                    api.createVehicule(vehicule);
-                    //console.log(resp);
-                   //console.log(resVehicule);
-                    setUser(initialValuesRegister)
-                    setPageType("login");
-                } catch (error) {
-                    console.log(error)
-                }
-            }
-            else {
-                try {
-                    api.registerUser(user)
-                    setUser(initialValuesRegister)
-                    setPageType("login");
-                } catch (error) {
-                    console.error(error)
-                }
-               
-            }      
-        } 
-        if(isLogin) {
+        dispatch(setLogout());
+        validate();
 
-            try { 
-                const { access_token } = api.loginUser(userLogin).then((Response) => {
-                    console.log(Response); 
-                    dispatch(setLogin(Response.data));
-                    dispatch(getCommands())
-                    console.log(access_token);
-                    setError(false);
-                    dispatch(loginSuccess());
-                    setUserLogin(initialValuesLogin);
-                    navigate('/Accueil');                                                                
-                                                                                    })
-               
-                
-            } catch (error) {
-                setError(true)
-                dispatch(loginError());
-                console.log(error)
-            }
-
+        if(!emailError){
+            if(!numberError) {
                  
-                
-                //console.log(resp);
-        }        
+
+                if(isRegister) {
+                    if(isPartenaire) {
+                        
+                        console.log(vehicule);
+                        console.log(user);
+                        try {
+                            api.registerUser(user);
+                            api.createVehicule(vehicule);
+                            //console.log(resp);
+                           //console.log(resVehicule);
+                            setUser(initialValuesRegister)
+                            setPageType("login");
+                        } catch (error) {
+                            console.log(error)
+                        }
+                    }
+                    else {
+                        try {
+                            api.registerUser(user)
+                            setUser(initialValuesRegister)
+                            setPageType("login");
+                        } catch (error) {
+                            console.error(error)
+                        }
+                       
+                    }      
+                } 
+                if(isLogin) {
+        
+                    try { 
+                        const { access_token } = api.loginUser(userLogin).then((Response) => {
+                            console.log(Response); 
+                            dispatch(setLogin(Response.data));
+                            dispatch(getCommands())
+                            console.log(access_token);
+                            setError(false);
+                            dispatch(loginSuccess());
+                            setUserLogin(initialValuesLogin);
+                            navigate('/Accueil');                                                                
+                                                                                            })
+                       
+                        
+                    } catch (error) {
+                        setError(true)
+                        dispatch(loginError());
+                        console.log(error)
+                    }
+        
+
+                }
+            }
+        }
+        
+               
         dispatch(loginStatut(false));
         //setTimeout(dispatch(loginStatut(false)), 2000)
     }
@@ -267,7 +315,15 @@ const Form2 = () => {
                                         value={user.phoneNumber}
                                         name="phoneNumber"
                                         
-                                         />  
+                                         /> 
+                                         {numberError && 
+                                          <motion.div initial={{opacity:0}}
+                                                      animate={{opacity:1,  transition:{duration: 1, ease: "easeInOut"}}}
+                                                      exit={{opacity:0,  transition:{duration: 1, ease: "easeInOut"}}} > 
+                                                     <Alert severity="error">
+                                                            Your Phone Number is invalid 
+                                                    </Alert> 
+                                        </motion.div>} 
                                     </Grid> } 
                                 <Grid item xs={isNonMobile ? isLogin ? 12 : 6 : 12} >
                                       <TextField
@@ -281,6 +337,13 @@ const Form2 = () => {
                                         name="email"
                                         
                                          />
+                                    { emailError && <motion.div initial={{opacity:0}}
+                                                      animate={{opacity:1,  transition:{duration: 1, ease: "easeInOut"}}}
+                                                      exit={{opacity:0,  transition:{duration: 1, ease: "easeInOut"}}} > 
+                                                     <Alert severity="error">
+                                                            Your adresse email is invalid 
+                                                    </Alert> 
+                                        </motion.div> }
                                </Grid>
                                <Grid item xs={isNonMobile ? isLogin ? 12 : 6 : 12} >
                                      <TextField
