@@ -1,11 +1,12 @@
 import { Typography, TextField, CircularProgress,
-        Paper, Button, Container, Stack, 
+        Paper, Button, Container, Stack, Box,
         FormControl, Select, MenuItem, InputLabel} from "@mui/material";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { color } from "../theme";
 import { setCommand, testValidation,  createCommand } from "../state/CommandSlice";
 import { useNavigate } from "react-router-dom";
+import { makeCommand } from "../state/UserSlice";
 
 const FormCommand = () => {
 
