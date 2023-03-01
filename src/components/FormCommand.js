@@ -171,7 +171,9 @@ const FormCommand = () => {
                          <Button  disabled type="submit" sx={{backgroundColor:color3, marginTop:"20px"}}>
                                 Demarer le devis 
                          </Button>}
-                         { clicked && <LinearProgress variant="determinate" value={progress} /> }
+                         { clicked &&  <Box sx={{ width: '100%' }}>
+                                            <LinearProgress variant="determinate" value={progress} />
+                                       </Box> }
                          <Typography variant="h8" sx={{fontW:"bold", color:color1}}
                                       onClick={() => navigate('/connexion')}>
                                  Déjà inscrit? Connectez-vous
