@@ -179,15 +179,18 @@ const Form2 = () => {
    // console.log(Statut)
 
     return (
-        <Box >
-            <Container sx={{width: isNonMobile ? "75%" : "95%", display:"flex", 
+        <Box sx={{width: "100%", display:"flex", 
+                  flexDirection:"column", 
+                  justifyContent:"center", 
+                   alignItems:"center" }} >
+            <Box sx={{width: isNonMobile ? "75%" : "95%", display:"flex", 
                             flexDirection:"column", 
                             justifyContent:"center", 
                             alignItems:"center", }}>
             <Typography variant="h3" sx={{color:color1, fontWeight:"bold", marginBottom:"60px"}}>
                               {isRegister ? "INSCRIPTION" : "CONNEXION" }
             </Typography>
-            <Paper elevation={10} sx={{borderRadius:"20px", padding:"50px" }}>
+            <Paper elevation={10} sx={{borderRadius:"20px", padding:isNonMobile ? "50px" : "10px" }}>
             
                <form autoComplete="off" 
                      noValidate 
@@ -392,7 +395,7 @@ const Form2 = () => {
                      </Container>
                 </form>
         </Paper>
-        </Container>
+        </Box>
     </Box>
     )
 }

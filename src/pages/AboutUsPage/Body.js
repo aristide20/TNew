@@ -257,15 +257,15 @@ const Body = () => {
                 <Box sx={{backgroundColor: background, width:"100%"}}>
                     
                 </Box>
-                <Box position="absolute" sx={{top:isScreenBig ? "160%" : "500%", 
+                <Box position="absolute" sx={{top:isScreenBig ? "160%" : "420%", 
                                               left: isScreenBig ? "30%" : "30%" }}>
                      <img src={image0} alt="" width={isScreenBig ? "30%" : "50%"}  />
                 </Box>
                 <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "10%", 
-                                                         top:isScreenToBig ? "35%" : "90%"}}>
+                                                         top:isScreenToBig ? "35%" : "70%"}}>
                      <ContactBox1 />
                 </Box>
-                <Box position="absolute" sx={{top:isScreenBig ? "50%" : "500%", 
+                <Box position="absolute" sx={{top:isScreenBig ? "50%" : "420%", 
                                               left: isScreenBig ? "3%" : "30%" }}>
                      <img src={image0} alt="" width={isScreenBig ? "20%" : "50%"}  />
                 </Box>

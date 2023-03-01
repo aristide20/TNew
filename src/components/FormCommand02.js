@@ -31,10 +31,18 @@ let commanditaire = "";
 const validate = useSelector((state) => state.CommandReducer.isEnAttente) 
 
 
-const handleSubmit = async (e) => {
-     dispatch( createCommand(infoCommand))
-     dispatch( setCommand(infoCommand))
-     dispatch(makeCommand(infoCommand))
+const handleSubmit = (e) => {
+      e.preventDefault();
+     dispatch( createCommand(infoCommand));
+     dispatch( setCommand(infoCommand));
+     dispatch(makeCommand(infoCommand));
+     setInfoCommand({commanditaire: "",
+     contact: "",
+     villeDepart: "",
+     jourDepart: "",
+     villeArrivee:"",
+     typeVehicule:"Camion de Transport",
+     nomVehicule:""})
 }
 
 

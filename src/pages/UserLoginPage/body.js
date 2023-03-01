@@ -35,7 +35,7 @@ const Body = () => {
                                       justifyContent: "center",
                                       alignItems:"center"}} >
                    <CssBaseline />
-                   <Box sx={{pading:"10px"}}>
+                   <Box sx={{padding:"10px"}}>
                         <Form />
                     </Box>
                   

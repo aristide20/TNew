@@ -1,7 +1,7 @@
-import { Typography, TextField, CircularProgress,
+import { Typography, TextField, LinearProgress,
         Paper, Button, Container, Stack, Box,
         FormControl, Select, MenuItem, InputLabel} from "@mui/material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { color } from "../theme";
 import { setCommand, testValidation,  createCommand } from "../state/CommandSlice";
@@ -35,13 +35,32 @@ const FormCommand = () => {
 
      const navigate = useNavigate();
 
+     // Controlprogress barre
+     const [progress, setProgress] = React.useState(0);
 
-   const handleSubmit =  async (e) => {
+     useEffect(() => {
+       const timer = setInterval(() => {
+         setProgress((oldProgress) => {
+           if (oldProgress === 100) {
+             return 0;
+           }
+           const diff = Math.random() * 10;
+           return Math.min(oldProgress + diff, 100);
+         });
+       }, 500);
+   
+       return () => {
+         clearInterval(timer);
+       };
+     }, []);
+
+
+   const handleSubmit = (e) => {
           e.preventDefault();
           setClicked(true)
-         await dispatch( createCommand(infoCommand))
-         await dispatch( setCommand(infoCommand))
-         await dispatch(makeCommand(infoCommand))
+          dispatch( createCommand(infoCommand))
+          dispatch( setCommand(infoCommand))
+          dispatch(makeCommand(infoCommand))
          setInfoCommand({commanditaire: "",
          contact: "",
          villeDepart: "",
@@ -143,7 +162,8 @@ const FormCommand = () => {
                                     onChange={(e) => {setInfoCommand({...infoCommand, contact:e.target.value});
                                                       dispatch(testValidation(infoCommand))}}/>
                      </Stack>
-                     <Stack direction="column" spacing={2} sx={{paddingTop:"30px"}}> 
+                     <Stack direction="column" spacing={2} sx={{paddingTop:"30px"}} justifyContent="center"
+                            alignItems="center"> 
                          { validate ?
                             <Button type="submit"  sx={{backgroundColor:color1, marginTop:"20px", color:"white"}}>
                                 Demarer le devis 
@@ -151,7 +171,7 @@ const FormCommand = () => {
                          <Button  disabled type="submit" sx={{backgroundColor:color3, marginTop:"20px"}}>
                                 Demarer le devis 
                          </Button>}
-                         { clicked && <Box>  <CircularProgress /> </Box> }
+                         { clicked && <LinearProgress variant="determinate" value={progress} /> }
                          <Typography variant="h8" sx={{fontW:"bold", color:color1}}
                                       onClick={() => navigate('/connexion')}>
                                  Déjà inscrit? Connectez-vous

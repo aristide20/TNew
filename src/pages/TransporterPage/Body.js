@@ -150,7 +150,7 @@ const Body = () => {
                                 <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
                                             fontSize:isSmallScreen2 ?"20px" : "16px"}}>
                                              Nous mettons un accent particulier sur la sécurité des biens et personnes, 
-                                             c'est pourquoi vous bénéficié automatiquement de toutes nos formations en 
+                                             c'est pourquoi vous bénéficiez automatiquement de toutes nos formations en 
                                              logistique et transport une fois inscrit à notre réseau. Toutefois, nous 
                                              n'acceptons que des véhicules à jours sur le plan technique et 
                                              administratif <br />
