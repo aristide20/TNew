@@ -45,19 +45,22 @@ const Body = () => {
                          <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12}>
                                 <Carte />
                         </Grid>
-                        <Grid item xs={isSmallScreen2 ? 7 : 12}>
+                        <Grid item xs={isSmallScreen2 ? 8 : 12}>
                              <Stack direction="column"
                                     display="flex"
                                     justifyContent= {isSmallScreen2 ? "center" : "flex-start"}
                                     alignItems={isSmallScreen2 ? "center" : "flex-start"}
                                     spacing={2}>
-                                  <Typography variant={isSmallScreen2 ? "h2" : "h3"} sx={{ fontWeight:"bold", color:isSmallScreen2 ? color0 : color1 }}>
+                                  <Typography variant={isSmallScreen2 ? "h1" : "h3"} sx={{ fontWeight:"bold", 
+                                                                                           color:isSmallScreen2 ? color0 : color1,
+                                                                                           textAlign: isSmallScreen2 ? "left" : "center" }}>
                                                 TRANSAF SARL 
                                   </Typography>
-                                  <Typography variant={isSmallScreen2 ? "h4" : "h6"} sx={{ fontWeight:"bold", color:isSmallScreen2 ? color0 : color1 }}>
+                                  <Typography variant={isSmallScreen2 ? "h3" : "h5"} sx={{ fontWeight:"bold", color:isSmallScreen2 ? color0 : color1,
+                                                                                              textAlign: "center" }}>
                                                 Transport et Services D'Afrique SARL
                                   </Typography>
-                                  <Container>
+                                  <Container sx={{paddingTop:"30px"}}>
                                              <Grid container spacing={2} justifyContent="center" alignItems="center">
                                                    <Grid item xs={isSmallScreen ? 5 : 12}>
                                                          <Button variant="contained"
@@ -80,13 +83,13 @@ const Body = () => {
                                   </Container>
                              </Stack>
                         </Grid>
-                        <Grid item xs={isSmallScreen ? 1 : 0}>
+                        <Grid item xs={isSmallScreen ? 0 : 12}>
                              
                         </Grid> 
                     </Grid>
                     </Box>
                </Box> 
-                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen ? "16.8%" : isSmallScreen2 ? "15%" : "17%", 
+                  <Box position="absolute" sx={{zIndex:10, top: isSmallScreen ? "17%" : isSmallScreen2 ? "15%" : "17%", 
                                                         left:isSmallScreen2 ? "27%" : "6%", 
                                                         width: isSmallScreen2 ? "40%" : "90%", 
                                                         padding: isSmallScreen2 ? "40px" : "10px", 
@@ -108,7 +111,7 @@ const Body = () => {
                </Box>
                <Box sx={{ backgroundColor: "white", 
                           width:"100%",  
-                          paddingTop: "100px",
+                          paddingTop: isSmallScreen2 ? "100px" : "0px",
                           paddingBottom: "100px",
                           color: "gray"}}>
                           <ImagesBoxHome />

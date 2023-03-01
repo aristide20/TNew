@@ -134,12 +134,13 @@ const Body = () => {
                     <Box sx={{marginTop: top8, flexGrow:1, marginBottom:"80px"}}>
                          <Grid container justifyContent="center" alignItems="center" spacing={0} >
                                <Grid item xs={isScreenToBig ? 3 : isScreenBig? 6 : 12}>
-                                    <Box sx={{width:"100%", height:"100%"}}>
+                                    <Box sx={{width:isScreenBig ? "100%" : "95%", height:"25rem"}}>
                                          <img src={image1} alt="image01" width="100%" height="100%" />
                                     </Box>
                                </Grid>
                                <Grid item xs={isScreenToBig ? 3 : isScreenBig? 6 : 12}>
-                                     <Box sx={{backgroundColor:background4, width:"100%"}}>
+                                     <Box sx={{backgroundColor:background4, width:isScreenBig ? "100%" : "95%", 
+                                                 height:"25rem"}}>
                                           <Stack direction="column"
                                                  justifyContent="center"
                                                  alignItems="center"
@@ -188,7 +189,8 @@ const Body = () => {
                                      </Box>
                                </Grid>
                                <Grid item xs={isScreenToBig ? 3 : isScreenBig? 6 : 12}>
-                                    <Box sx={{backgroundColor:background2, width:"100%"}}>
+                                    <Box sx={{backgroundColor:background2, width:isScreenBig ? "100%" : "95%", 
+                                               height:"25rem"}}>
                                           <Stack direction="column"
                                                  justifyContent="center"
                                                  alignItems="center"
@@ -237,7 +239,7 @@ const Body = () => {
                                      </Box>
                                </Grid>
                                <Grid item xs={isScreenToBig ? 3 : isScreenBig? 6 : 12}>
-                                    <Box sx={{width:"100%", height:"100%"}}>
+                                    <Box sx={{width:isScreenBig ? "100%" : "95%", height:"25rem"}}>
                                          <img src={image2} alt="image02" width="100%" height="100%" />
                                     </Box>
                                </Grid>
@@ -260,7 +262,7 @@ const Body = () => {
                      <img src={image0} alt="" width={isScreenBig ? "30%" : "50%"}  />
                 </Box>
                 <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "10%", 
-                                                         top:isScreenToBig ? "35%" : "105%"}}>
+                                                         top:isScreenToBig ? "35%" : "90%"}}>
                      <ContactBox1 />
                 </Box>
                 <Box position="absolute" sx={{top:isScreenBig ? "50%" : "500%", 
