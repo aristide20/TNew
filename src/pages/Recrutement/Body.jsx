@@ -22,7 +22,7 @@ const Body = () => {
  
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
     const isSmallScreen2 = useMediaQuery("(min-width: 600px)");
-    const isMobileMenuToggledState = useSelector((state) => state.UserReducer.isMobileMenuToggled);
+    const isMobileMenuToggledState = useSelector((state) => state.persistedReducer.isMobileMenuToggled);
     //const backgroundcolor = color.gray.niveau0;
     const color1 = color.blue.niveau100;
     const color2 = color.gray.niveau100;

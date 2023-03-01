@@ -38,7 +38,9 @@ const background2 = color.gray.niveau100;
                                          Semi-remorque, citerne...) et engins de BTP (Pelle chargeuse, tractopelle, 
                                          bulldozer...), vous trouverez toujours le vehicule dont vous avez besoin chez nous!!
                               </Typography>
-                              <Button size="medium" sx={{backgroundColor:background2, color:"white", marginBottom:"30px"}}> 
+                              <Button size="medium" 
+                                       onClick={() => {navigate('/Expediteurs')} }
+                                      sx={{backgroundColor:background2, color:"white", marginBottom:"30px"}}> 
                                      Demander un Devis
                               </Button>
                          </Container>
@@ -61,6 +63,7 @@ const background2 = color.gray.niveau100;
                               </Typography>
                               <Button size="medium" 
                                       endIcon={<ForwardToInboxIcon />}
+                                      onClick={() => {navigate('/Contact')} }
                                       sx={{backgroundColor:background1, color:"white", marginBottom:"30px"}}> 
                                      Contactez-Nous
                               </Button>
@@ -86,6 +89,7 @@ const background2 = color.gray.niveau100;
                               </Typography>
                               <Button size="medium" 
                                       endIcon={<PersonAddAltIcon />}
+                                      onClick={() => {navigate('/Recrutement')} }
                                       sx={{backgroundColor:background1, color:"white", marginBottom:"32px"}}> 
                                       Rejoindre Notre Equipe
                               </Button>
@@ -111,6 +115,7 @@ const background2 = color.gray.niveau100;
                               </Typography>
                               <Button size="medium" 
                                       endIcon={<AccountBoxIcon />}
+                                      onClick={() => {navigate('/connexion')} }
                                       sx={{backgroundColor:background2, color:"white", marginBottom:"35px"}}> 
                                       Créer un compte 
                               </Button>
