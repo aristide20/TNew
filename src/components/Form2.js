@@ -154,6 +154,7 @@ const Form2 = () => {
         e.preventDefault();
         dispatch(setLogout());
         validate();
+        console.log(numberError, emailError)
 
         if(!emailError){
             if(!numberError) {
