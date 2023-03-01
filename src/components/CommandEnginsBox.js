@@ -1,4 +1,5 @@
-import { Button, Typography, Box, Container, useMediaQuery, Grid } from '@mui/material';
+import { Button, Typography, Box, Container, useMediaQuery, Grid,  Dialog, DialogActions, 
+         DialogContent, DialogContentText, DialogTitle, } from '@mui/material';
 import { color } from "../theme";
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
@@ -11,10 +12,23 @@ const CommandEnginsBox = () => {
     const color4 = color.white.niveau0;   // blanc
     const isNonMobile = useMediaQuery("(min-width:800px)");
     //const isNonMobile2 = useMediaQuery("(min-width:500px)");
-
+     
+    // ouverture whatsapp sur une nouvelle page
     function openInNewTab(url) {
       window.open(url, '_blank').focus();
     }
+
+    // ouverture boite de dialogue pour commande
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+
 
     return (
         <Box sx={{paddingBottom:'100px', width:"100%", backgroundColor: color1}}>
@@ -41,9 +55,25 @@ const CommandEnginsBox = () => {
                                          </Button>
                                    </Grid>
                                    <Grid item xs={isNonMobile ? 4 : 12}>
-                                         <Button variant="contained" size="large" sx={{backgroundColor:color3}}>
+                                         <Button variant="contained" size="large" 
+                                                  onClick={handleClickOpen}
+                                                 sx={{backgroundColor:color3}}>
                                                  Demander un devis
                                          </Button>
+                                         <Dialog open={open} onClose={handleClose}>
+                                      <DialogTitle>Commande</DialogTitle>
+                                      <DialogContent>
+                                                    <DialogContentText>
+                                                            Precisez nous vos besoins et un agent vous contactera dans 
+                                                            l'heure pour finaliser votre commande!!
+                                                    </DialogContentText>
+                                                                       <FormCommand />
+                                      </DialogContent>
+                                                    <DialogActions>
+                                                                   <Button onClick={handleClose}>Annuler</Button>
+                                                                   <Button onClick={handleClose}>Confirmer</Button>
+                                                    </DialogActions>
+                                </Dialog>
                                    </Grid>
                                    <Grid item xs={isNonMobile ? 4 : 12}>
                                          <Button variant="outlined" size="large" startIcon={<WhatsAppIcon />} 

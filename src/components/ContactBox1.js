@@ -1,4 +1,5 @@
-import {  Button, Stack, Box, Container, useMediaQuery } from '@mui/material';
+import {  Button, Stack, Box, Container, useMediaQuery,  Dialog, DialogActions, 
+           DialogContent, DialogContentText, DialogTitle, } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import CallIcon from '@mui/icons-material/Call';
 import { color } from "../theme";
@@ -10,10 +11,22 @@ export default function ContactBox1() {
     const color2 = color.blue.niveau100;
     const navigate = useNavigate();
     const isNonMobile = useMediaQuery("(min-width:600px)")
-
+    
+    // ouverture lien whatsapp sur une nouvelle page
     function openInNewTab(url) {
         window.open(url, '_blank').focus();
       }
+
+    // ouverture boite de dialogue pour commande
+      const [open, setOpen] = useState(false);
+
+      const handleClickOpen = () => {
+        setOpen(true);
+      };
+    
+      const handleClose = () => {
+        setOpen(false);
+      };
     
 
     return (
@@ -32,10 +45,24 @@ export default function ContactBox1() {
                                      +(237) 651 21 87 97
                              </Button>
                              <Button variant="contained"
-                                     onClick={() => {navigate('/Expediteurs')} } 
+                                     onClick={handleClickOpen}
                                      sx={{color:"white", fontSize:isNonMobile ? "20px" : "14px", backgroundColor:color2}}>
                                     OBTENIR UN DEVIS
                              </Button>
+                             <Dialog open={open} onClose={handleClose}>
+                                      <DialogTitle>Commande</DialogTitle>
+                                      <DialogContent>
+                                                    <DialogContentText>
+                                                            Precisez nous vos besoins et un agent vous contactera dans 
+                                                            l'heure pour finaliser votre commande!!
+                                                    </DialogContentText>
+                                                                       <FormCommand />
+                                      </DialogContent>
+                                                    <DialogActions>
+                                                                   <Button onClick={handleClose}>Annuler</Button>
+                                                                   <Button onClick={handleClose}>Confirmer</Button>
+                                                    </DialogActions>
+                                </Dialog>
                     </Stack>
               </Container>
         </Box>

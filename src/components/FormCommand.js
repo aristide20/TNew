@@ -1,4 +1,4 @@
-import { Typography, TextField, 
+import { Typography, TextField, CircularProgress,
         Paper, Button, Container, Stack, 
         FormControl, Select, MenuItem, InputLabel} from "@mui/material";
 import { useState } from "react";
@@ -16,6 +16,7 @@ const FormCommand = () => {
     villeArrivee:"",
     typeVehicule:"Camion de Transport",
     nomVehicule:""});
+    const [clicked, setClicked] = useState(false)
     //const user = useSelector((state) => state.UserReducer.user);
     const user = useSelector((state) => state.persistedReducer.user);
     const dispatch = useDispatch();
@@ -36,8 +37,18 @@ const FormCommand = () => {
 
    const handleSubmit =  async (e) => {
           e.preventDefault();
+          setClicked(true)
          await dispatch( createCommand(infoCommand))
          await dispatch( setCommand(infoCommand))
+         await dispatch(makeCommand(infoCommand))
+         setInfoCommand({commanditaire: "",
+         contact: "",
+         villeDepart: "",
+         jourDepart: "",
+         villeArrivee:"",
+         typeVehicule:"Camion de Transport",
+         nomVehicule:""})
+         setTimeout(() => setClicked(false), 2000)
    }
 
 
@@ -139,6 +150,7 @@ const FormCommand = () => {
                          <Button  disabled type="submit" sx={{backgroundColor:color3, marginTop:"20px"}}>
                                 Demarer le devis 
                          </Button>}
+                         { clicked && <Box>  <CircularProgress /> </Box> }
                          <Typography variant="h8" sx={{fontW:"bold", color:color1}}
                                       onClick={() => navigate('/connexion')}>
                                  Déjà inscrit? Connectez-vous
