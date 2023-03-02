@@ -92,6 +92,7 @@ useEffect(function(){
           setError(-1);
       })      
 } 
+else {setNumberError(true);  }
 }
 
 

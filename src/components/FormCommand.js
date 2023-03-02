@@ -106,6 +106,7 @@ const FormCommand = () => {
                 setError(-1);
             })      
       } 
+      else { setNumberError(false);  }
   }
 
 
