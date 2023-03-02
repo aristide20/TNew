@@ -153,14 +153,14 @@ const Form2 = () => {
      //  Login validation messages
      useEffect(function(){
         if(error === 1){
-            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0)}, 5000);
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0); navigate('/Accueil')}, 5000);
             console.log("remove dialog")
             return () => {
                  clearInterval(cleanup)
              }
           } 
           if(error === -1){
-            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0); navigate('/Accueil')}, 5000);
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0);}, 5000);
             console.log("remove dialog")
             return () => {
                  clearInterval(cleanup)
@@ -229,8 +229,13 @@ const Form2 = () => {
                         dispatch(loginSuccess());
                         
                         if(Response.status === 200) { setUserLogin(initialValuesLogin); }
-                        else if(Response === undefined) { setError(-1) }                                                               
-                                                                                        })   
+                        //else if(Response === undefined) { setError(-1) }                                                               
+                                                                                        })
+                        .catch((err) => { setError(-1);
+                                console.log(err.message);
+                                console.log(err.name);
+                                console.log(err.code)
+                        })
                 } catch (error) {
                     setError(-1)
                     dispatch(loginError());
