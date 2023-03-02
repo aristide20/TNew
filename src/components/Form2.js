@@ -229,7 +229,7 @@ const Form2 = () => {
                         dispatch(loginSuccess());
                         
                         if(Response.status === 200) { setUserLogin(initialValuesLogin); }
-                        else { setError(-1) }                                                               
+                        else if(Response === undefined) { setError(-1) }                                                               
                                                                                         })   
                 } catch (error) {
                     setError(-1)
