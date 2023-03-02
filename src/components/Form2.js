@@ -242,7 +242,7 @@ const Form2 = () => {
                     console.log(error)
                 }
             }
-            else { setNumberError(true); }
+            else { setEmailError(true); }
         }
         
                
