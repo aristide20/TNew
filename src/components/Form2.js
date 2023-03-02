@@ -199,15 +199,14 @@ const Form2 = () => {
             if(validEmail.test(user.email)) {
                 setNumberError(false);
                 try { 
-                    const { access_token } = api.loginUser(userLogin).then((Response) => {
-                        console.log(Response); 
+                      api.loginUser(userLogin).then((Response) => {
+                        console.log(Response.status); 
                         dispatch(setLogin(Response.data));
                         dispatch(getCommands())
-                        console.log(access_token);
                         setError(false);
                         dispatch(loginSuccess());
                         
-                        if(!emailError) {setPageType("login"); setUserLogin(initialValuesLogin); }                                                               
+                        if(!emailError) {navigate("/Accueil"); setUserLogin(initialValuesLogin); }                                                               
                                                                                         })   
                 } catch (error) {
                     setError(true)
