@@ -1,4 +1,4 @@
-import { Typography, TextField, LinearProgress,
+import { Typography, TextField, 
         Paper, Button, Container, Stack, Box,
         FormControl, Select, MenuItem, InputLabel} from "@mui/material";
 import { useState, useEffect } from "react";
@@ -7,16 +7,25 @@ import { color } from "../theme";
 import { setCommand, testValidation,  createCommand } from "../state/CommandSlice";
 import { useNavigate } from "react-router-dom";
 import { makeCommand } from "../state/UserSlice";
+import { validPhoneNumber } from './Regex';
+import CircularProgress from '@mui/material/CircularProgress';
+import { motion } from "framer-motion";
+import * as api from "../api/index";
+
+
+const initialValues = {commanditaire: "",
+contact: "",
+villeDepart: "",
+jourDepart: "",
+villeArrivee:"",
+typeVehicule:"Camion de Transport",
+nomVehicule:""}
+
+
 
 const FormCommand = () => {
 
-    const [infoCommand, setInfoCommand] = useState({commanditaire: "",
-    contact: "",
-    villeDepart: "",
-    jourDepart: "",
-    villeArrivee:"",
-    typeVehicule:"Camion de Transport",
-    nomVehicule:""});
+    const [infoCommand, setInfoCommand] = useState(initialValues);
     const [clicked, setClicked] = useState(false)
     //const user = useSelector((state) => state.UserReducer.user);
     const user = useSelector((state) => state.persistedReducer.user);
@@ -25,6 +34,9 @@ const FormCommand = () => {
     const color3 = color.gray.niveau20;
     const nom = user ? user.fullName : "Non Account";
     let commanditaire = "";
+
+    const [error, setError] = useState(0);
+    const [numberError, setNumberError] = useState(false);
 
         if(!nom) { commanditaire = "Non Account"}
         else { commanditaire = nom}
@@ -38,38 +50,54 @@ const FormCommand = () => {
      // Controlprogress barre
      const [progress, setProgress] = useState(0);
 
-     useEffect(() => {
-       const timer = setInterval(() => {
-         setProgress((oldProgress) => {
-           if (oldProgress === 100) {
-             return 0;
+
+
+     // validation phone number
+     useEffect(function(){
+      if(error !== 0){
+          let cleanup = setTimeout(()=>{ setError(0); setClicked(false)}, 7000);
+          console.log("remove dialog")
+          return () => {
+               clearInterval(cleanup)
            }
-           const diff = Math.random() * 10;
-           return Math.min(oldProgress + diff, 100);
-         });
-       }, 500);
-   
-       return () => {
-         clearInterval(timer);
-       };
-     }, []);
+        } 
+   });
+
+   useEffect(function(){
+    if(numberError){
+        let cleanup = setTimeout(()=>{console.log("enter timeout"); setNumberError(false)}, 7000);
+        console.log("remove dialog")
+        return () => {
+             clearInterval(cleanup)
+         }
+      } 
+ });
+
+ // fin validation
 
 
    const handleSubmit = (e) => {
           e.preventDefault();
-          setClicked(true)
-          dispatch( createCommand(infoCommand))
-          dispatch( setCommand(infoCommand))
-          dispatch(makeCommand(infoCommand))
-         setInfoCommand({commanditaire: "",
-         contact: "",
-         villeDepart: "",
-         jourDepart: "",
-         villeArrivee:"",
-         typeVehicule:"Camion de Transport",
-         nomVehicule:""})
-         setTimeout(() => setClicked(false), 2000)
-   }
+           
+          if(validPhoneNumber.test(infoCommand.contact)) {
+            setNumberError(false); 
+            setClicked(true);
+            api.createCommand(infoCommand).then((resp) => {
+              setClicked(false);
+                console.log(resp)
+                if(resp.status === 201) {
+                    dispatch( setCommand(infoCommand));
+                    dispatch(makeCommand(infoCommand));
+                    setError(1);
+                    setInfoCommand(initialValues); 
+                }
+            }).catch((err) => {
+              setClicked(false);
+                console.log(err.name)
+                setError(-1);
+            })      
+      } 
+  }
 
 
 
@@ -161,19 +189,30 @@ const FormCommand = () => {
                                     value={infoCommand.contact}
                                     onChange={(e) => {setInfoCommand({...infoCommand, contact:e.target.value});
                                                       dispatch(testValidation(infoCommand))}}/>
+                                       {numberError && 
+                                          <motion.div initial={{opacity:0}}
+                                                      animate={{opacity:1,  transition:{duration: 1, ease: "easeInOut"}}}
+                                                      exit={{opacity:0,  transition:{duration: 1, ease: "easeInOut"}}} > 
+                                                     <Alert severity="error">
+                                                            Your Phone Number is invalid 
+                                                    </Alert> 
+                                        </motion.div>} 
                      </Stack>
                      <Stack direction="column" spacing={2} sx={{paddingTop:"30px"}} justifyContent="center"
                             alignItems="center"> 
                          { validate ?
                             <Button type="submit"  sx={{backgroundColor:color1, marginTop:"20px", color:"white"}}>
-                                Demarer le devis 
+                                Demarrer le devis 
                          </Button> :
                          <Button  disabled type="submit" sx={{backgroundColor:color3, marginTop:"20px"}}>
-                                Demarer le devis 
+                                Demarrer le devis 
                          </Button>}
-                         { clicked &&  <Box sx={{ width: '100%' }}>
-                                            <LinearProgress variant="determinate" value={progress} />
-                                       </Box> }
+                         { error === 1 && <Alert severity="success"> Commande enregistree </Alert> }
+                         { error === -1 && <Alert severity="error"> telephone invalid Or Network error </Alert> }
+                         { clicked &&   <Box sx={{ display: 'flex', flexDirection:"column", 
+                                                   justifyContent:"center", alignItems:"center" }}>
+                                             <CircularProgress />
+                                         </Box>}
                          <Typography variant="h8" sx={{fontW:"bold", color:color1}}
                                       onClick={() => navigate('/connexion')}>
                                  Déjà inscrit? Connectez-vous
