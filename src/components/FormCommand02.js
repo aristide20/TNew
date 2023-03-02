@@ -1,11 +1,13 @@
-import { TextField, Button, Stack, FormControl, Select, MenuItem, InputLabel, CircularProgress} from "@mui/material";
-import { useState } from "react";
+import { TextField, Button, Stack, FormControl, Select,
+         MenuItem, InputLabel, CircularProgress, Alert, Box} from "@mui/material";
+import { useState, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { color } from "../theme";
 import { setCommand, testValidation,  createCommand } from "../state/CommandSlice";
 import { makeCommand } from "../state/UserSlice";
 import { validPhoneNumber } from './Regex';
 import { motion } from "framer-motion";
+import * as api from "../api/index";
 
 //import { useNavigate } from "react-router-dom";
 
@@ -32,6 +34,7 @@ let commanditaire = "";
 
 const [error, setError] = useState(0);
 const [numberError, setNumberError] = useState(false);
+const [clicked, setClicked] = useState(false);
 
     if(!nom) { commanditaire = "Non Account"}
     else { commanditaire = nom}
@@ -41,13 +44,20 @@ const validate = useSelector((state) => state.CommandReducer.isEnAttente)
 
 // validation phone number
 useEffect(function(){
-    if(error !== 0){
-        let cleanup = setTimeout(()=>{ setError(0)}, 7000);
+    if(error === -1){
+        let cleanup = setTimeout(()=>{ setError(0); setClicked(false)}, 7000);
         console.log("remove dialog")
         return () => {
              clearInterval(cleanup)
          }
       } 
+      if(error === 1){
+        let cleanup = setTimeout(()=>{ setError(0); setClicked(false); setInfoCommand(initialValues)}, 7000);
+        console.log("remove dialog")
+        return () => {
+             clearInterval(cleanup)
+         }
+      }
  });
 
  useEffect(function(){

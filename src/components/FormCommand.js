@@ -1,4 +1,4 @@
-import { Typography, TextField, 
+import { Typography, TextField, Alert,
         Paper, Button, Container, Stack, Box,
         FormControl, Select, MenuItem, InputLabel} from "@mui/material";
 import { useState, useEffect } from "react";
@@ -26,7 +26,7 @@ nomVehicule:""}
 const FormCommand = () => {
 
     const [infoCommand, setInfoCommand] = useState(initialValues);
-    const [clicked, setClicked] = useState(false)
+    const [clicked, setClicked] = useState(false);
     //const user = useSelector((state) => state.UserReducer.user);
     const user = useSelector((state) => state.persistedReducer.user);
     const dispatch = useDispatch();
@@ -54,13 +54,22 @@ const FormCommand = () => {
 
      // validation phone number
      useEffect(function(){
-      if(error !== 0){
+      if(error === -1){
           let cleanup = setTimeout(()=>{ setError(0); setClicked(false)}, 7000);
           console.log("remove dialog")
           return () => {
                clearInterval(cleanup)
            }
         } 
+        if(error === 1){
+          let cleanup = setTimeout(()=>{ setError(0); setClicked(false); 
+                                         navigate('/Expediteurs'); 
+                                         setInfoCommand(initialValues)}, 7000);
+          console.log("remove dialog")
+          return () => {
+               clearInterval(cleanup)
+           }
+        }
    });
 
    useEffect(function(){
@@ -89,7 +98,7 @@ const FormCommand = () => {
                     dispatch( setCommand(infoCommand));
                     dispatch(makeCommand(infoCommand));
                     setError(1);
-                    setInfoCommand(initialValues); 
+                     
                 }
             }).catch((err) => {
               setClicked(false);
