@@ -129,7 +129,7 @@ const Form2 = () => {
    //validation or errors messages
    useEffect(function(){
     if(emailError){
-        let cleanup = setTimeout(()=>{console.log("enter timeout"); setEmailError(false)}, 3000);
+        let cleanup = setTimeout(()=>{console.log("enter timeout"); setEmailError(false)}, 10000);
         console.log("remove dialog")
         return () => {
             clearInterval(cleanup)
@@ -139,7 +139,7 @@ const Form2 = () => {
 
     useEffect(function(){
         if(numberError){
-            let cleanup = setTimeout(()=>{console.log("enter timeout"); setNumberError(false)}, 3000);
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setNumberError(false)}, 10000);
             console.log("remove dialog")
             return () => {
                  clearInterval(cleanup)
@@ -196,7 +196,7 @@ const Form2 = () => {
 
         if(isLogin) {
 
-            if(validPhoneNumber.test(user.phoneNumber)) {
+            if(validEmail.test(user.email)) {
                 setNumberError(false);
                 try { 
                     const { access_token } = api.loginUser(userLogin).then((Response) => {
