@@ -36,7 +36,6 @@ const registerSchema = yup.object().shape({
     picture: yup.string().required("required"),
     vehicules: yup.array().required("required")
 });
-
 const loginSchema = yup.object().shape({
     isPartner: yup.boolean().required("required"),
     isClient: yup.boolean().required("required"),

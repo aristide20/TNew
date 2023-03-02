@@ -16,7 +16,7 @@ import axiosConfig from './axiosConfig';
 
 
 
-export const registerUser = async (userData) => { await axiosConfig.post('/auth/register', userData) }
+export const registerUser = async (userData) => { return await axiosConfig.post('/auth/register', userData) }
 
 export const loginUser = async (userData) => { return await axiosConfig.post('/auth/login', userData) }
 
