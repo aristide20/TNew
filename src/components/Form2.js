@@ -89,7 +89,7 @@ const Form2 = () => {
     const [user, setUser] = useState(initialValuesRegister);
     const [userLogin, setUserLogin] = useState(initialValuesLogin);
     const [vehicule, setVehicule] = useState(initialValueVehicule);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState(0);
 
     const isLogin = pageType === "login";
     const isRegister = pageType === "register";
@@ -103,7 +103,7 @@ const Form2 = () => {
     const dispatch = useDispatch();
     //const Error = useSelector((state) => state.UserReducer.loginError);
     //const Statut = useSelector((state) => state.UserReducer.loginStatut);
-    const Statut = useSelector((state) => state.persistedReducer.loginStatut);
+    //const Statut = useSelector((state) => state.persistedReducer.loginStatut);
     const registerButton = useSelector((state) => state.persistedReducer.loginButton);
     //const registerButton = useSelector((state) => state.UserReducer.loginButton);
     //const UserLoggedIn = useSelector((state) => state.UserReducer.user);
@@ -114,6 +114,8 @@ const Form2 = () => {
     // Validation of phoneNumber and email format
    const [emailError, setEmailError] = useState(false);
    const [numberError, setNumberError] = useState(false);
+
+   /*
    const validate = () => {
       if (!validEmail.test(user.email)) {
          setEmailError(true);
@@ -121,14 +123,15 @@ const Form2 = () => {
       if (!validPhoneNumber.test(user.phoneNumber)) {
         setNumberError(true);
       }
-   };
+   };*/
+
    // end of validation
     
 
    //validation or errors messages
    useEffect(function(){
     if(emailError){
-        let cleanup = setTimeout(()=>{console.log("enter timeout"); setEmailError(false)}, 10000);
+        let cleanup = setTimeout(()=>{console.log("enter timeout"); setEmailError(false)}, 8000);
         console.log("remove dialog")
         return () => {
             clearInterval(cleanup)
@@ -138,13 +141,33 @@ const Form2 = () => {
 
     useEffect(function(){
         if(numberError){
-            let cleanup = setTimeout(()=>{console.log("enter timeout"); setNumberError(false)}, 10000);
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setNumberError(false)}, 8000);
             console.log("remove dialog")
             return () => {
                  clearInterval(cleanup)
              }
           } 
-     })
+     });
+
+
+     //  Login validation messages
+     useEffect(function(){
+        if(error === 1){
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0)}, 5000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup)
+             }
+          } 
+          if(error === -1){
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0); navigate('/Accueil')}, 5000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup)
+             }
+          }
+     });
+
    //
 
 
@@ -152,7 +175,7 @@ const Form2 = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(setLogout());
-        validate();
+        //validate();
         console.log(numberError, emailError)
 
         if(isRegister) {
@@ -202,13 +225,14 @@ const Form2 = () => {
                         console.log(Response.status); 
                         dispatch(setLogin(Response.data));
                         dispatch(getCommands())
-                        setError(false);
+                        setError(1);
                         dispatch(loginSuccess());
                         
-                        if(!emailError) {navigate("/Accueil"); setUserLogin(initialValuesLogin); }                                                               
+                        if(Response.status === 200) { setUserLogin(initialValuesLogin); }
+                        else { setError(-1) }                                                               
                                                                                         })   
                 } catch (error) {
-                    setError(true)
+                    setError(-1)
                     dispatch(loginError());
                     console.log(error)
                 }
@@ -447,10 +471,8 @@ const Form2 = () => {
                                {isLogin ? "LOGIN" : "REGISTER"}
                         </Button>
                           }
-                           { Statut && (error ? 
-                            (<Alert severity="success"> Login successfully </Alert>) :
-                            (<Alert severity="error"> Credentials Errors </Alert>) 
-                          ) }
+                           { error === 1 && <Alert severity="success"> Login successfully </Alert> }
+                           { error === -1 && <Alert severity="error"> Credentials Errors or Network error </Alert> }
                           <Typography onClick={() => {setPageType( isLogin ? "register" : "login");}}
                                       sx={{ textDecoration: "underline",
                                             color: color1,
