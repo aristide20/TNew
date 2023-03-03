@@ -3,46 +3,23 @@ import { Button, Typography, Paper, TextField, useMediaQuery, Box, Grid,
          Alert} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin, loginSuccess, loginError, testLogin,  testRegister, loginStatut, setLogout } from "../state/UserSlice";
-//import { setLogin, setLogout} from "../state/UserSlice";
 import { color } from "../theme";
 import { useState, useEffect } from "react";
 import { Container } from "@mui/system";
-//import PropTypes from 'prop-types';
-//import { styled } from '@mui/material/styles';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
-//import * as yup from 'yup';
 import { useNavigate } from "react-router-dom";
 //import CheckIcon from '@mui/icons-material/Check';
 //import EditOutlinedIcon  from "@mui/icons-material/EditOutlined"
-//import Dropzone from "dropzone";
 import * as api from "../api/index";
 import { getCommands } from '../state/UserSlice';
 import { validEmail, validPhoneNumber } from './Regex';
 import { motion } from "framer-motion";
 //import jwt from 'jwt-decode';
 
-/*
-const registerSchema = yup.object().shape({
-    isMoralPerson: yup.boolean().required("required"),
-    isPartner: yup.boolean().required("required"),
-    fullName: yup.string().required("required"),
-    email: yup.string().email("invalid email").required("required"),
-    phoneNumber: yup.string().required("required"),
-    password: yup.string().required("required"),
-    picture: yup.string().required("required"),
-    vehicules: yup.array().required("required")
-});
-const loginSchema = yup.object().shape({
-    isPartner: yup.boolean().required("required"),
-    isClient: yup.boolean().required("required"),
-    email: yup.string().email("invalid email").required("required"),
-    password: yup.string().required("required") 
-});
-*/
 
 const initialValuesRegister = {
     isMoralPerson: false,
