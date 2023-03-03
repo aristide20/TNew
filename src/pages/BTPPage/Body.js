@@ -31,12 +31,13 @@ const Body = () => {
           <Box position="static" sx={{ width:"100%", marginTop:"90px"}} >
               <CssBaseline />
               <div className="btptop">
-              <Box  sx={{ width:isSmallScreen2 ? "70%" : "90%", display:"flex", flexDirection:"column",
-                          justifyContent:"center", alignItems:"center" }}>
+                   <Box  sx={{ width:isSmallScreen2 ? "70%" : "90%", display:"flex", flexDirection:"column",
+                          justifyContent:"center", alignItems:"center", 
+                          paddingTop:"25%", paddingLeft:"15%" }}>
                              <Grid container justifyContent="center" alignItems="center" spacin={4}>
                                    <Grid item xs={isSmallScreen2 ? 6 : 12} >
-                                         <Typography variant="h4" sx={{color:"white", fontWeight:"bold"}}>
-                                                  Optimiser les couts du matériel est le défi majeur de tous entrepreneur 
+                                         <Typography variant="h3" sx={{color:"white", fontWeight:"bold"}}>
+                                                  Optimiser les couts est le défi majeur de tout entrepreneur 
                                                   dans le BTP. 
                                          </Typography>
                                          <Typography variant="paragraph" sx={{color:"white"}}>
@@ -48,7 +49,7 @@ const Body = () => {
                                         <ContactBox1 />
                                    </Grid>
                              </Grid>
-              </Box>
+                    </Box>
               </div>
               <Box>
                    <SatisfiedClients02 />
