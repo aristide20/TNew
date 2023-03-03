@@ -15,7 +15,7 @@ import HomeUserPage from "../pages/UserPages/index";
 import OurTeamPage from "../pages/OurTeam/index";
 import OurSolutionsPage from "../pages/OurSolutions/index";
 import Recrutement from "../pages/Recrutement/index";
-import Vehicules from "../pages/UserPages/Partener/index"
+import Vehicules from "../pages/UserPages/Partner/index"
 import {Routes, Route, useLocation } from 'react-router-dom';
 
 import { AnimatePresence } from 'framer-motion';
