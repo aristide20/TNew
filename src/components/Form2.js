@@ -235,12 +235,14 @@ const Form2 = () => {
                                 console.log(err.message);
                                                     console.log(err.name);
                                                     console.log(err.code);
-                                                    setError(-2)
+                                                    setError(-2);
+                                                    setClicked(false);
                             })
                         } catch (err) {
                                  console.log(err.message);
                                     console.log(err.name);
                                     console.log(err.code);
+                                    setClicked(false);
                             setError(-4)
                         }      
                                  
@@ -272,10 +274,12 @@ const Form2 = () => {
                                                                                         })
                         .catch((err) => { setError(-1);
                                 console.log(err.message);
+                                setClicked(false);
                                 console.log(err.name);
                                 console.log(err.code);
                         })
                 } catch (error) {
+                    setClicked(false);
                     setError(-1)
                     dispatch(loginError());
                     console.log(error)

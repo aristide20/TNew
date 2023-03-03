@@ -97,9 +97,10 @@ const Body = () => {
 
     
     //
+    /*
     useEffect(() => {
       handleDisplay();
-    })
+    })*/
 
     useEffect(function(){
       if(statut !== 0){
