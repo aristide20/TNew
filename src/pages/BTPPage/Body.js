@@ -33,14 +33,14 @@ const Body = () => {
               <div className="btptop">
                    <Box  sx={{ width:isSmallScreen2 ? "70%" : "90%", display:"flex", flexDirection:"column",
                           justifyContent:"center", alignItems:"center", 
-                          paddingTop:"25%", paddingLeft:"15%" }}>
-                             <Grid container justifyContent="center" alignItems="center" spacin={4}>
+                          paddingTop:"12%", paddingLeft:"25%" }}>
+                             <Grid container justifyContent="center" alignItems="center" spacing={10}>
                                    <Grid item xs={isSmallScreen2 ? 6 : 12} >
-                                         <Typography variant="h3" sx={{color:"white", fontWeight:"bold"}}>
+                                         <Typography variant="h3" sx={{color:"white", fontWeight:"bold", marginBottom:"3rem"}}>
                                                   Optimiser les couts est le défi majeur de tout entrepreneur 
                                                   dans le BTP. 
                                          </Typography>
-                                         <Typography variant="paragraph" sx={{color:"white"}}>
+                                         <Typography variant="paragraph" sx={{color:"white", fontSize:"24px"}}>
                                                 Choisissez nos solutions sur mesures 
                                                 pour tous vos travaux (Terrassement,VRD, assainissement, levage... )!!
                                          </Typography>
