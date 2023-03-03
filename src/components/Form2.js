@@ -18,6 +18,7 @@ import * as api from "../api/index";
 import { getCommands } from '../state/UserSlice';
 import { validEmail, validPhoneNumber } from './Regex';
 import { motion } from "framer-motion";
+import CircularProgress from '@mui/material/CircularProgress';
 //import jwt from 'jwt-decode';
 
 
@@ -67,6 +68,7 @@ const Form2 = () => {
     const [userLogin, setUserLogin] = useState(initialValuesLogin);
     const [vehicule, setVehicule] = useState(initialValueVehicule);
     const [error, setError] = useState(0);
+    const [clicked, setClicked] = useState(false);
 
     const isLogin = pageType === "login";
     const isRegister = pageType === "register";
@@ -143,6 +145,42 @@ const Form2 = () => {
                  clearInterval(cleanup)
              }
           }
+          if(error === 2){
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0); 
+                                          if(!isPartenaire){ setPageType("login"); } }, 5000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup)
+             }
+          } 
+          if(error === -2){
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0);}, 5000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup)
+             }
+          }
+          if(error === 3){
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0); setPageType("login");}, 5000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup)
+             }
+          } 
+          if(error === -3){
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0);}, 5000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup)
+             }
+          }
+          if(error === -4){
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0);}, 5000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup)
+             }
+          }
      });
 
    //
@@ -160,30 +198,52 @@ const Form2 = () => {
                 setEmailError(false);
                 if(validPhoneNumber.test(user.phoneNumber)) {
                     setNumberError(false); 
-                       if(isPartenaire) {
-                        
+                    setClicked(true);
+                       
                         console.log(vehicule);
                         console.log(user);
                         try {
-                            api.registerUser(user);
-                            api.createVehicule(vehicule);
-                            //console.log(resp);
-                           //console.log(resVehicule);
-                            
-                            if(!emailError && !numberError) {setPageType("login"); setUser(initialValuesRegister) }
-                        } catch (error) {
-                            console.log(error)
-                        }
-                    }
-                    else {
-                        try {
-                            api.registerUser(user)
-                            if(!emailError && !numberError) {setPageType("login"); setUser(initialValuesRegister) }
-                        } catch (error) {
-                            console.error(error)
-                        }
-                       
-                    }      
+                            api.registerUser(user).then((resp) => {
+                                console.log(resp);
+                                console.log(resp.data);
+                                console.log(resp.status);
+                                setClicked(false);
+                                if(resp.status === 201) {
+                                    setError(2);
+                                    if(isPartenaire) {
+                                        setClicked(true);
+                                        api.createVehicule(vehicule).then((resp2) => {
+                                            setClicked(false);
+                                             console.log(resp2);
+                                             console.log(resp2.data);
+                                             console.log(resp2.status); 
+                                             if(resp2.status === 201) {
+                                                  setError(3);
+                                                  dispatch(setVehicule(vehicule));
+                                                  setUser(initialValuesRegister);
+                                             }
+                                           }).catch((err) => {
+                                                    console.log(err.message);
+                                                    console.log(err.name);
+                                                    console.log(err.code);
+                                                    setError(-3)
+                                    })
+                                }
+                            }
+
+                            }).catch((err) => {
+                                console.log(err.message);
+                                                    console.log(err.name);
+                                                    console.log(err.code);
+                                                    setError(-2)
+                            })
+                        } catch (err) {
+                                 console.log(err.message);
+                                    console.log(err.name);
+                                    console.log(err.code);
+                            setError(-4)
+                        }      
+                                 
                 } 
                 else { setNumberError(true); }
                 
@@ -197,21 +257,23 @@ const Form2 = () => {
 
             if(validEmail.test(user.email)) {
                 setNumberError(false);
+                setClicked(true);
                 try { 
                       api.loginUser(userLogin).then((Response) => {
+                        setClicked(false);
                         console.log(Response.status); 
-                        dispatch(setLogin(Response.data));
-                        dispatch(getCommands())
-                        setError(1);
-                        dispatch(loginSuccess());
-                        
-                        if(Response.status === 200) { setUserLogin(initialValuesLogin); }
+                        if(Response.status === 200) { 
+                            dispatch(setLogin(Response.data));
+                            dispatch(getCommands());
+                            setError(1);
+                             dispatch(loginSuccess());
+                            setUserLogin(initialValuesLogin); }
                         //else if(Response === undefined) { setError(-1) }                                                               
                                                                                         })
                         .catch((err) => { setError(-1);
                                 console.log(err.message);
                                 console.log(err.name);
-                                console.log(err.code)
+                                console.log(err.code);
                         })
                 } catch (error) {
                     setError(-1)
@@ -482,7 +544,16 @@ const Form2 = () => {
                         </Button>
                           }
                            { error === 1 && <Alert severity="success"> Login successfully </Alert> }
-                           { error === -1 && <Alert severity="error"> Credentials Errors or Network error </Alert> }
+                           { error === -1 && <Alert severity="error"> Credentials Errors </Alert> }
+                           { error === 2 && <Alert severity="success"> User registered successfully </Alert> }
+                           { error === -2 && <Alert severity="error"> validation problems </Alert> }
+                           { error === 3 && <Alert severity="success"> Vehicule of the user successfully registered </Alert> }
+                           { error === -3 && <Alert severity="error"> vehicule not registered, you have to do it in your account </Alert> }
+                           { error === -4 && <Alert severity="error"> Network error, try again later... </Alert> }
+                           { clicked &&   <Box sx={{ display: 'flex', flexDirection:"column", 
+                                                   justifyContent:"center", alignItems:"center" }}>
+                                             <CircularProgress />
+                                         </Box>}
                           <Typography onClick={() => {setPageType( isLogin ? "register" : "login");}}
                                       sx={{ textDecoration: "underline",
                                             color: color1,

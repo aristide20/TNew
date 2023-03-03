@@ -70,6 +70,7 @@ const FormCommand = () => {
                clearInterval(cleanup)
            }
         }
+        
    });
 
    useEffect(function(){

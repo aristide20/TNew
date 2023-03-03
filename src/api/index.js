@@ -16,7 +16,7 @@ import axiosConfig from './axiosConfig';
 
 
 
-export const registerUser = async (userData) => { await axiosConfig.post('/auth/register', userData) }
+export const registerUser = async (userData) => { return await axiosConfig.post('/auth/register', userData) }
 
 export const loginUser = async (userData) => { return await axiosConfig.post('/auth/login', userData) }
 
@@ -25,7 +25,7 @@ export const fetchUsers = async () => {
          return data 
         }
 
-export const createVehicule = async (vehicule) => { await axiosConfig.post('/vehicules', vehicule)}
+export const createVehicule = async (vehicule) => { return await axiosConfig.post('/vehicules', vehicule)}
 export const fetchVehicules = async () => { 
        const {data} = await axios.get('/vehicules', { headers: {Accept:'application/json',}})
        return data 
