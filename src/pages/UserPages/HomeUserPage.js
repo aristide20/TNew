@@ -75,6 +75,8 @@ const Body = () => {
                         setFilterData( brutData.map((commande) => { if(user.fullName === commande.commanditaire) {
                               return commande
                         }}) ) 
+                        console.log(brutData);
+                        console.log(filterData);
                   }
             }).catch((error) => {
                   setStatut(-1);
@@ -101,7 +103,7 @@ const Body = () => {
     useEffect(() => {
       handleDisplay();
     })*/
-
+    /*
     useEffect(function(){
       if(statut !== 0){
           let cleanup = setTimeout(()=>{ setStatut(0);; }, 7000);
@@ -111,7 +113,7 @@ const Body = () => {
            }
         } 
         
-    });
+    });*/
 
 
     const tabDisplay = filterData.map((item) => {
