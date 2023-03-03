@@ -73,7 +73,7 @@ export default function PrimarySearchAppBar() {
   const userLoggedIn = useSelector((state) => state.persistedReducer.user);
   console.log(userLoggedIn);
   const isPartenaire = userLoggedIn !== undefined ? userLoggedIn.isPartner ? true : false : false;
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = React.useState(true);
  // console.log(isPartenaire);
 
     const navigate = useNavigate();
