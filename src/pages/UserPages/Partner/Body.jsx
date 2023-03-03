@@ -1,5 +1,5 @@
 //import CssBaseline from '@mui/material/CssBaseline';
-import { color } from '../../theme';
+import { color } from '../../../theme';
 import { Button, Typography, Grid,
          Box, useMediaQuery, Paper, Dialog, DialogActions, 
           DialogContent, DialogContentText, DialogTitle, Container } from '@mui/material';
@@ -13,8 +13,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 //import Form from "../../components/Form2";
 //import { useNavigate } from 'react-router-dom';
 //import logo from "../../assets/logo.png";
-import FormCommand from '../../components/FormCommand02';
-import UserSpeedDial from "../../components/UserDial";
+import FormCommand from '../../../components/FormCommand02';
+import UserSpeedDial from "../../../components/UserDial";
 //import fond01 from "../../assets/fondLogo01.png";
 //import fond02 from "../../assets/fondLogo02.png";
 
