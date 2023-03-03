@@ -28,7 +28,6 @@ const VehiculeSlice = createSlice({
                   state.isReadytowork = false
            },
            testValidation: (state, action) => {
-               if(action.payload.contact !== "") {
                    if(action.payload.Proprietaire !== "") {
                       if(action.payload.Immatriculation !== "") {
                          if(action.payload.nomVehicule !== "") {
@@ -42,9 +41,6 @@ const VehiculeSlice = createSlice({
                    }else {
                     state.isValidate = false
                  }
-               }else {
-                state.isValidate = false
-             }
            },
            createVehicule: (state, action) => {
                 try {

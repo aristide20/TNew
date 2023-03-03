@@ -168,7 +168,7 @@ const Form2 = () => {
              }
           } 
           if(error === -3){
-            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0);}, 5000);
+            let cleanup = setTimeout(()=>{console.log("enter timeout"); setError(0); setPageType("login");}, 5000);
             console.log("remove dialog")
             return () => {
                  clearInterval(cleanup)
@@ -200,8 +200,8 @@ const Form2 = () => {
                     setNumberError(false); 
                     setClicked(true);
                        
-                        console.log(vehicule);
-                        console.log(user);
+                        //console.log(vehicule);
+                       // console.log(user);
                         try {
                             api.registerUser(user).then((resp) => {
                                 console.log(resp);
@@ -223,7 +223,7 @@ const Form2 = () => {
                                                   setUser(initialValuesRegister);
                                              }
                                            }).catch((err) => {
-                                                    console.log(err.message);
+                                                    console.log(err.msg);
                                                     console.log(err.name);
                                                     console.log(err.code);
                                                     setError(-3)

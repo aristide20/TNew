@@ -34,16 +34,6 @@ export const fetchVehicules = async () => {
 
 
 export const createCommand = async (commande) => { return await axiosConfig.post('/commandes', commande) }
-/*export const fetchCommands = async () => { await axios.get('commandes', { headers: {Accept: 'application/json',}})
-                                                        .then((resp) => {
-                                                              
-                                                        }
-                                                            
-                                                        )
-                                                        .catch(
+export const getCommands = async () => { return await axios.get('/commandes', { headers: {Accept: 'application/json',}}) }
 
-                                                        ) }*/
-    //const dispatch= useDispatch();
-   // var data = []; 
-     
     

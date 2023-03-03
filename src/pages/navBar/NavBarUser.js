@@ -94,8 +94,9 @@ export default function PrimarySearchAppBar() {
   const handleMenuClose1 = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+    dispatch(setLogout())
     navigate('/connexion');
-    //dispatch(setLogout());
+    dispatch(setLogout());
   };
 
   const handleMenuClose2 = () => {
@@ -185,9 +186,6 @@ export default function PrimarySearchAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="fixed" sx={{backgroundColor:color1 }}>
         <Toolbar>
-           <Typography>
-                   Welcome {name}
-           </Typography>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

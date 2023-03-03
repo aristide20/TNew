@@ -105,13 +105,11 @@ const UserSlice = createSlice({
 								}
 								
 							},
-							 setVehicule: (state, action) => { 
-								if(state.user){
-									state.user.vehicules = action.payload.vehicules;
-								}
-								else {
-									console.error("user Vehicules non existants :(")
-								}
+							 AddVehicule: (state, action) => { 
+								let data = action.payload.Immatriculation;
+								let tab = state.vehicules;
+								tab.push(data);
+								state.vehicules = tab;
 							},
 							 deleteVehicule: (state) => { 
 
@@ -140,7 +138,7 @@ export const { setLogin,
 			   getCommands, 
 			   modifyCommand, 
 			   updateVehicule, 
-			   setVehicule,
+			   AddVehicule,
 			   testRegister,
 			   testLogin,
 			   loginStatut,
