@@ -28,10 +28,27 @@ const Body = () => {
     const haut5 = isSmallScreen2 ? "250px" : "35px";
         
         return(
-          <Box position="static" sx={{ width:"100%"}} >
+          <Box position="static" sx={{ width:"100%", marginTop:"90px"}} >
               <CssBaseline />
               <div className="btptop">
-                   
+              <Box  sx={{ width:isSmallScreen2 ? "70%" : "90%", display:"flex", flexDirection:"column",
+                          justifyContent:"center", alignItems:"center" }}>
+                             <Grid container justifyContent="center" alignItems="center" spacin={4}>
+                                   <Grid item xs={isSmallScreen2 ? 6 : 12} >
+                                         <Typography variant="h4" sx={{color:"white", fontWeight:"bold"}}>
+                                                  Optimiser les couts du matériel est le défi majeur de tous entrepreneur 
+                                                  dans le BTP. 
+                                         </Typography>
+                                         <Typography variant="paragraph" sx={{color:"white"}}>
+                                                Choisissez nos solutions sur mesures 
+                                                pour tous vos travaux (Terrassement,VRD, assainissement, levage... )!!
+                                         </Typography>
+                                   </Grid>
+                                   <Grid item xs={isSmallScreen2 ? 6 : 12} >
+                                        <ContactBox1 />
+                                   </Grid>
+                             </Grid>
+              </Box>
               </div>
               <Box>
                    <SatisfiedClients02 />
@@ -69,7 +86,7 @@ const Body = () => {
      * 
      
     <img src={fondBTP} width="100%" height={haut1} alt="fond" />
-                   <Box position="absolute" sx={{ width:large, 
+                   <Box  sx={{ width:large, 
                          backgroundColor:color2, 
                          opacity:0.5 , 
                          height:hauteur,
@@ -78,28 +95,7 @@ const Body = () => {
                          top:haut2,
                          left:haut3 }}>
               </Box>
-              <Box position="absolute" sx={{ width:large, 
-                         zIndex:10,
-                         top:haut4,
-                         left:haut5}}>
-                   <Container>
-                             <Grid container justifyContent="center" alignItems="center" spacin={4}>
-                                   <Grid item xs={isSmallScreen2 ? 6 : 10} >
-                                         <Typography variant="h4" sx={{color:"white", fontWeight:"bold"}}>
-                                                  Optimiser les couts du matériel est le défi majeur de tous entrepreneur 
-                                                  dans le BTP. 
-                                         </Typography>
-                                         <Typography variant="paragraph" sx={{color:"white"}}>
-                                                Choisissez nos solutions sur mesures 
-                                                pour tous vos travaux (Terrassement,VRD, assainissement, levage... )!!
-                                         </Typography>
-                                   </Grid>
-                                   <Grid item xs={isSmallScreen2 ? 6 : 10} >
-                                        <ContactBox1 />
-                                   </Grid>
-                             </Grid>
-                   </Container>
-              </Box>
+              
 
               
      */
