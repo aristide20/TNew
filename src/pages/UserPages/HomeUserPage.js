@@ -73,9 +73,7 @@ const Body = () => {
                         setStatut(1);
                         console.log(statut);
                         setBrutData(resp.data.commandes);
-                        setFilterData( brutData.map((commande) => { if(user.fullName === commande.commanditaire) {
-                              return commande
-                        }}) ) 
+                        setFilterData( brutData.filter((commande) => { commande.commanditaire === user.fullName }) ) 
                         console.log(brutData);
                         console.log(filterData);
                   }
