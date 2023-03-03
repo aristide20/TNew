@@ -60,7 +60,7 @@ const Body = () => {
                                                    paddingTop:"20px",
                                                    paddingBottom:"50px",
                                                    width:"100%",
-                                                   height:"500px"}}> 
+                                                   height:isSmallScreen ? "25rem" : "20rem"}}> 
                                               <Form />
                                   </Box>
                               </Grid>

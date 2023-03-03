@@ -73,7 +73,7 @@ export default function PrimarySearchAppBar() {
   const userLoggedIn = useSelector((state) => state.persistedReducer.user);
   console.log(userLoggedIn);
   const isPartenaire = userLoggedIn !== undefined ? userLoggedIn.isPartner ? true : false : false;
-  const name = userLoggedIn !== undefined ? userLoggedIn.fullName : "";
+  const [login, setLogin] = useState(true);
  // console.log(isPartenaire);
 
     const navigate = useNavigate();
@@ -95,9 +95,12 @@ export default function PrimarySearchAppBar() {
     setAnchorEl(null);
     handleMobileMenuClose();
     dispatch(setLogout())
-    navigate('/connexion');
-    dispatch(setLogout());
+    setLogin(true);
   };
+
+  React.useEffect(() => {
+    if(login) { dispatch(setLogout()); console.log("useEffect pour logout"); navigate('/connexion'); }
+  },[login])
 
   const handleMenuClose2 = () => {
     setAnchorEl(null);

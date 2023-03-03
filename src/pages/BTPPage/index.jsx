@@ -1,7 +1,7 @@
 import Body from './Body';
 import Footer from '../../components/Footer';
 import { Stack } from '@mui/material';
-import NavBar from "../navBar/NavBarHome2";
+import NavBar from "../navBar/NavBarHome";
 import { motion } from 'framer-motion';
 
 

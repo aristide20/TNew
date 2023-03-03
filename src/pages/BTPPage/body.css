@@ -1,0 +1,7 @@
+.btptop {
+    width: 100%;
+    background-image: url("../../assets/fondbtp01.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 40rem;
+ }

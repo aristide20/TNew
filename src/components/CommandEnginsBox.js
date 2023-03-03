@@ -41,7 +41,7 @@ const CommandEnginsBox = () => {
                         <Typography variant="h5" sx={{color:color2, fontWeight:"bold", paddingBottom:"20px"}}>
                                    Commander les engins dont vous avez besoin
                         </Typography>
-                        <Box sx={{ width: isNonMobile ? "70%" : "90%", 
+                        <Box sx={{ width: isNonMobile ? "70%" : "80%", 
                                    backgroundColor:color4, 
                                    borderRadius:"10px",
                                    padding:"20px", 
@@ -49,7 +49,8 @@ const CommandEnginsBox = () => {
                                    flexDirection:"column",
                                    justifyContent:"center",
                                    alignItems:"center" }} >
-                             <Grid container spacing={3}>
+                             <Grid container spacing={3}  display="flex" justifyContent="center"
+                                   alignItems="center">
                                    <Grid item xs={isNonMobile ? 4 : 12}>
                                          <Button variant="outlined" size="large" startIcon={<PhoneIphoneIcon />}
                                                   sx={{borderColor:color3, color:color2}}>

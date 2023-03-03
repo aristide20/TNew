@@ -26,7 +26,7 @@ const SatisfiedClients = () => {
 
     return (
         <Box sx={{ backgroundColor: color4,
-            width:"95%" , paddingTop:"40px", paddingBottom:"40px"}}>
+            width:"100%" , paddingTop:"40px", paddingBottom:"40px"}}>
            <Container sx={{ backgroundColor: color4,
                             paddingTop:"10px"}}>
                        <Stack direction="column"
@@ -42,7 +42,7 @@ const SatisfiedClients = () => {
                                    <Grid container
                                           justifyContent="center"
                                           alignItems="center"
-                                          spacing={8}>
+                                          spacing={isScreenSmall ? 8 : 2}>
                                           <Grid item xs={isScreenToBig ? 2 : isScreenBig ? 3 : isScreenSmall ? 4 : 6}>
                                                 <Item elevation={6} sx={{width:"150px", height:"100px"}}>
                                                       <img src={logoE1} alt="logo" width="150px" height="100px"/>
