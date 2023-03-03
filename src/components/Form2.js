@@ -411,7 +411,7 @@ const Form2 = () => {
                                                       </Select>
                                      </FormControl>
                                   </Grid>}
-                                  { isRegister && isPartenaire && 
+                                  { isRegister && isPartenaire && vehicule.TypeVehicule === "Camion de Transport" &&
                                   <Grid item xs={isNonMobile ? 6 : 12} >
                                        <FormControl fullWidth>
                                              <InputLabel id="demo-simple-select-label">Nom du Vehicule</InputLabel>
@@ -435,6 +435,34 @@ const Form2 = () => {
                                             <MenuItem value="Remorque conteneur"> Remorque conteneur  </MenuItem>
                                             <MenuItem value="Remorque bois ou camion grumier"> Remorque bois ou camion grumier   </MenuItem>
                                             <MenuItem value="Camion toupie  ou bétonnière"> Camion toupie  ou bétonnière </MenuItem>
+                                            <MenuItem value="Autre"> Autre </MenuItem>
+                                           
+                                                      </Select>
+                                     </FormControl>
+                                  </Grid>}
+                                  { isRegister && isPartenaire && vehicule.TypeVehicule === "ENGIN de Chantier BTP" &&
+                                  <Grid item xs={isNonMobile ? 6 : 12} >
+                                       <FormControl fullWidth>
+                                             <InputLabel id="demo-simple-select-label">Nom du Vehicule</InputLabel>
+                                                       <Select
+                                           labelId="demo-simple-select-label"
+                                           id="demo-simple-select"
+                                           value={vehicule.NomVehicule}
+                                           label="Type de Vehicule"
+                                           onChange={(e) =>{ setVehicule({...vehicule, NomVehicule: e.target.value,
+                                                                                      Proprietaire: user.fullName});
+                                                            isRegister ? dispatch(testRegister({user, vehicule})) :
+                                                                        dispatch(testLogin(userLogin))}}
+                                      >
+                                           <MenuItem value="Bulldozer"> Bulldozer  </MenuItem>
+                                            <MenuItem value="Compacteur lisse "> Compacteur lisse  </MenuItem>
+                                            <MenuItem value="Elévatrice mobile"> Elévatrice mobile </MenuItem>
+                                            <MenuItem value="Camion Grue "> Camion Grue  </MenuItem>
+                                            <MenuItem value="Camion niveleuse "> Camion niveleuse   </MenuItem>
+                                            <MenuItem value="Camion pelle chargeuse "> Camion pelle chargeuse  </MenuItem>
+                                            <MenuItem value="Pelle excavatrice ou pelleteuse"> Pelle excavatrice ou pelleteuse  </MenuItem>
+                                            <MenuItem value="Camion scraper ou décapeuse "> Camion scraper ou décapeuse   </MenuItem>
+                                            <MenuItem value="Tractopelle "> Tractopelle    </MenuItem>
                                             <MenuItem value="Autre"> Autre </MenuItem>
                                            
                                                       </Select>
