@@ -29,9 +29,9 @@ const SatisfiedClients = () => {
 
     return (
         <Box sx={{ backgroundColor: color4,
-            width:"100%" , paddingTop:"50px", paddingBottom:"60px"}}>
+            width:"95%" , paddingTop:"40px", paddingBottom:"40px"}}>
            <Container sx={{ backgroundColor: color4,
-                            paddingTop:"20px"}}>
+                            paddingTop:"10px"}}>
                        <Stack direction="column"
                               justifyContent="center"
                               alignItems="center"
@@ -41,7 +41,7 @@ const SatisfiedClients = () => {
                                                Ils nous font confiance!!!
                                     </Typography>
                               </Box>
-                              <Box sx={{paddingBottom:"50px"}}>
+                              <Box sx={{paddingBottom:"40px"}}>
                                    <Grid container
                                           justifyContent="center"
                                           alignItems="center"

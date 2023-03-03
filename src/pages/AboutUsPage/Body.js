@@ -53,7 +53,7 @@ const Body = () => {
                               paddingBottom:isScreenToBig ? "8%" : isScreenBig ? "8%" : "8%"}}>
                          <Grid container spacing={2}>
                               <Grid item xs={isScreenToBig ? 3 : isScreenBig ? 6 : 12}>
-                                    <Paper elevation={5} sx={{bgcolor:background3, width:"100%", height:"400px",
+                                    <Paper elevation={5} sx={{bgcolor:background3, width:"100%", height:"30rem",
                                            display:"flex", flexDirection:"column", justifyContent:"center",
                                            alignItems:"center", padding:"20px"}} > 
                                           <Typography variant="h4" sx={{color: background2, fontWeight:"bold", paddingBottom:"50px"}}>
@@ -67,7 +67,7 @@ const Body = () => {
                                     </Paper>
                               </Grid>
                               <Grid item xs={isScreenToBig ? 3 : isScreenBig ? 6 : 12}>
-                                   <Paper elevation={5} sx={{bgcolor:background2, width:"100%", height:"400px", 
+                                   <Paper elevation={5} sx={{bgcolor:background2, width:"100%", height:"30rem", 
                                                              marginTop:isScreenBig ? "50px" : "0px",
                                                              display:"flex", flexDirection:"column", justifyContent:"center",
                                                            alignItems:"center", padding:"20px"}} > 
@@ -88,7 +88,7 @@ const Body = () => {
                                     </Paper>
                               </Grid>
                               <Grid item xs={isScreenToBig ? 3 : isScreenBig ? 6 : 12}>
-                                    <Paper elevation={5} sx={{bgcolor:background3, width:"100%", height:"400px", 
+                                    <Paper elevation={5} sx={{bgcolor:background3, width:"100%", height:"30rem", 
                                                              marginTop:isScreenBig ? "100px" : "0px",
                                                              display:"flex", flexDirection:"column", justifyContent:"center",
                                                            alignItems:"center", padding:"20px"}} > 
@@ -108,7 +108,7 @@ const Body = () => {
                                     </Paper>
                               </Grid>
                               <Grid item xs={isScreenToBig ? 3 : isScreenBig ? 6 : 12}>
-                                    <Paper elevation={5} sx={{bgcolor:background4, width:"100%", height:"400px", 
+                                    <Paper elevation={5} sx={{bgcolor:background4, width:"100%", height:"30rem", 
                                                              marginTop:isScreenBig ? "150px" : "0px",
                                                              display:"flex", flexDirection:"column", justifyContent:"center",
                                                              alignItems:"center", padding:"20px"}} > 
@@ -254,18 +254,15 @@ const Body = () => {
                 <Box sx={{backgroundColor: background, width:"100%"}}>
                      <CamionList />
                 </Box>
-                <Box sx={{backgroundColor: background, width:"100%"}}>
-                    
-                </Box>
-                <Box position="absolute" sx={{top:isScreenBig ? "160%" : "420%", 
+                <Box position="absolute" sx={{top:isScreenBig ? "180%" : "430%", 
                                               left: isScreenBig ? "30%" : "30%" }}>
                      <img src={image0} alt="" width={isScreenBig ? "30%" : "50%"}  />
                 </Box>
-                <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "10%", 
-                                                         top:isScreenToBig ? "35%" : "70%"}}>
+                <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "20%", 
+                                                         top:isScreenToBig ? "35%" : "55%"}}>
                      <ContactBox1 />
                 </Box>
-                <Box position="absolute" sx={{top:isScreenBig ? "50%" : "420%", 
+                <Box position="absolute" sx={{top:isScreenBig ? "50%" : "430%", 
                                               left: isScreenBig ? "3%" : "30%" }}>
                      <img src={image0} alt="" width={isScreenBig ? "20%" : "50%"}  />
                 </Box>
