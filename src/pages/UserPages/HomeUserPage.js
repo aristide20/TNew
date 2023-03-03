@@ -68,6 +68,7 @@ const Body = () => {
                   setDisplay(false);
                   console.log(resp);
                   console.log(resp.data);
+                  console.log(resp.data.commandes);
                   if(resp.status === 200) {
                         setStatut(1);
                         console.log(statut);
@@ -115,32 +116,36 @@ const Body = () => {
         
     });*/
 
+    var tabDisplay = [];
 
-    const tabDisplay = filterData.map((item) => {
-        return ( 
-            <Accordion>
-                      <AccordionSummary   expandIcon={<ExpandMoreIcon />}
-                                          aria-controls="panel1a-content"
-                                          id="panel1a-header"
->
-                                         <Typography sx={{color:"black"}}> Commande {item._id} </Typography>
-                       </AccordionSummary>
-                              <AccordionDetails>
-                                      <Typography sx={{color:"black"}}>
-                                           Commanditaire: {item.commanditaire}
-                                      </Typography>
-                                      <Typography sx={{color:"black"}}>
-                                           Ville de départ: {item.villeDepart}
-                                      </Typography >
-                                      <Typography sx={{color:"black"}}>
-                                           Ville d'arrivée: {item.villeArrivee}
-                                      </Typography>
-                                      <Typography sx={{color:"black"}}>
-                                           Jour d'éxecution de la commande: {item.jourDepart}
-                                      </Typography>
-                     </AccordionDetails>
-            </Accordion>)
-    })
+     if(filterData.length > 0) { 
+          tabDisplay = filterData.map((item) => {
+               return ( 
+                   <Accordion>
+                             <AccordionSummary   expandIcon={<ExpandMoreIcon />}
+                                                 aria-controls="panel1a-content"
+                                                 id="panel1a-header"
+       >
+                                                <Typography sx={{color:"black"}}> Commande {item._id} </Typography>
+                              </AccordionSummary>
+                                     <AccordionDetails>
+                                             <Typography sx={{color:"black"}}>
+                                                  Commanditaire: {item.commanditaire}
+                                             </Typography>
+                                             <Typography sx={{color:"black"}}>
+                                                  Ville de départ: {item.villeDepart}
+                                             </Typography >
+                                             <Typography sx={{color:"black"}}>
+                                                  Ville d'arrivée: {item.villeArrivee}
+                                             </Typography>
+                                             <Typography sx={{color:"black"}}>
+                                                  Jour d'éxecution de la commande: {item.jourDepart}
+                                             </Typography>
+                            </AccordionDetails>
+                   </Accordion>)
+           })
+     }
+          
 
     
     
