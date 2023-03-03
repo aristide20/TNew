@@ -71,7 +71,7 @@ const Body = () => {
                   if(resp.status === 200) {
                         setStatut(1);
                         console.log(statut);
-                        setBrutData(resp.data);
+                        setBrutData(resp.data.commandes);
                         setFilterData( brutData.map((commande) => { if(user.fullName === commande.commanditaire) {
                               return commande
                         }}) ) 
@@ -181,7 +181,7 @@ const Body = () => {
                                </Button>    
                         </Paper>
                    </Grid>
-                   <Grid item xs={ isNonMobile ? 9 : 3}> <UserSpeedDial /> </Grid>
+                   <Grid item xs={ isNonMobile ? 9 : 3}>  </Grid>
                    <Grid item xs={isNonMobile ? 3 : 9}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
