@@ -98,10 +98,10 @@ export default function PrimarySearchAppBar() {
   };
 
   React.useEffect(() => {
-    if(loggedIn === -1) {  
+    if(loggedIn === -1) { 
+      navigate('/connexion'); 
       let cleanup = setTimeout(() => { dispatch(setLogout()); 
                                        console.log("useEffect pour logout"); 
-                                       navigate('/connexion');
                                        dispatch(setLoggedIn(0));}, 3000);
        console.log("remove dialog")
     return () => {
