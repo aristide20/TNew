@@ -113,6 +113,7 @@ export default function PrimarySearchAppBar() {
   const handleMenuClose2 = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
+    navigate('/user/profile')
   };
 
   const handleMobileMenuOpen = (event) => {
@@ -164,7 +165,7 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>{NavBarUserData.label05}</p>
       </MenuItem>
-      <MenuItem>
+      <MenuItem onClick={() => navigate('/user/vehicules')} >
         <IconButton
           size="large"
           aria-label="show 17 new notifications"

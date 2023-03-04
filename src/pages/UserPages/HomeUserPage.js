@@ -185,7 +185,6 @@ const Body = () => {
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
                    <Grid item xs={ isNonMobile ? 3 : 0}>  </Grid>
                    <Grid item xs={ isNonMobile ? 3 : 12}>
-                          <UserSpeedDial /> 
                    </Grid>
                    <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
                    <Grid item xs={isNonMobile ? 4 : 12}>
