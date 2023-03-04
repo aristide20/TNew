@@ -20,10 +20,11 @@ import { useNavigate } from 'react-router-dom';
 //import Stack from "@mui/material/Stack";
 import { NavBarUserData } from "../../components/data/data";
 import HailIcon from '@mui/icons-material/Hail';
-import BookIcon from '@mui/icons-material/Book';
+//import BookIcon from '@mui/icons-material/Book';
 import { color } from '../../theme';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLogout, setLoggedIn } from '../../state/UserSlice';
+import HomeIcon from '@mui/icons-material/Home';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -159,7 +160,17 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      
+      <MenuItem >
+        <IconButton
+          size="large"
+          aria-label="show 17 new notifications"
+          color="inherit"
+          onClick={() => navigate('/Accueil')}
+        >
+            <HailIcon />
+        </IconButton>
+        <p> Home </p>
+      </MenuItem>
       <MenuItem >
         <IconButton
           size="large"
@@ -169,7 +180,7 @@ export default function PrimarySearchAppBar() {
         >
             <HailIcon />
         </IconButton>
-        <p onClick={() => navigate('/user/vehicules')} >{isPartenaire ? NavBarUserData.label04 : NavBarUserData.label03}</p>
+        <p>{isPartenaire ? NavBarUserData.label04 : NavBarUserData.label03}</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -205,16 +216,18 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <IconButton size="large" aria-label="show 4 new mails" color="inherit" 
+                        onClick={() => navigate('/Accueil')}>
               <Badge >
-                <BookIcon />
+                <HomeIcon />
               </Badge>
-              <Typography sx={{fontSize:"16px"}} >{NavBarUserData.label05}</Typography>
+              <Typography sx={{fontSize:"16px"}} > Home </Typography>
             </IconButton>
             <IconButton
               size="large"
               aria-label="show 17 new notifications"
               color="inherit"
+              onClick={() => navigate('/user/vehicules')}
             >
                  <Badge>
               <HailIcon />
