@@ -1,6 +1,6 @@
 //import CssBaseline from '@mui/material/CssBaseline';
 import { color } from '../../../theme';
-import { Button, Typography, Grid, Avatar,
+import { Button, Typography, Grid, Avatar, Stack,
          Box, useMediaQuery, Paper, Dialog, DialogActions, 
           DialogContent, DialogContentText, DialogTitle, Container } from '@mui/material';
 import { useSelector } from "react-redux";
