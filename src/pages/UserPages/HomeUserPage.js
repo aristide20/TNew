@@ -17,6 +17,8 @@ import FormCommand from '../../components/FormCommand02';
 import UserSpeedDial from "../../components/UserDial";
 import CircularProgress from '@mui/material/CircularProgress';
 import * as api from "../../api/index";
+//import CheckIcon from '@mui/icons-material/Check';
+//import CloseIcon from '@mui/icons-material/Close';
 //import fond01 from "../../assets/fondLogo01.png";
 //import fond02 from "../../assets/fondLogo02.png";
 
@@ -120,12 +122,12 @@ const Body = () => {
      if(filterData.length > 0) { 
           tabDisplay = filterData.map((item) => {
                return ( 
-                   <Accordion>
+                   <Accordion sx={{width:"90%"}}>
                              <AccordionSummary   expandIcon={<ExpandMoreIcon />}
                                                  aria-controls="panel1a-content"
                                                  id="panel1a-header"
        >
-                                                <Typography sx={{color:"black"}}> Commande {item._id} </Typography>
+                                                <Typography sx={{color:"black"}}> Commande : {item._id} </Typography>
                               </AccordionSummary>
                                      <AccordionDetails>
                                              <Typography sx={{color:"black"}}>
@@ -139,6 +141,13 @@ const Body = () => {
                                              </Typography>
                                              <Typography sx={{color:"black"}}>
                                                   Jour d'éxecution de la commande: {item.jourDepart}
+                                             </Typography>
+                                             <Typography sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
+                                                                     item.isEnCours ? "orange" : "gray"}}>
+                                                  Statut de la Commande: {item.isDone ? "Exécutée avec succes" : 
+                                                                          item.isAvorted ? "Annulée" : 
+                                                                          item.isEnCours ? "En cours d'exécution..." :
+                                                                          "En Attente de confirmation..."}
                                              </Typography>
                             </AccordionDetails>
                    </Accordion>)
@@ -171,11 +180,13 @@ const Body = () => {
     // <img src={isNonMobile2 ? fond01 : fond02 } alt="logo"  width="100%"  />
 
     return (
-        <Box position="static" sx={{minHeight:"700px", width:"100%", marginTop:"100px",
+        <Box position="static" sx={{minHeight:"700px", width:"100%", marginTop:"20px",
               padding:isNonMobile ? "50px" : isNonMobile2 ? "25px" : "10px", marginBottom:"50px"  }}>
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
-             <Grid item xs={ isNonMobile ? 9 : 3}> <UserSpeedDial /> </Grid>
-                   <Grid item xs={isNonMobile ? 3 : 9}>
+                   <Grid item xs={ isNonMobile ? 3 : 0}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 12}> <UserSpeedDial /> </Grid>
+                   <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
+                   <Grid item xs={isNonMobile ? 4 : 12}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
                                <Button variant="text"
@@ -185,8 +196,9 @@ const Body = () => {
                                </Button>    
                         </Paper>
                    </Grid>
-                   <Grid item xs={ isNonMobile ? 9 : 3}>  </Grid>
-                   <Grid item xs={isNonMobile ? 3 : 9}>
+                   <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 7 : 0}>  </Grid>
+                   <Grid item xs={isNonMobile ? 4 : 12}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
                                <Button variant="text" sx={{color:color1, fontWeight:"bold"}}>
@@ -194,8 +206,9 @@ const Body = () => {
                                </Button>    
                         </Paper>
                    </Grid>
-                   <Grid item xs={ isNonMobile ? 9 : 3}></Grid>
-                   <Grid item xs={isNonMobile ? 3 : 9}>
+                   <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 7 : 0}>  </Grid>
+                   <Grid item xs={isNonMobile ? 4 : 12}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
                                <Button variant="text" onClick={handleClickOpen} sx={{color:color1, fontWeight:"bold"}}>
@@ -217,6 +230,7 @@ const Body = () => {
                                 </Dialog>
                         </Paper>
                    </Grid>
+                   <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
                    <Grid item xs={12}>
                          <Typography variant="h4" sx={{color:color2, fontWeight:"bold"}}>
                                    Tableau de Bord de vos commandes
@@ -226,7 +240,7 @@ const Body = () => {
                          <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "90%",
                                             minHeight: "400px",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
-                                            alignItems:"center", bgcolor:color1}}>
+                                            alignItems:"center", bgcolor:color2}}>
                                 { display && <CircularProgress /> }
                                 { statut === 1 && filterData.length === 0 &&
                                   <Container>

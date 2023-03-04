@@ -218,7 +218,7 @@ const FormCommand = () => {
                          <Button  disabled type="submit" sx={{backgroundColor:color3, marginTop:"20px"}}>
                                 Demarrer le devis 
                          </Button>}
-                         { error === 1 && <Alert severity="success"> Commande enregistree </Alert> }
+                         { error === 1 && <Alert severity="success"> Commande enregistrée </Alert> }
                          { error === -1 && <Alert severity="error"> telephone invalid Or Network error </Alert> }
                          { clicked &&   <Box sx={{ display: 'flex', flexDirection:"column", 
                                                    justifyContent:"center", alignItems:"center" }}>

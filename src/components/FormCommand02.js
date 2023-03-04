@@ -196,8 +196,8 @@ return (
                      <Button  disabled type="submit" sx={{backgroundColor:color3, marginTop:"20px"}}>
                             Demarrer le devis 
                      </Button>}
-                     { error === 1 && <Alert severity="success"> Login successfully </Alert> }
-                     { error === -1 && <Alert severity="error"> Credentials Errors or Network error </Alert> }
+                     { error === 1 && <Alert severity="success"> Commande enregistrée </Alert> }
+                     { error === -1 && <Alert severity="error"> Something went wrong, try again later... </Alert> }
                      { clicked &&   <Box sx={{ display: 'flex', flexDirection:"column", 
                                                    justifyContent:"center", alignItems:"center" }}>
                                              <CircularProgress />
