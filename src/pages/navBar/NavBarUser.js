@@ -159,12 +159,7 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-            <BookIcon />
-        </IconButton>
-        <p>{NavBarUserData.label05}</p>
-      </MenuItem>
+      
       <MenuItem >
         <IconButton
           size="large"

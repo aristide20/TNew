@@ -2,7 +2,7 @@
 import { color } from '../../theme';
 import { Button, Typography, Grid, Alert,
          Box, useMediaQuery, Paper, Dialog, DialogActions, 
-          DialogContent, DialogContentText, DialogTitle, Container } from '@mui/material';
+          DialogContent, DialogContentText, DialogTitle, Container, IconButton } from '@mui/material';
 import { useSelector } from "react-redux";
 import {useEffect, useState } from 'react';
 import Accordion from '@mui/material/Accordion';
@@ -17,6 +17,10 @@ import FormCommand from '../../components/FormCommand02';
 import UserSpeedDial from "../../components/UserDial";
 import CircularProgress from '@mui/material/CircularProgress';
 import * as api from "../../api/index";
+import CheckIcon from '@mui/icons-material/Check';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import StartIcon from '@mui/icons-material/Start';
+import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 //import CheckIcon from '@mui/icons-material/Check';
 //import CloseIcon from '@mui/icons-material/Close';
 //import fond01 from "../../assets/fondLogo01.png";
@@ -123,11 +127,16 @@ const Body = () => {
           tabDisplay = filterData.map((item) => {
                return ( 
                    <Accordion sx={{width:"90%"}}>
-                             <AccordionSummary   expandIcon={<ExpandMoreIcon />}
+                             <AccordionSummary   expandIcon={<ExpandMoreIcon /> }
                                                  aria-controls="panel1a-content"
                                                  id="panel1a-header"
        >
                                                 <Typography sx={{color:"black"}}> Commande : {item._id} </Typography>
+                                                <IconButton sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
+                                                                     item.isEnCours ? "orange" : "gray"}}> 
+                                                  { item.isDone ? <CheckIcon /> : 
+                                                               item.isAvorted ? <HighlightOffIcon /> : 
+                                                               item.isEnCours ? <StartIcon /> : <HourglassTopIcon /> } </IconButton>
                               </AccordionSummary>
                                      <AccordionDetails>
                                              <Typography sx={{color:"black"}}>
