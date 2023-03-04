@@ -47,7 +47,7 @@ function AnimatedRoutes() {
                   <Route path="/user/vehicules"  element={<Vehicules />} />
                   <Route path="/user/profile"  element={<Profile />} />
 
-                  <Route path="/admin/dashboard/2022/loggin"  element={<AuthPage />} />  
+                  <Route path="/admin/dashboard/2022/login"  element={<AuthPage />} />  
                   <Route path="/admin/dashboard/2022/Accueil"  element={<AuthPage />} />
                   <Route path="/admin/dashboard/2022/user/vehicules"  element={<AuthPage />} />
                   <Route path="/admin/dashboard/2022/user/profile"  element={<AuthPage />} />
