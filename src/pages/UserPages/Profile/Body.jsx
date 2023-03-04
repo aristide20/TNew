@@ -9,6 +9,12 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 //import { useDispatch } from "react-redux";
 //import Form from "../../components/Form2";
 //import { useNavigate } from 'react-router-dom';
@@ -20,6 +26,11 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 //import fond02 from "../../assets/fondLogo02.png";
 
 //import * as api from "../../api/index";
+
+
+function createData(champ, sep ,  valeur ) {
+    return { champ, sep, valeur};
+  }
 
 
 const Body = () => {
@@ -52,7 +63,13 @@ const Body = () => {
     console.log(commandes) */
 
     
-    
+    const rows = [
+        createData('Nom ', ":", `${user.fullName}` ),
+        createData('adresse email', ":", `${user.email}` ),
+        createData('Numero de telephone', ":", `${user.phoneNumber}` ),
+        createData('Type', ":", `${ user.isMoralPerson ? "Entreprise" : "Particulier" }` ),
+        createData('compte',":", `${ user.isPartner ? "Partenaire" : "Client" }` ),
+      ];
 
 
     const [open, setOpen] = useState(false);
@@ -89,11 +106,29 @@ const Body = () => {
                            </Stack>
                      </Grid>
                     <Grid item xs={isNonMobile ? 6 : 12}>
-                          <Typography> Nom : {user.fullName} </Typography>
-                          <Typography> adresse email : {user.email} </Typography>
-                          <Typography> telephone : {user.phoneNumber} </Typography>
-                          <Typography> Type : { user.isMoralPerson ? "Entreprise" : "Particulier" } </Typography>
-                          <Typography> compte : { user.isPartner ? "Partenaire" : "Client" } </Typography>
+                         <TableContainer component={Paper}>
+                                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                                      <TableHead>
+                                                <TableRow>
+                                                          <TableCell align="left">Champ</TableCell>
+                                                          <TableCell align="center">  </TableCell>
+                                                          <TableCell align="left">Valeur</TableCell>
+                                                </TableRow>
+                                      </TableHead>
+                                      <TableBody>
+                                            {rows.map((row) => (
+                                              <TableRow
+                                                     key={row.name}
+                                                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }} >
+                                                    <TableCell component="th" scope="row">
+                                                              {row.champ}
+                                                    </TableCell>
+                                                    <TableCell align="center">{row.sep}</TableCell>
+                                                    <TableCell align="left">{row.valeur}</TableCell>
+                                              </TableRow> ))}
+                                    </TableBody>
+                                </Table>
+                          </TableContainer>
                     </Grid>
               </Grid>
               <Paper>

@@ -165,15 +165,16 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>{NavBarUserData.label05}</p>
       </MenuItem>
-      <MenuItem onClick={() => navigate('/user/vehicules')} >
+      <MenuItem >
         <IconButton
           size="large"
           aria-label="show 17 new notifications"
           color="inherit"
+          onClick={() => navigate('/user/vehicules')}
         >
             <HailIcon />
         </IconButton>
-        <p>{isPartenaire ? NavBarUserData.label04 : NavBarUserData.label03}</p>
+        <p onClick={() => navigate('/user/vehicules')} >{isPartenaire ? NavBarUserData.label04 : NavBarUserData.label03}</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
