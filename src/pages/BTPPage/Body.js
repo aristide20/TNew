@@ -33,17 +33,19 @@ const Body = () => {
               <div className="btptop">
                    <Box  sx={{ width:isSmallScreen2 ? "80%" : "90%", display:"flex", flexDirection:"column",
                           justifyContent:"center", alignItems:"center", 
-                          paddingTop:"8%", paddingLeft:"10%" }}>
-                             <Grid container justifyContent="center" alignItems="center" spacing={10}>
+                          paddingTop:"8%", paddingLeft:"7%" }}>
+                             <Grid container justifyContent="center" alignItems="center" spacing={8}>
                                    <Grid item xs={isSmallScreen2 ? 1 : 0} ></Grid>
                                    <Grid item xs={isSmallScreen2 ? 6 : 12} sx={{width:"100%"}}>
-                                         <Typography variant="h3" sx={{color:"white", fontWeight:"bold", marginBottom:"3rem"}}>
-                                                  Optimiser les couts est le défi majeur de tout entrepreneur 
-                                                  dans le BTP. 
+                                         <Typography variant={isSmallScreen2 ? "h3" : "h4"} 
+                                                     sx={{ color:"black", fontWeight:"bold", marginBottom:"3rem" }}>
+                                                     Optimiser les couts est le défi majeur de tout entrepreneur 
+                                                     dans le BTP. 
                                          </Typography>
-                                         <Typography variant="paragraph" sx={{color:"white", fontSize:"24px"}}>
-                                                Choisissez nos solutions sur mesures 
-                                                pour tous vos travaux (Terrassement,VRD, assainissement, levage... )!!
+                                         <Typography variant="paragraph" sx={{color:"black", 
+                                                     fontSize:isSmallScreen2 ? "24px" : "20px"}}>
+                                                     Choisissez nos solutions sur mesures pour tous vos travaux 
+                                                     (Terrassement,VRD, assainissement, levage... )!!
                                          </Typography>
                                    </Grid>
                                    <Grid item xs={isSmallScreen2 ? 5 : 12} sx={{width:"90%"}} >

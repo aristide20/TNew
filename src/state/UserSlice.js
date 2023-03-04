@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 				
 const initialState = { 
 	user:null,
+	loggedIn: 0,
 	commandes:[],
 	vehicules:[],
 	isMobileMenuToggled: false,
@@ -21,6 +22,9 @@ const UserSlice = createSlice({
 							},
 							setLogout: (state ) => { 
 								state.user = null;
+							},
+							setLoggedIn: (state, action) => {
+								state.loggedIn = action.payload;
 							},
 							loginStatut: (state, action) => { state.loginStatut=action.payload;},
 							loginSuccess: (state) => { state.loginStatut = true;
@@ -136,7 +140,8 @@ export const { setLogin,
 			   makeCommand,  
 			   deleteCommand,
 			   getCommands, 
-			   modifyCommand, 
+			   modifyCommand,
+			   setLoggedIn, 
 			   updateVehicule, 
 			   AddVehicule,
 			   testRegister,

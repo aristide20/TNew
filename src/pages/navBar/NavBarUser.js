@@ -23,7 +23,7 @@ import HailIcon from '@mui/icons-material/Hail';
 import BookIcon from '@mui/icons-material/Book';
 import { color } from '../../theme';
 import { useDispatch, useSelector } from 'react-redux';
-import { setLogout } from '../../state/UserSlice';
+import { setLogout, setLoggedIn } from '../../state/UserSlice';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -73,7 +73,7 @@ export default function PrimarySearchAppBar() {
   const userLoggedIn = useSelector((state) => state.persistedReducer.user);
   console.log(userLoggedIn);
   const isPartenaire = userLoggedIn !== undefined ? userLoggedIn.isPartner ? true : false : false;
-  const [login, setLogin] = React.useState(true);
+  const loggedIn = useSelector((state) => state.persistedReducer.loggedIn);
  // console.log(isPartenaire);
 
     const navigate = useNavigate();
@@ -94,13 +94,12 @@ export default function PrimarySearchAppBar() {
   const handleMenuClose1 = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
-    dispatch(setLogout())
-    setLogin(true);
+    dispatch(setLoggedIn(-1));
   };
 
   React.useEffect(() => {
-    if(login) { dispatch(setLogout()); console.log("useEffect pour logout"); navigate('/connexion'); }
-  },[login])
+    if(loggedIn === -1) { dispatch(setLogout()); console.log("useEffect pour logout"); navigate('/connexion'); }
+  },[loggedIn])
 
   const handleMenuClose2 = () => {
     setAnchorEl(null);

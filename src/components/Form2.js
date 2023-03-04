@@ -2,7 +2,7 @@ import { Button, Typography, Paper, TextField, useMediaQuery, Box, Grid,
             Select, MenuItem, InputLabel,
          Alert} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setLogin, loginSuccess, loginError, testLogin,  testRegister, loginStatut, setLogout } from "../state/UserSlice";
+import { setLogin, loginSuccess, loginError, setLoggedIn, testLogin,  testRegister, loginStatut, setLogout } from "../state/UserSlice";
 import { color } from "../theme";
 import { useState, useEffect } from "react";
 import { Container } from "@mui/system";
@@ -250,10 +250,8 @@ const Form2 = () => {
                 else { setNumberError(true); }
                 
             }  
-             else { setEmailError(true); }
-            
+             else { setEmailError(true); }   
         }
-       
 
         if(isLogin) {
 
@@ -269,6 +267,7 @@ const Form2 = () => {
                             dispatch(getCommands());
                             setError(1);
                              dispatch(loginSuccess());
+                             dispatch(setLoggedIn(1));
                             setUserLogin(initialValuesLogin); }
                         //else if(Response === undefined) { setError(-1) }                                                               
                                                                                         })
