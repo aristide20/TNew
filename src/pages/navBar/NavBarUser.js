@@ -98,8 +98,17 @@ export default function PrimarySearchAppBar() {
   };
 
   React.useEffect(() => {
-    if(loggedIn === -1) { dispatch(setLogout()); console.log("useEffect pour logout"); navigate('/connexion'); }
-  },[loggedIn])
+    if(loggedIn === -1) {  
+      let cleanup = setTimeout(() => { dispatch(setLogout()); 
+                                       console.log("useEffect pour logout"); 
+                                       navigate('/connexion');
+                                       dispatch(setLoggedIn(0));}, 3000);
+       console.log("remove dialog")
+    return () => {
+         clearInterval(cleanup)
+     }
+       }
+  })
 
   const handleMenuClose2 = () => {
     setAnchorEl(null);
