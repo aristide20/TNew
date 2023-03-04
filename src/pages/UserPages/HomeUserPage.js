@@ -58,7 +58,7 @@ const Body = () => {
     const [brutData, setBrutData] = useState([]);
     const [filterData, setFilterData] = useState([]);
     const [statut, setStatut] = useState(0);
-    const [login, setLogin] = useState(true);
+    //const [login, setLogin] = useState(true);
 
     
 
@@ -184,7 +184,9 @@ const Body = () => {
               padding:isNonMobile ? "50px" : isNonMobile2 ? "25px" : "10px", marginBottom:"50px"  }}>
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
                    <Grid item xs={ isNonMobile ? 3 : 0}>  </Grid>
-                   <Grid item xs={ isNonMobile ? 3 : 12}> <UserSpeedDial /> </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 12}>
+                          <UserSpeedDial /> 
+                   </Grid>
                    <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
                    <Grid item xs={isNonMobile ? 4 : 12}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
@@ -193,16 +195,6 @@ const Body = () => {
                                        onClick={() => handleDisplay()} 
                                        sx={{color:color1, fontWeight:"bold"}}>
                                       Afficher vos commandes
-                               </Button>    
-                        </Paper>
-                   </Grid>
-                   <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
-                   <Grid item xs={ isNonMobile ? 7 : 0}>  </Grid>
-                   <Grid item xs={isNonMobile ? 4 : 12}>
-                        <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
-                                                   alignItems:"center", bgcolor:color2}}>
-                               <Button variant="text" sx={{color:color1, fontWeight:"bold"}}>
-                                      { user !== undefined ? user.isPartner ?"Liste Vehicules" : "Devenir Partenaire" : "vide"}
                                </Button>    
                         </Paper>
                    </Grid>

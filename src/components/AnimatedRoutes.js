@@ -15,7 +15,8 @@ import HomeUserPage from "../pages/UserPages/index";
 import OurTeamPage from "../pages/OurTeam/index";
 import OurSolutionsPage from "../pages/OurSolutions/index";
 import Recrutement from "../pages/Recrutement/index";
-import Vehicules from "../pages/UserPages/Partner/index"
+import Vehicules from "../pages/UserPages/Partner/index";
+import Profile from "../pages/UserPages/Profile/index"
 import {Routes, Route, useLocation } from 'react-router-dom';
 
 import { AnimatePresence } from 'framer-motion';
@@ -42,7 +43,8 @@ function AnimatedRoutes() {
 
                   <Route path="/connexion"  element={<UserLoginPage />} />  
                   <Route path="/Accueil"  element={<HomeUserPage />} />
-                  <Route path="//user/vehicules"  element={<Vehicules />} />
+                  <Route path="/user/vehicules"  element={<Vehicules />} />
+                  <Route path="/user/profile"  element={<Profile />} />
                   
         </Routes>
     </AnimatePresence>

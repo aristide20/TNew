@@ -32,7 +32,7 @@ const Body = () => {
               <CssBaseline />
               <div className="btptop">
                    <Box  sx={{ width:isSmallScreen2 ? "80%" : "90%", display:"flex", flexDirection:"column",
-                          justifyContent:"center", alignItems:"center", 
+                          justifyContent:"center", alignItems:"center", paddingBottom:isSmallScreen2 ? "0%" : "20px",
                           paddingTop:"8%", paddingLeft:"7%" }}>
                              <Grid container justifyContent="center" alignItems="center" spacing={8}>
                                    <Grid item xs={isSmallScreen2 ? 1 : 0} ></Grid>
