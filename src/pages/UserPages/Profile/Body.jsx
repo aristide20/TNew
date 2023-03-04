@@ -49,9 +49,8 @@ const Body = () => {
                           <Stack direction="column" justifyContent="center" alignItems="center">
                                  <Avatar sx={{ width: 180, 
                                                height: 180, marginBottom:"20px" }} 
-                                               src={ <IconButton sx={{color:color2}} >
-                                                                <AccountCircleIcon />
-                                                      </IconButton>} />
+                                               src={ <AccountCircleIcon color="success" />
+                                                      } />
                                  <Typography> id : {user._id} </Typography>
                            </Stack>
                      </Grid>
