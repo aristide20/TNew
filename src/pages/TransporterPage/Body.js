@@ -172,9 +172,9 @@ const Body = () => {
                                    Devenir Partenaire
                          </Button>
                     </Box>
-                <Box position="absolute" sx={{width:"20%", top:isSmallScreen2 ? "20%" : "6%", 
-                                                           left:isSmallScreen2 ? "75%" : "50%"}}>
-                    <img src={image2} alt="" width="80%" />
+                <Box position="absolute" sx={{width:"25%", top:isSmallScreen2 ? "20%" : "6%", 
+                                                           left:isSmallScreen2 ? "70%" : "50%"}}>
+                    <img src={image2} alt="" width={isSmallScreen2 ? "90%" : "10%"} />
                 </Box>
                    {!isSmallScreen && isMobileMenuToggledState && <MobileMenuBox />}
           </Box>

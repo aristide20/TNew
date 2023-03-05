@@ -5,7 +5,7 @@ import { Typography, Box, Stack, useMediaQuery, Grid, Paper } from '@mui/materia
 import { useSelector } from "react-redux";
 //import {useState } from 'react';
 import ContactBox1 from "../../components/ContactBox1";
-//import image1 from "../../assets/camion05c.PNG";
+import image1 from "../../assets/camion05c.PNG";
 import image2 from "../../assets/btp01b.PNG";
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -14,7 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import CamionList from "../../components/CamionList";
 import image0 from "../../assets/Truck01.png";
-import image1 from "../../assets/Truck01b.png";
+import image01 from "../../assets/Truck01b.png";
 import NewsLetter from "../../components/NewsLetter";
 
 
@@ -261,7 +261,7 @@ const Body = () => {
                 </Box>
                 <Box position="absolute" sx={{top:isScreenBig ? "50%" : "430%", 
                                               left: isScreenBig ? "3%" : "30%" }}>
-                     <img src={image1} alt="" width={isScreenBig ? "20%" : "50%"}  />
+                     <img src={image01} alt="" width={isScreenBig ? "30%" : "50%"}  />
                 </Box>
                 <Box>
                     <NewsLetter />

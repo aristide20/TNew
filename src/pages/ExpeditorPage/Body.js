@@ -67,8 +67,9 @@ const Body = () => {
                 <Box sx={{paddingTop: "100px", paddingBottom:"60px"}}>
                 <Grid container spacing={0}>
                           <Grid item xs={isSmallScreen2 ? 3 : 0} >
-                                <Box sx={{paddingTop:isSmallScreen ? "100px" : "0px", paddingLeft:"10px"}}> 
-                                     <img src={image2} alt="" width="60%" />
+                                <Box sx={{paddingTop:isSmallScreen ? "100px" : "0px", 
+                                         paddingLeft: isSmallScreen ?"10px" : "20%"}}> 
+                                     <img src={image2} alt="" width="90%" />
                                 </Box>
                           </Grid>
                           <Grid item xs={isSmallScreen2 ? 6 : 12}>
@@ -130,7 +131,7 @@ const Body = () => {
                     </Stack>
                     </Grid>
                     <Grid item xs={isSmallScreen2 ? 3 : 0}>
-                         <Box sx={{paddingTop:"300px", paddingLeft:"80px"}}>
+                         <Box sx={{paddingTop:isSmallScreen2 ? "300px" : "100px", paddingLeft:"80px"}}>
                                <img src={image1} alt="" width="60%" />
                           </Box>
                     </Grid>

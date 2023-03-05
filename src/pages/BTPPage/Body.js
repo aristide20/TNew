@@ -38,11 +38,11 @@ const Body = () => {
                                    <Grid item xs={isSmallScreen2 ? 1 : 0} ></Grid>
                                    <Grid item xs={isSmallScreen2 ? 6 : 12} sx={{width:"100%"}}>
                                          <Typography variant={isSmallScreen2 ? "h3" : "h4"} 
-                                                     sx={{ color:"black", fontWeight:"bold", marginBottom:"3rem" }}>
+                                                     sx={{ color:"white", fontWeight:"bold", marginBottom:"3rem" }}>
                                                      Optimiser les couts est le défi majeur de tout entrepreneur 
                                                      dans le BTP. 
                                          </Typography>
-                                         <Typography variant="paragraph" sx={{color:"black", 
+                                         <Typography variant="paragraph" sx={{color:"white", 
                                                      fontSize:isSmallScreen2 ? "24px" : "20px"}}>
                                                      Choisissez nos solutions sur mesures pour tous vos travaux 
                                                      (Terrassement,VRD, assainissement, levage... )!!

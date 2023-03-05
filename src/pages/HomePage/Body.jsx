@@ -145,14 +145,16 @@ return(
                 paddingBottom: "100px",
                 color: "gray"}}>
                 <ImagesBoxHome />
-           <Box sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
-               <Grid container display="flex" justifyContent="center" alignItems="center" > 
-                     <Grid item xs={isSmallScreen ? 2 : 0} ></Grid>
-                     <Grid item xs={isSmallScreen ? 6 : 12} >
+           <Box sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", paddingLeft:"10px"}}>
+               <Grid container display="flex" justifyContent="center" alignItems="center" spacing={2} > 
+                     <Grid item xs={isSmallScreen ? 1 : 0} ></Grid>
+                     <Grid item xs={isSmallScreen ? 7 : 12} >
                             <MotDirection />
                      </Grid>
-                     <Grid item xs={isSmallScreen ? 4 : 12} >
-                            <img src={image2} alt="" width="60%" />
+                     <Grid item xs={isSmallScreen ? 4 : 12} sx={{paddingLeft:"15px"}} >
+                           <Box> 
+                                 <img src={image2} alt="" width="80%" />
+                            </Box>
                      </Grid>
                </Grid>
            </Box>

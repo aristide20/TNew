@@ -24,7 +24,7 @@ import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 //import Form from "../../components/Form2";
 //import { useNavigate } from 'react-router-dom';
 //import logo from "../../assets/logo.png";
-import FormCommand from '../../../components/FormVehicule';
+import FormVehicule from '../../../components/FormVehicule';
 //import UserSpeedDial from "../../../components/UserDial";
 //import fond01 from "../../assets/fondLogo01.png";
 //import fond02 from "../../assets/fondLogo02.png";
@@ -185,7 +185,7 @@ const Body = () => {
                                       <DialogTitle> Enregistrez un Véhicule </DialogTitle>
                                       <DialogContent>
                                                     
-                                                      <FormCommand />
+                                                      <FormVehicule />
                                       </DialogContent>
                                                     <DialogActions>
                                                                    <Button onClick={handleClose}>Annuler</Button>
@@ -213,6 +213,8 @@ const Body = () => {
                    <Grid item xs={12}>
                    <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "90%",
                                             minHeight: "400px",
+                                            paddingTop:"50px",
+                                            paddingBottom:"50px",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
                                 { display && <CircularProgress /> }

@@ -239,6 +239,8 @@ const Body = () => {
                    <Grid item xs={12}>
                          <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "90%",
                                             minHeight: "400px",
+                                            paddingTop:"50px",
+                                            paddingBottom:"50px",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
                                 { display && <CircularProgress /> }
