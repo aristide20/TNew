@@ -1,10 +1,10 @@
 //import CssBaseline from '@mui/material/CssBaseline';
-import { color } from '../../theme';
+import { color } from '../../../theme';
 import { Button, Typography, Grid, Alert,
          Box, useMediaQuery, Paper, Dialog, DialogActions, 
-          DialogContent, DialogContentText, DialogTitle, Container, IconButton } from '@mui/material';
+          DialogContent, DialogTitle, Container, IconButton } from '@mui/material';
 import { useSelector } from "react-redux";
-import {useEffect, useState } from 'react';
+import { useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
