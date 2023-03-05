@@ -24,7 +24,7 @@ export const updateUser = async (data) => { await axiosConfig.put('/admin/users'
 
 
 export const createVehicule = async (vehicule) => { return await axiosConfig.post('/vehicules', vehicule)}
-export const fetchVehicules = async () => { await axiosConfig.get('/vehicules', { headers: {Accept:'application/json',}}) }
+export const getAllVehicules = async () => { return await axiosConfig.get('/vehicules', { headers: {Accept:'application/json',}}) }
 
 
 

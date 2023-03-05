@@ -20,6 +20,7 @@ import fond from "../../assets/fondT02.png";
 import fond2 from "../../assets/fondT03.png";
 import Form from "../../components/Form4";
 import image1 from "../../assets/Truck01.png";
+import image2 from "../../assets/Truck01b.png";
 
 
 const Body = () => {
@@ -173,11 +174,7 @@ const Body = () => {
                     </Box>
                 <Box position="absolute" sx={{width:"20%", top:isSmallScreen2 ? "20%" : "6%", 
                                                            left:isSmallScreen2 ? "75%" : "50%"}}>
-                    <img src={image1} alt="" width="80%" />
-                </Box>
-                <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "85%": "98%", 
-                                                           left: isSmallScreen2 ? "80%" : "80%"}}>
-                    <img src={image1} alt="" width="50%" />
+                    <img src={image2} alt="" width="80%" />
                 </Box>
                    {!isSmallScreen && isMobileMenuToggledState && <MobileMenuBox />}
           </Box>

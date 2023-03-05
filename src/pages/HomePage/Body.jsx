@@ -10,6 +10,7 @@ import SatisfiedClients from "../../components/SatisfiedClients";
 import { useNavigate } from 'react-router-dom';
 import MotDirection from "../../components/motDirection";
 import image1 from "../../assets/Truck01.png";
+import image2 from "../../assets/Truck01b.png";
 import { useState } from 'react';
 import './body.css';
 import FormCommand from '../../components/FormCommand02';
@@ -145,22 +146,26 @@ return(
                 color: "gray"}}>
                 <ImagesBoxHome />
            <Box sx={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
-                <MotDirection />
+               <Grid container display="flex" justifyContent="center" alignItems="center" > 
+                     <Grid item xs={isSmallScreen ? 2 : 0} ></Grid>
+                     <Grid item xs={isSmallScreen ? 6 : 12} >
+                            <MotDirection />
+                     </Grid>
+                     <Grid item xs={isSmallScreen ? 4 : 12} >
+                            <img src={image2} alt="" width="60%" />
+                     </Grid>
+               </Grid>
            </Box>
      </Box>
      <Box sx={{ width:"100%",  
                 color: "black"}}>
                 <NewsLetter />
      </Box>
-     <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "15%" : "3%", 
+     <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "15%" : "4%", 
                                                 left: isSmallScreen2 ? "80%" : "55%"}}>
           <img src={image1} alt="" width= {isSmallScreen2 ? "60%" : "120%"} />
       </Box>
-      <Box position="absolute" sx={{width:isSmallScreen2 ? "25%" : "40%", 
-                                   top:isSmallScreen2 ? "28%" : "5%", 
-                                   left:isSmallScreen2 ? "30%" : "60%"}}>
-          <img src={image1} alt="" width="60%" />
-      </Box>
+      
      {!isSmallScreen && isMobileMenuToggledState && <MobileMenuBox />}
 </Box>
 )

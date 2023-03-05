@@ -14,6 +14,7 @@ import ListItemText from '@mui/material/ListItemText';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
 import CamionList from "../../components/CamionList";
 import image0 from "../../assets/Truck01.png";
+import image1 from "../../assets/Truck01b.png";
 import NewsLetter from "../../components/NewsLetter";
 
 
@@ -254,17 +255,13 @@ const Body = () => {
                 <Box sx={{backgroundColor: background, width:"100%"}}>
                      <CamionList />
                 </Box>
-                <Box position="absolute" sx={{top:isScreenBig ? "180%" : "430%", 
-                                              left: isScreenBig ? "30%" : "30%" }}>
-                     <img src={image0} alt="" width={isScreenBig ? "30%" : "50%"}  />
-                </Box>
                 <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "20%", 
                                                          top:isScreenToBig ? "35%" : "55%"}}>
                      <ContactBox1 />
                 </Box>
                 <Box position="absolute" sx={{top:isScreenBig ? "50%" : "430%", 
                                               left: isScreenBig ? "3%" : "30%" }}>
-                     <img src={image0} alt="" width={isScreenBig ? "20%" : "50%"}  />
+                     <img src={image1} alt="" width={isScreenBig ? "20%" : "50%"}  />
                 </Box>
                 <Box>
                     <NewsLetter />
@@ -275,3 +272,13 @@ const Body = () => {
     }
     
     export default Body;
+
+/**
+ * 
+ 
+ <Box position="absolute" sx={{top:isScreenBig ? "180%" : "430%", 
+                                              left: isScreenBig ? "30%" : "30%" }}>
+                     <img src={image0} alt="" width={isScreenBig ? "30%" : "50%"}  />
+                </Box>
+
+ */

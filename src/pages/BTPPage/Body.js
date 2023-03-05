@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { color} from '../../theme';
 import { Typography, Box, Container, useMediaQuery, Grid } from '@mui/material';
 import {  useSelector } from "react-redux";
-import fondBTP from "../../assets/btp01.png";
+//import fondBTP from "../../assets/btp01.png";
 import SatisfiedClients02 from "../../components/SatisfiedClients02";
 import BTPEngineList from "../../components/BTPEnginesList";
 import CommandEnginsBox from "../../components/CommandEnginsBox";
@@ -63,22 +63,7 @@ const Body = () => {
               <Box >
                    <CommandEnginsBox />
               </Box>
-              
-              <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 
-                                            top:isSmallScreen2 ? "620px" : "920px", 
-                                             left:isSmallScreen2 ? "100px" : "100px"}}>
-                    <img src={image1} alt="" width="60%" />
-                </Box>
-                <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 
-                                              top:isSmallScreen2 ? "2500px" : "73.6%", 
-                                              left:isSmallScreen2 ? "100px" : "30%"}}>
-                    <img src={image1} alt="" width="50%" />
-                </Box>
-                <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 
-                                              top:isSmallScreen2 ? "1050px" : "1650px", 
-                                              left:isSmallScreen2 ? "1050px" : "150px"}}>
-                    <img src={image1} alt="" width="60%" />
-                </Box>
+          
                    {!isSmallScreen && isMobileMenuToggledState && <MobileMenuBox />}
           </Box>
         )
@@ -99,7 +84,24 @@ const Body = () => {
                          top:haut2,
                          left:haut3 }}>
               </Box>
-              
+      
+     
+               <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 
+                                            top:isSmallScreen2 ? "620px" : "920px", 
+                                             left:isSmallScreen2 ? "100px" : "100px"}}>
+                    <img src={image1} alt="" width="60%" />
+                </Box>
+                <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 
+                                              top:isSmallScreen2 ? "2500px" : "73.6%", 
+                                              left:isSmallScreen2 ? "100px" : "30%"}}>
+                    <img src={image1} alt="" width="50%" />
+                </Box>
+                <Box position="absolute" sx={{width:isSmallScreen2 ? "20%" : "60%", 
+                                              top:isSmallScreen2 ? "1050px" : "1650px", 
+                                              left:isSmallScreen2 ? "1050px" : "150px"}}>
+                    <img src={image1} alt="" width="60%" />
+                </Box>
+
 
               
      */

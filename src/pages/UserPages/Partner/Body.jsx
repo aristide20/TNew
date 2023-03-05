@@ -2,7 +2,7 @@
 import { color } from '../../../theme';
 import { Button, Typography, Grid,
          Box, useMediaQuery, Paper, Dialog, DialogActions, 
-          DialogContent, DialogContentText, DialogTitle, Container } from '@mui/material';
+          DialogContent, DialogTitle, Container } from '@mui/material';
 import { useSelector } from "react-redux";
 import {useState } from 'react';
 import Accordion from '@mui/material/Accordion';
@@ -13,8 +13,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 //import Form from "../../components/Form2";
 //import { useNavigate } from 'react-router-dom';
 //import logo from "../../assets/logo.png";
-import FormCommand from '../../../components/FormCommand02';
-import UserSpeedDial from "../../../components/UserDial";
+import FormCommand from '../../../components/FormVehicule';
+//import UserSpeedDial from "../../../components/UserDial";
 //import fond01 from "../../assets/fondLogo01.png";
 //import fond02 from "../../assets/fondLogo02.png";
 
@@ -50,6 +50,91 @@ const Body = () => {
     console.log(CommData)
     console.log(commandes) */
 
+    const [display, setDisplay] = useState(true);
+    const [brutData, setBrutData] = useState([]);
+    const [filterData, setFilterData] = useState([]);
+    const [statut, setStatut] = useState(0);
+
+
+    const handleDisplay = () => {
+
+      setDisplay(true);
+
+        try {
+            api.getAllVehicules().then((resp) => {
+                  setDisplay(false);
+                  console.log(resp);
+                  console.log(resp.data);
+                  console.log(resp.data.vehicules);
+                  if(resp.status === 200) {
+                        setStatut(1);
+                        console.log(statut);
+                        setBrutData(resp.data.vehicules);
+                        setFilterData( brutData.filter((item) => { return item.Proprietaire === user.fullName }) ) 
+                        console.log(brutData);
+                        console.log(filterData);
+                  }
+            }).catch((error) => {
+                  setStatut(-1);
+                  setDisplay(false);
+                  console.log(statut);
+                  console.log(error);
+                  console.log(error.name);
+                  console.log(error.code);
+            })
+        } catch (error) {
+            setStatut(-2);
+            setDisplay(false);
+            console.log(statut);
+            console.log(error);
+            console.log(error.name);
+            console.log(error.code);
+        }
+        
+    }
+
+
+    var tabDisplay = [];
+
+     if(filterData.length > 0) { 
+          tabDisplay = filterData.map((item) => {
+               return ( 
+                   <Accordion sx={{width:"90%"}}>
+                             <AccordionSummary   expandIcon={<ExpandMoreIcon /> }
+                                                 aria-controls="panel1a-content"
+                                                 id="panel1a-header"
+       >
+                                                <Typography sx={{color:"black"}}> Commande : {item._id} </Typography>
+                                                <IconButton sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
+                                                                     item.isEnCours ? "orange" : "gray"}}> 
+                                                  { item.isDone ? <CheckIcon /> : 
+                                                               item.isAvorted ? <HighlightOffIcon /> : 
+                                                               item.isEnCours ? <StartIcon /> : <HourglassTopIcon /> } </IconButton>
+                              </AccordionSummary>
+                                     <AccordionDetails>
+                                             <Typography sx={{color:"black"}}>
+                                                  Proprietaire: {item.Proprietaire}
+                                             </Typography>
+                                             <Typography sx={{color:"black"}}>
+                                                  Type de véhicule: {item.TypeVehicule}
+                                             </Typography >
+                                             <Typography sx={{color:"black"}}>
+                                                  Nom du Véhicule: {item.NomVehicule}
+                                             </Typography>
+                                             <Typography sx={{color:"black"}}>
+                                                  Immatriculation: {item.Immatriculation}
+                                             </Typography>
+                                             <Typography sx={{color:"black"}}>
+                                                  Enregistrée le: {item.Immatriculation}
+                                             </Typography>
+                                             <Typography sx={{color: item.isReadyToWork ? "green" :  "red"}}>
+                                                  Statut: {item.isReadyToWork ? "Actif" : 
+                                                                "Inactif"}
+                                             </Typography>
+                            </AccordionDetails>
+                   </Accordion>)
+           })
+     }
     
     
 
@@ -78,80 +163,68 @@ const Body = () => {
         <Box position="static" sx={{minHeight:"700px", width:"100%", marginTop:"100px",
               padding:isNonMobile ? "50px" : isNonMobile2 ? "25px" : "10px", marginBottom:"50px"  }}>
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
-                   <Grid item xs={ isNonMobile ? 9 : 3}> <UserSpeedDial /> </Grid>
-                   <Grid item xs={isNonMobile ? 3 : 9}>
+                   <Grid item xs={ isNonMobile ? 6 : 3}>  </Grid>
+                   <Grid item xs={isNonMobile ? 3 : 7}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
                                <Button variant="text" sx={{color:color1, fontWeight:"bold"}}>
-                                      { user !== undefined ? user.isPartner ?"Liste Vehicules" : "Devenir Partenaire" : "vide"}
-                               </Button>    
-                        </Paper>
-                   </Grid>
-                   <Grid item xs={ isNonMobile ? 9 : 3}></Grid>
-                   <Grid item xs={isNonMobile ? 3 : 9}>
-                        <Paper elevation={5} sx={{ display:"flex", justifyContent:"center", width:"90%",
-                                                   alignItems:"center", bgcolor:color2}}>
-                               <Button variant="text" onClick={handleClickOpen} sx={{color:color1, fontWeight:"bold"}}>
-                                      Commander un Camion
+                                      { user !== undefined ? user.isPartner ?"Ajouter un Vehicule" : "Devenir Partenaire" : "vide"}
                                </Button>
                                <Dialog open={open} onClose={handleClose}>
-                                      <DialogTitle>Commande</DialogTitle>
+                                      <DialogTitle> Enregistrez un Véhicule </DialogTitle>
                                       <DialogContent>
-                                                    <DialogContentText>
-                                                            Precisez nous vos besoins et un agent vous contactera dans 
-                                                            l'heure pour finaliser votre commande!!
-                                                    </DialogContentText>
-                                                                       <FormCommand />
+                                                    
+                                                      <FormCommand />
                                       </DialogContent>
                                                     <DialogActions>
                                                                    <Button onClick={handleClose}>Annuler</Button>
                                                                    <Button onClick={handleClose}>Confirmer</Button>
                                                     </DialogActions>
-                                </Dialog>
+                                </Dialog>    
                         </Paper>
                    </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 2}> </Grid>
+                   <Grid item xs={ isNonMobile ? 6 : 3}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 7}> 
+                         <Button  variant="contained"
+                                       onClick={handleDisplay} 
+                                       sx={{color:color1, fontWeight:"bold"}}>
+                                 Afficher vos Véhicules
+                         </Button>
+                    </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 2}>  </Grid>
+                   <Grid item xs={12}>  </Grid>
                    <Grid item xs={12}>
                          <Typography variant="h4" sx={{color:color2, fontWeight:"bold"}}>
                                    Tableau de Bord de vos commandes
                          </Typography>
                    </Grid>
                    <Grid item xs={12}>
-                         <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "90%",
+                   <Paper elevation={5} sx={{width:isNonMobile ? "85%" : "90%",
                                             minHeight: "400px",
                                             display:"flex", flexDirection:"column", justifyContent:"center",
                                             alignItems:"center", bgcolor:color2}}>
-                                {user !== undefined ? user.isPartner ? 
-                                <Container>
-                                       <stack dirction="column" justifyContent="center" alignItems="center">
-                                             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                                                      <AccordionSummary expandIcon={<ExpandMoreIcon />}
-                                                                        aria-controls="panel1bh-content"
-                                                                        id="panel1bh-header"
-                                                                  >
-                                                                   <Typography sx={{ width: '33%', flexShrink: 0 }}>
-                                                                              Commande Id
-                                                                   </Typography>
-                                                                   <Typography sx={{ color: 'text.secondary' }}>
-                                                                               {}
-                                                                   </Typography>
-                                                      </AccordionSummary>
-                                                      <AccordionDetails>
-                                                                   <Typography>
-                                                                            Nulla facilisi. Phasellus sollicitudin nulla 
-                                                                            et quam mattis feugiat. Aliquam eget maximus 
-                                                                            est, id dignissim quam.
-                                                                   </Typography>
-                                                      </AccordionDetails>
-                                             </Accordion>
-                                       </stack>
-                                </Container>
-                                            : 
-                                <Container>
-
-                                 </Container>
-                                             : 
-                                <Typography> Vide!! Pas de Compte</Typography>
-                             }
+                                { display && <CircularProgress /> }
+                                { statut === 1 && filterData.length === 0 &&
+                                  <Container>
+                                            <Typography sx={{color:color2}}>
+                                                    Aucun Véhicule Enregistré
+                                            </Typography>
+                                    </Container>}
+                                    { statut === 1 && filterData.length > 0 &&
+                                         tabDisplay }
+                                    { statut === -1 && 
+                                  <Container>
+                                          <Alert severity="error"> 
+                                                   Bad Request, Error 500
+                                              </Alert> 
+                                    </Container>}
+                                    { statut === -2 && 
+                                  <Container>
+                                             <Alert severity="error"> 
+                                                    Network Error, Error 404!!!!!
+                                              </Alert> 
+                                    </Container>}
                          </Paper>
                    </Grid>
              </Grid>

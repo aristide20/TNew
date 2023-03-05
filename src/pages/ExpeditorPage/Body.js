@@ -18,6 +18,7 @@ import ImagesBoxHome from "../../components/imagesBoxHome";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useNavigate } from "react-router-dom";
 import image1 from "../../assets/Truck01.png";
+import image2 from "../../assets/Truck01b.png";
 
 
 
@@ -66,8 +67,8 @@ const Body = () => {
                 <Box sx={{paddingTop: "100px", paddingBottom:"60px"}}>
                 <Grid container spacing={0}>
                           <Grid item xs={isSmallScreen2 ? 3 : 0} >
-                                <Box > 
-                                     <img src={image1} alt="" width="60%" />
+                                <Box sx={{paddingTop:isSmallScreen ? "100px" : "0px", paddingLeft:"10px"}}> 
+                                     <img src={image2} alt="" width="60%" />
                                 </Box>
                           </Grid>
                           <Grid item xs={isSmallScreen2 ? 6 : 12}>
@@ -129,7 +130,7 @@ const Body = () => {
                     </Stack>
                     </Grid>
                     <Grid item xs={isSmallScreen2 ? 3 : 0}>
-                         <Box sx={{paddingTop:"200px", paddingLeft:"80px"}}>
+                         <Box sx={{paddingTop:"300px", paddingLeft:"80px"}}>
                                <img src={image1} alt="" width="60%" />
                           </Box>
                     </Grid>

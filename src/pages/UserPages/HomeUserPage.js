@@ -14,7 +14,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 //import { useNavigate } from 'react-router-dom';
 //import logo from "../../assets/logo.png";
 import FormCommand from '../../components/FormCommand02';
-import UserSpeedDial from "../../components/UserDial";
+//import UserSpeedDial from "../../components/UserDial";
 import CircularProgress from '@mui/material/CircularProgress';
 import * as api from "../../api/index";
 import CheckIcon from '@mui/icons-material/Check';
@@ -193,10 +193,9 @@ const Body = () => {
               padding:isNonMobile ? "50px" : isNonMobile2 ? "25px" : "10px", marginBottom:"50px"  }}>
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
                    <Grid item xs={ isNonMobile ? 3 : 0}>  </Grid>
-                   <Grid item xs={ isNonMobile ? 3 : 12}>
+                   <Grid item xs={ isNonMobile ? 3 : 2}>
                    </Grid>
-                   <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
-                   <Grid item xs={isNonMobile ? 4 : 12}>
+                   <Grid item xs={isNonMobile ? 3 : 8}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
                                <Button variant="text"
@@ -206,9 +205,10 @@ const Body = () => {
                                </Button>    
                         </Paper>
                    </Grid>
-                   <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
-                   <Grid item xs={ isNonMobile ? 7 : 0}>  </Grid>
-                   <Grid item xs={isNonMobile ? 4 : 12}>
+                   <Grid item xs={ isNonMobile ? 3 : 2}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 0}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 2}>  </Grid>
+                   <Grid item xs={isNonMobile ? 4 : 8}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
                                <Button variant="text" onClick={handleClickOpen} sx={{color:color1, fontWeight:"bold"}}>
@@ -230,10 +230,10 @@ const Body = () => {
                                 </Dialog>
                         </Paper>
                    </Grid>
-                   <Grid item xs={ isNonMobile ? 1 : 0}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 2 : 2}>  </Grid>
                    <Grid item xs={12}>
                          <Typography variant="h4" sx={{color:color2, fontWeight:"bold"}}>
-                                   Tableau de Bord de vos commandes
+                                   Tableau de Bord
                          </Typography>
                    </Grid>
                    <Grid item xs={12}>
