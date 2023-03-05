@@ -152,7 +152,7 @@ return(
                             <MotDirection />
                      </Grid>
                      <Grid item xs={isSmallScreen ? 4 : 12} sx={{paddingLeft:"15px"}} >
-                           <Box> 
+                           <Box sx={{paddingTop:isSmallScreen ? "50px": "5px"}} > 
                                  <img src={image2} alt="" width="80%" />
                             </Box>
                      </Grid>

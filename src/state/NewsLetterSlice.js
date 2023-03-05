@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import * as api from "../api/index";
+//import * as api from "../api/index";
 
 const initialState = {
     emails: [],
@@ -18,3 +18,6 @@ const NewsLetterSlice = createSlice({
         }
     }
 })
+
+export const { addEmail } = NewsLetterSlice.actions;
+export default NewsLetterSlice.reducer;

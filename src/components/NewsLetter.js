@@ -1,7 +1,10 @@
-import { Button, Typography, Box, Container, useMediaQuery, Grid, TextField } from '@mui/material';
+import { Button, Typography, Box, Container, useMediaQuery, Grid, TextField, Alert } from '@mui/material';
 import { color } from '../theme';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { addEmail } from "../state/NewsLetterSlice";
+import * as api from '../api/index';
 
 const NewsLetter = () => {
 
@@ -11,10 +14,35 @@ const NewsLetter = () => {
     const isScreenBig = useMediaQuery("(min-width: 800px)");
     const isScreenSmall = useMediaQuery("(min-width: 600px)");
     const [newsLetterEmail, setNewsLetterEmail] = useState("");
+    const [error, setError] = useState(0);
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        try {
+            api.addEmailNewsletter(newsLetterEmail).then((resp) => {
+                console.log(resp.data, resp.status)
+                setError(1)
+                dispatch(addEmail(newsLetterEmail))
+            }).catch((err) => { console.log(err.msg, err.name, err.status);
+                     setError(-1);}) 
+        } catch (error) {
+            console.log(error.msg, error.status, error.name)
+            setError(-2)
+        }
+       
     }
+
+
+    useEffect(() => {
+        if(error !== 0) {
+            let cleanup = setTimeout(() => {setError(0);}, 4000);
+            console.log("remove dialog")
+            return () => {
+                 clearInterval(cleanup) }
+        }
+    })
 
 
     return (
@@ -92,6 +120,9 @@ const NewsLetter = () => {
                        </Grid>
                     </form>
              </Container>
+             {error === -1 && <Alert variant='error' > Email déja enregistrée dans la base de données </Alert>}
+             {error === -2 && <Alert variant='error' > Connexion au serveur impossible, Réessayez plus tard... </Alert>}
+             {error === 1 && <Alert variant='success' > email enregistrée avec succes!!!</Alert>}
         </Box>
     )
 }
