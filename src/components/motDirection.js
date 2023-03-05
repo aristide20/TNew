@@ -15,11 +15,8 @@ const MotDirection = () => {
         <Box sx={{bgcolor:color0, padding:isNonMobile ? "100px" : "10px", paddingBottom:"10px", 
                   paddingTop:isNonMobile ? "100px" : "50px"}}>
               <Grid container spacing={8} justifyContent="center" alignItems="center" >
-                    <Grid item xs={ isNonMobile ? 2 : 0 } > 
-                         
-                    </Grid> 
-                    <Grid item xs={ isNonMobile ? 8 : 12 } >
-                          <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"90%"}}>
+                    <Grid item xs={ 12 } >
+                          <Paper elevation={10} sx={{borderRadius:"15px", padding:"20px", width:"100%"}}>
                                  <Stack direction={isNonMobile ? "row" : "column"} spacing={isNonMobile ? 8 : 4}
                                         justifyContent="center" alignItems="center">
                                        <Avatar sx={{ bgcolor: deepOrange[500], width: isNonMobile ? 180 : 180, 
@@ -35,10 +32,7 @@ const MotDirection = () => {
                                        </Typography>
                                  </Stack>
                           </Paper>
-                    </Grid>
-                    <Grid item xs={ isNonMobile ? 2 : 0 } > 
-                         
-                    </Grid>        
+                    </Grid>       
               </Grid>
         </Box>
     )
