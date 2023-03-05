@@ -5,7 +5,7 @@ import { Typography, Box, Stack, useMediaQuery, Grid, Paper } from '@mui/materia
 import { useSelector } from "react-redux";
 //import {useState } from 'react';
 import ContactBox1 from "../../components/ContactBox1";
-import image1 from "../../assets/camion05c.PNG";
+//import image1 from "../../assets/camion05c.PNG";
 import image2 from "../../assets/btp01b.PNG";
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';

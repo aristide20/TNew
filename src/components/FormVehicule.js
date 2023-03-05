@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { color } from "../theme";
 import { setVehicule, testValidation,  createVehicule } from "../state/VehiculeSlice";
-import { useNavigate, useSelector } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {  AddVehicule } from "../state/UserSlice";
 import CircularProgress from '@mui/material/CircularProgress';
 import * as api from "../api/index";
