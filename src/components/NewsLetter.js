@@ -1,7 +1,7 @@
 import { Button, Typography, Box, Container, useMediaQuery, Grid, TextField, Alert } from '@mui/material';
 import { color } from '../theme';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { addEmail } from "../state/NewsLetterSlice";
 import * as api from '../api/index';
