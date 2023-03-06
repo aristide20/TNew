@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addEmail } from "../state/NewsLetterSlice";
 import * as api from '../api/index';
-import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import { green } from '@mui/material/colors';
 import Fab from '@mui/material/Fab';
