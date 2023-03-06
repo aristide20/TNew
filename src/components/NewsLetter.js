@@ -1,15 +1,16 @@
 import { Button, Typography, Box, Container, useMediaQuery, Grid, TextField, Alert } from '@mui/material';
 import { color } from '../theme';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addEmail } from "../state/NewsLetterSlice";
 import * as api from '../api/index';
 import CircularProgress from '@mui/material/CircularProgress';
-import { green } from '@mui/material/colors';
+import { green, red } from '@mui/material/colors';
 import Fab from '@mui/material/Fab';
 import CheckIcon from '@mui/icons-material/Check';
 import SaveIcon from '@mui/icons-material/Save';
+import CloseIcon from '@mui/icons-material/Close';
 
 const NewsLetter = () => {
 
@@ -24,11 +25,11 @@ const NewsLetter = () => {
 
 // CIRCULAR INTEGRETED BUTTON PROGRESS
 const [loading, setLoading] = useState(false);
-const [success, setSuccess] = useState(false);
-const timer = useRef();
+//const [success, setSuccess] = useState(false);
+//const timer = useRef();
 
 const buttonSx = {
-  ...(success && {
+  ...(error === 1 && {
     bgcolor: green[500],
     '&:hover': {
       bgcolor: green[700],
@@ -36,11 +37,21 @@ const buttonSx = {
   }),
 };
 
+const buttonSx2 = {
+  ...(error === -1 || error === -2 && {
+    bgcolor: red[500],
+    '&:hover': {
+      bgcolor: red[700],
+    },
+  }),
+};
+
+/*
 useEffect(() => {
   return () => {
     clearTimeout(timer.current);
   };
-}, []);
+}, []); */
 
 /*const handleButtonClick = () => {
   if (!loading) {
@@ -58,7 +69,10 @@ useEffect(() => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        setLoading(true);
 
+        /*
         if (!loading) {
             setSuccess(false);
             setLoading(true);
@@ -67,15 +81,19 @@ useEffect(() => {
               setLoading(false);
             }, 2000);
         }
+        */
 
         try {
             api.addEmailNewsletter(newsLetterEmail).then((resp) => {
-                console.log(resp.data, resp.status)
-                setError(1)
-                dispatch(addEmail(newsLetterEmail))
+                setLoading(false);
+                console.log(resp.data, resp.status);
+                setError(1);
+                dispatch(addEmail(newsLetterEmail));
             }).catch((err) => { console.log(err.messageg, err.name, err.status);
+                     setLoading(false);
                      setError(-1);}) 
         } catch (error) {
+            setLoading(false);
             console.log(error.msg, error.status, error.name)
             setError(-2)
         }
@@ -121,6 +139,7 @@ useEffect(() => {
                        <form onSubmit={handleSubmit}> 
 
                        <Grid  container
+                              display= "flex"
                               justifyContent="center"
                               alignItems="center"
                               spacing={2}>
@@ -135,7 +154,7 @@ useEffect(() => {
 
                               </Grid>
 
-                              <Grid item xs={isScreenToBig ? 6 : isScreenBig ? 8 : isScreenSmall ? 10 : 12}>
+                              <Grid item xs={isScreenToBig ? 6 : isScreenBig ? 8 : isScreenSmall ? 12 : 12}>
 
                                   <Box
                                    sx={{backgroundColor:"white",
@@ -152,22 +171,17 @@ useEffect(() => {
 
                               </Grid>
 
-                              <Grid item xs={isScreenToBig ? 2 : isScreenBig ? 12 : isScreenSmall ? 2 : 12}>
+                              <Grid item xs={isScreenToBig ? 2 : isScreenBig ? 12 : isScreenSmall ? 12 : 12}>
 
                               <Box>
-
-                                   <Button variant="contained"
-                                           type="submit" 
-                                           sx={{backgroundColor:"white", color:color1}}> 
-                                           valider
-                                   </Button>
                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                    <Box sx={{ m: 1, position: 'relative' }}>
                                        <Fab aria-label="save"
                                             color="primary"
                                             sx={buttonSx}
                                             onClick={handleSubmit }>
-                                            {success ? <CheckIcon /> : <SaveIcon />}
+                                            { error === 1 ? <CheckIcon /> : 
+                                              error === -1 || error === -2 ? <CloseIcon /> :  <SaveIcon />}
                                       </Fab>
                                       {loading && (
                                           <CircularProgress size={68}
@@ -180,7 +194,7 @@ useEffect(() => {
                                         </Box>
                                              <Box sx={{ m: 1, position: 'relative' }}>
                                                   <Button variant="contained"
-                                                          sx={buttonSx}
+                                                          sx={ error === 1 ? buttonSx : buttonSx2}
                                                           type="submit"
                                                           disabled={loading}
                                                           onClick={handleSubmit}>
@@ -212,3 +226,6 @@ useEffect(() => {
 }
 
 export default NewsLetter
+
+
+//{success ? <CheckIcon /> : <SaveIcon />}
