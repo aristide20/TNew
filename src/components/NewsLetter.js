@@ -25,7 +25,7 @@ const NewsLetter = () => {
                 console.log(resp.data, resp.status)
                 setError(1)
                 dispatch(addEmail(newsLetterEmail))
-            }).catch((err) => { console.log(err.msg, err.name, err.status);
+            }).catch((err) => { console.log(err.messageg, err.name, err.status);
                      setError(-1);}) 
         } catch (error) {
             console.log(error.msg, error.status, error.name)
