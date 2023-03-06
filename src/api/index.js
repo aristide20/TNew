@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios';
 import axiosConfig from './axiosConfig';
 //import { getCommands } from '../state/UserSlice';
 //import { useDispatch } from 'react-redux';
@@ -33,5 +33,5 @@ export const getCommands = async () => { return await axiosConfig.get('/commande
 
 
 
-export const addEmailNewsletter = async (email) => { return await axiosConfig.post('/newsLetter', email)}
+export const addEmailNewsletter = async (data) => { return await axiosConfig.post('/newsLetter', data)}
     

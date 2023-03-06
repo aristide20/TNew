@@ -13,7 +13,7 @@ const NewsLetter = () => {
     const isScreenToBig = useMediaQuery("(min-width: 1200px)");
     const isScreenBig = useMediaQuery("(min-width: 800px)");
     const isScreenSmall = useMediaQuery("(min-width: 600px)");
-    const [newsLetterEmail, setNewsLetterEmail] = useState("");
+    const [newsLetterEmail, setNewsLetterEmail] = useState({email:"", hasAccount:false});
     const [error, setError] = useState(0);
     const dispatch = useDispatch();
 
@@ -98,8 +98,8 @@ const NewsLetter = () => {
                                                   fullWidth
                                                   type='email'
                                                   name='email'
-                                                  value={newsLetterEmail}
-                                                  onChange={(e) => {setNewsLetterEmail(e.target.value)} } />
+                                                  value={newsLetterEmail.email}
+                                                  onChange={(e) => {setNewsLetterEmail({...newsLetterEmail, email:e.target.value})} } />
                                   </Box>
 
                               </Grid>
