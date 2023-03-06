@@ -144,7 +144,7 @@ useEffect(() => {
                               alignItems="center"
                               spacing={2}>
 
-                              <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 4 : isScreenSmall ? 12 : 12}>
+                              <Grid item xs={isScreenToBig ? 3 : isScreenBig ? 4 : isScreenSmall ? 12 : 12}>
 
                                    <Button variant="text" 
                                            startIcon={<MailOutlineIcon />}
@@ -154,7 +154,7 @@ useEffect(() => {
 
                               </Grid>
 
-                              <Grid item xs={isScreenToBig ? 6 : isScreenBig ? 8 : isScreenSmall ? 12 : 12}>
+                              <Grid item xs={isScreenToBig ? 5 : isScreenBig ? 8 : isScreenSmall ? 12 : 12}>
 
                                   <Box
                                    sx={{backgroundColor:"white",
@@ -171,7 +171,7 @@ useEffect(() => {
 
                               </Grid>
 
-                              <Grid item xs={isScreenToBig ? 2 : isScreenBig ? 12 : isScreenSmall ? 12 : 12}>
+                              <Grid item xs={isScreenToBig ? 4 : isScreenBig ? 12 : isScreenSmall ? 12 : 12}>
 
                               <Box>
                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
