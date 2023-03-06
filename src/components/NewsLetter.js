@@ -23,9 +23,9 @@ const NewsLetter = () => {
     const dispatch = useDispatch();
 
 // CIRCULAR INTEGRETED BUTTON PROGRESS
-const [loading, setLoading] = React.useState(false);
-const [success, setSuccess] = React.useState(false);
-const timer = React.useRef();
+const [loading, setLoading] = useState(false);
+const [success, setSuccess] = useState(false);
+const timer = useRef();
 
 const buttonSx = {
   ...(success && {
@@ -36,7 +36,7 @@ const buttonSx = {
   }),
 };
 
-React.useEffect(() => {
+useEffect(() => {
   return () => {
     clearTimeout(timer.current);
   };
