@@ -1,4 +1,4 @@
-//import CssBaseline from '@mui/material/CssBaseline';
+import CssBaseline from '@mui/material/CssBaseline';
 import { color } from '../../../theme';
 import { Button, Typography, Grid, Alert,
          Box, useMediaQuery, Paper, Dialog, DialogActions, 
@@ -9,57 +9,24 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-//import { useDispatch } from "react-redux";
-//import Form from "../../components/Form2";
-//import { useNavigate } from 'react-router-dom';
-//import logo from "../../assets/logo.png";
-//import UserSpeedDial from "../../components/UserDial";
 import CircularProgress from '@mui/material/CircularProgress';
 import * as api from "../../../api/index";
 import CheckIcon from '@mui/icons-material/Check';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import StartIcon from '@mui/icons-material/Start';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
-//import { useDispatch } from "react-redux";
-//import Form from "../../components/Form2";
-//import { useNavigate } from 'react-router-dom';
-//import logo from "../../assets/logo.png";
 import FormVehicule from '../../../components/FormVehicule';
-//import UserSpeedDial from "../../../components/UserDial";
-//import fond01 from "../../assets/fondLogo01.png";
-//import fond02 from "../../assets/fondLogo02.png";
-
-//import * as api from "../../api/index";
 
 
 const Body = () => {
 
-    //const dispatch = useDispatch();
-    //const navigate = useNavigate();
     const color1 = color.white.niveau0;
     const color2 = color.blue.niveau100;
-    //const user = useSelector((state) => state.UserReducer.user);
     const user = useSelector((state) => state.persistedReducer.user);
-    //const commandes = useSelector((state) => state.persistedReducer.commandes);
-    //const Commandes = useSelector((state) => state.UserReducer.commandes)
     const isNonMobile = useMediaQuery("(min-width:900px)");
     const isNonMobile2 = useMediaQuery("(min-width:600px)");
-    //const isNonMobile3 = useMediaQuery("(min-width:400px)");
-    //const dispatch = useDispatch();
-    //dispatch(loginStatut(false));
-    //const pbox = isNonMobile ? "30px" : "10px";
-    //console.log(Commandes);
-    //const topLogo = isNonMobile ? "40px" : "-40px";
-    //const leftLogo = isNonMobile ? "180px" : "100px";
 
-   /* useEffect(() => {
-       const ComData = api.fetchCommands()
-        
-    }, []) */
-/*
-    const CommData = api.FetchCommands();
-    console.log(CommData)
-    console.log(commandes) */
+   
 
     const [display, setDisplay] = useState(true);
     const [brutData, setBrutData] = useState([]);
@@ -168,17 +135,15 @@ const Body = () => {
     };
 
 
-    // <img src={isNonMobile2 ? fond01 : fond02 } alt="logo"  width="100%"  />
 
     return (
         <Box position="static" sx={{minHeight:"700px", width:"100%", marginTop:"100px",
               padding:isNonMobile ? "50px" : isNonMobile2 ? "25px" : "10px", marginBottom:"50px"  }}>
+               <CssBaseline />
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
                    <Grid item xs={ isNonMobile ? 6 : 3}>  </Grid>
                    <Grid item xs={isNonMobile ? 3 : 7}>
-                        <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
-                                                   alignItems:"center", bgcolor:color2}}>
-                               <Button variant="text" sx={{color:color1, fontWeight:"bold"}}>
+                               <Button variant="contained" sx={{color:color1, fontWeight:"bold"}}>
                                       { user !== undefined ? user.isPartner ?"Ajouter un Vehicule" : "Devenir Partenaire" : "vide"}
                                </Button>
                                <Dialog open={open} onClose={handleClose}>
@@ -192,7 +157,6 @@ const Body = () => {
                                                                    <Button onClick={handleClose}>Confirmer</Button>
                                                     </DialogActions>
                                 </Dialog>    
-                        </Paper>
                    </Grid>
                    <Grid item xs={ isNonMobile ? 3 : 2}> </Grid>
                    <Grid item xs={ isNonMobile ? 6 : 3}>  </Grid>

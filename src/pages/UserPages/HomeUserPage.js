@@ -208,7 +208,7 @@ const Body = () => {
                    <Grid item xs={ isNonMobile ? 3 : 2}>  </Grid>
                    <Grid item xs={ isNonMobile ? 3 : 0}>  </Grid>
                    <Grid item xs={ isNonMobile ? 3 : 2}>  </Grid>
-                   <Grid item xs={isNonMobile ? 4 : 8}>
+                   <Grid item xs={isNonMobile ? 3 : 8}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
                                <Button variant="text" onClick={handleClickOpen} sx={{color:color1, fontWeight:"bold"}}>
@@ -230,7 +230,7 @@ const Body = () => {
                                 </Dialog>
                         </Paper>
                    </Grid>
-                   <Grid item xs={ isNonMobile ? 2 : 2}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 2}>  </Grid>
                    <Grid item xs={12}>
                          <Typography variant="h4" sx={{color:color2, fontWeight:"bold"}}>
                                    Tableau de Bord

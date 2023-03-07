@@ -19,7 +19,7 @@ function createData(champ, sep ,  valeur ) {
 
 const Body = () => {
 
-    const color1 = color.gray.niveau20;
+    const color1 = color.gray.niveau0;
     const color2 = color.blue.niveau100;
  
     const user = useSelector((state) => state.persistedReducer.user);
@@ -48,8 +48,8 @@ const Body = () => {
                     <Grid item xs={isNonMobile ? 4 : 12}>
                           <Stack direction="column" justifyContent="center" alignItems="center">
                                  <Avatar sx={{ width: 180, 
-                                               height: 180, marginBottom:"20px" }} 
-                                               src={ <AccountCircleIcon color="success" />
+                                               height: 180, marginBottom:"20px" , bgcolor:color2}} 
+                                               src={ <AccountCircleIcon color="success"  />
                                                       } />
                                  <Typography> id : {user._id} </Typography>
                            </Stack>
