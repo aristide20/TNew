@@ -61,7 +61,7 @@ const Body = () => {
                                                      Origines
                                           </Typography>
                                           <Typography variant="paragraph" sx={{color: background2}}>
-                                                     Crée en 2022 au Cameroun, Transport et Service d'Afrique (TRANSAF) 
+                                                     Crée en 2022 au Cameroun, Transport et Services d'Afrique (TRANSAF) 
                                                      SARL est une entreprise qui offre des solutions logistiques aux 
                                                      entreprises industrielles et commerciales en Afrique Centrale.
                                           </Typography>
@@ -118,14 +118,14 @@ const Body = () => {
                                           </Typography>
                                           <Typography variant="paragraph" sx={{color: background3}}>
                                                      <ol>
-                                                         <li>Plus de 100 camions (benne, porte container, plateau, 
-                                                            porte charges…) pour répondre à vos besoins,</li>
+                                                         <li>Plus de 100 camions (benne, porte conteneur, plateau, 
+                                                            porte charges...) pour répondre à vos besoins,</li>
                                                          <li>Un site et une application mobile pour un suivi efficace de 
-                                                             votre commande</li>
+                                                             vos commandes</li>
                                                          <li> Des opérateurs pour vous accompagner tout au long de la 
                                                               procédure </li>
-                                                         <li> Des solutions de paiements simplifiés </li>
-                                                         <li> + 1000 livraisons effectués </li>
+                                                         <li> Des solutions de paiements simplifiées </li>
+                                                         <li> + 1000 livraisons effectuées </li>
                                                      </ol>
                                          </Typography>
                                     </Paper>
@@ -177,7 +177,7 @@ const Body = () => {
                                                                        <ListItemIcon>
                                                                                     <FactCheckIcon />
                                                                        </ListItemIcon>
-                                                                       <ListItemText primary="Une logistique à tout épreuve" />
+                                                                       <ListItemText primary="Une logistique à toute épreuve" />
                                                         </ListItemButton>
                                                         <ListItemButton>
                                                                        <ListItemIcon>
@@ -261,7 +261,7 @@ const Body = () => {
                 </Box>
                 <Box position="absolute" sx={{top:isScreenBig ? "50%" : "430%", 
                                               left: isScreenBig ? "3%" : "30%" }}>
-                     <img src={image01} alt="" width={isScreenBig ? "30%" : "50%"}  />
+                     <img src={image01} alt="" width={isScreenBig ? "30%" : "5%"}  />
                 </Box>
                 <Box>
                     <NewsLetter />

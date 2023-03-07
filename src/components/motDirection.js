@@ -24,10 +24,10 @@ const MotDirection = () => {
                                                                                src={DG} />
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
                                                    « Vous méritez ce qu'il y a de mieux. C'est pourquoi notre objectif 
-                                                   est de vous offrir un service de transport au standing international.»
+                                                   est de vous offrir un service de transport aux standing internationaux.»
                                                    < br/>
                                                    < br/>
-                                                   <strong> Charkes Peggy MBADJI <br/> </strong>
+                                                   <strong> Charles Peggy MBADJI <br/> </strong>
                                                     Directeur Général Transaf Sarl
                                        </Typography>
                                  </Stack>
