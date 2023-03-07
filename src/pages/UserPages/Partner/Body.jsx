@@ -12,9 +12,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CircularProgress from '@mui/material/CircularProgress';
 import * as api from "../../../api/index";
 import CheckIcon from '@mui/icons-material/Check';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import StartIcon from '@mui/icons-material/Start';
-import HourglassTopIcon from '@mui/icons-material/HourglassTop';
+import CloseIcon from '@mui/icons-material/Close';
 import FormVehicule from '../../../components/FormVehicule';
 
 
@@ -82,12 +80,10 @@ const Body = () => {
                                                  aria-controls="panel1a-content"
                                                  id="panel1a-header"
        >
-                                                <Typography sx={{color:"black"}}> Commande : {item._id} </Typography>
-                                                <IconButton sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
-                                                                     item.isEnCours ? "orange" : "gray"}}> 
-                                                  { item.isDone ? <CheckIcon /> : 
-                                                               item.isAvorted ? <HighlightOffIcon /> : 
-                                                               item.isEnCours ? <StartIcon /> : <HourglassTopIcon /> } </IconButton>
+                                                <Typography sx={{color:"black"}}> Vehicule id : {item._id} </Typography>
+                                                <IconButton sx={{color: item.isReadyToWork ? "green" :  "red"}}> 
+                                                  { item.isReadyToWork ? <CheckIcon /> : 
+                                                                <CloseIcon /> } </IconButton>
                               </AccordionSummary>
                                      <AccordionDetails>
                                              <Typography sx={{color:"black"}}>
