@@ -10,6 +10,7 @@ import DG from "../../assets/Nouveau dossier/DG.png";
 import DAF from "../../assets/Nouveau dossier/DAF.png";
 import DE from "../../assets/Nouveau dossier/DC.png";
 import DC from "../../assets/Nouveau dossier/DE.png";
+import DPI from "../../assets/Nouveau dossier/DPI.padding";
 
 
 const Body = () => {
@@ -29,7 +30,7 @@ const Body = () => {
             <Box position="absolute" sx={{top: isNonMobile ? "130px" : "550px", 
                                           left: isNonMobile ? "600px" : "30px",
                                           width: isNonMobile ? "50%" : "90%"}} >
-                 <Typography variant={ isNonMobile ? "h2" : "h4"} sx={{fontWeight:"bold", textAlign:"center"}}>
+                 <Typography variant={ isNonMobile ? "h2" : "h4"} sx={{fontWeight:"bold", textAlign:"center", color:"white"}}>
                             Une Equipe de professionnels dévoués à la satisfaction de leurs clients!!!
                  </Typography>
             </Box>
@@ -54,7 +55,7 @@ const Body = () => {
                                                       height: 180 }}
                                                       src={DG} />
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
-                                                   "............................................" < br/>
+                                                   
                                                   <strong> Charles Peggy Mbadji <br/> </strong>  
                                                   <strong> Directeur General </strong> 
                                        </Typography>
@@ -70,7 +71,7 @@ const Body = () => {
                                                   height: 180 }}
                                                   src={DAF} />
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
-                                                   "............................................" < br/>
+                                                  
                                                   <strong> Kevine Audrey Nounkeu <br/> </strong>  
                                                   <strong> Directrice des Affaires Financières </strong> 
                                        </Typography>
@@ -85,7 +86,7 @@ const Body = () => {
                                        <Avatar sx={{ bgcolor: deepPurple[500], width: 180 ,
                                            height: 180 }} src={DE} />
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
-                                                  "............................................" < br/>
+                                                 
                                                   <strong> MBIANJEU SERGE WILLY </strong>  < br/>
                                                   <strong> Directeur Commercial et marketing </strong> 
                                        
@@ -101,7 +102,7 @@ const Body = () => {
                                        <Avatar sx={{ bgcolor: deepPurple[500], width: 180 , 
                                            height: 180 }} src={DC} />
                                         <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
-                                               "............................................" < br/>
+                                              
                                                   <strong> NJEZANG EPHRAIM  </strong>  < br/>
                                                   <strong>  Directeur d'exploitation </strong>
                                       
@@ -115,10 +116,10 @@ const Body = () => {
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2}
                                         justifyContent="center" alignItems="center"
                                         >
-                                       <Avatar sx={{ bgcolor: deepPurple[500], width: 180 ,
+                                       <Avatar sx={{ bgcolor: deepPurple[500], width: 180 , src={DPI}
                                            height: 180 }}>DDI photo</Avatar>
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
-                                                 "............................................" < br/>
+                                                 
                                                   <strong> GBA ROLAND SERGE  </strong>  < br/>
                                                   <strong>  Directeur de développement et innovation </strong>
                                                    
