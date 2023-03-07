@@ -116,8 +116,8 @@ const Body = () => {
                                  <Stack direction="column" spacing={isNonMobile ? 8 : 2}
                                         justifyContent="center" alignItems="center"
                                         >
-                                       <Avatar sx={{ bgcolor: deepPurple[500], width: 180 , src={DPI}, 
-                                           height: 180 }}>DDI photo</Avatar>
+                                       <Avatar sx={{ bgcolor: deepPurple[500], width: 180 , 
+                                           height: 180 }} src={DPI} >DDI photo</Avatar>
                                        <Typography variant="paragraph" sx={{color:color5, textAlign:"center"}}>
                                                  
                                                   <strong> GBA ROLAND SERGE  </strong>  < br/>

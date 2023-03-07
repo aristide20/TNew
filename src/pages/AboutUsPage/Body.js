@@ -61,7 +61,7 @@ const Body = () => {
                                                      Origines
                                           </Typography>
                                           <Typography variant="paragraph" sx={{color: background2}}>
-                                                     Crée en 2022 au Cameroun, Transport et Services d'Afrique (TRANSAF) 
+                                                     Créée en 2022 au Cameroun, Transport et Services d'Afrique (TRANSAF) 
                                                      SARL est une entreprise qui offre des solutions logistiques aux 
                                                      entreprises industrielles et commerciales en Afrique Centrale.
                                           </Typography>
