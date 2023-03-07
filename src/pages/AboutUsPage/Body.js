@@ -43,7 +43,7 @@ const Body = () => {
                                            sx={{textAlign:"left", fontWeight:"bold", color:background3}}>
                                            Notre Objectif: <br />
                                            Devenir dans les 10 (dix) prochaines années le leader de la logistique 
-                                           terrestre et maritime d'Afrique centrale.
+                                           terrestre et maritime en Afrique centrale.
                                </Typography>
                     </Box>
                </Box>
