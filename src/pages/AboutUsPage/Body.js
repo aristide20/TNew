@@ -42,7 +42,7 @@ const Body = () => {
                                <Typography variant={isScreenBig ? "h4" : "h5"} 
                                            sx={{textAlign:"left", fontWeight:"bold", color:background3}}>
                                            Notre Objectif: <br />
-                                           Devenir dans les 10 (dix) prochaines années le leader de la logistique 
+                                           Devenir dans les 10 (dix) prochaines années leader de la logistique 
                                            terrestre et maritime en Afrique centrale.
                                </Typography>
                     </Box>
@@ -261,7 +261,7 @@ const Body = () => {
                 </Box>
                 <Box position="absolute" sx={{top:isScreenBig ? "50%" : "430%", 
                                               left: isScreenBig ? "3%" : "30%" }}>
-                     <img src={image01} alt="" width={isScreenBig ? "30%" : "5%"}  />
+                     <img src={image01} alt="" width={isScreenBig ? "28%" : "5%"}  />
                 </Box>
                 <Box>
                     <NewsLetter />
