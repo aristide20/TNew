@@ -1,6 +1,6 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { color } from '../../../theme';
-import { Button, Typography, Grid, Alert,
+import { Button, Typography, Grid, Alert, DialogContentText,
          Box, useMediaQuery, Paper, Dialog, DialogActions, 
           DialogContent, DialogTitle, Container, IconButton } from '@mui/material';
 import { useSelector } from "react-redux";
@@ -143,13 +143,17 @@ const Body = () => {
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
                    <Grid item xs={ isNonMobile ? 6 : 3}>  </Grid>
                    <Grid item xs={isNonMobile ? 3 : 7}>
-                               <Button variant="contained" sx={{color:color1, fontWeight:"bold"}}>
+                               <Button variant="contained"
+                                       onClick={handleClickOpen}
+                                       sx={{color:color1, fontWeight:"bold"}}>
                                       { user !== undefined ? user.isPartner ?"Ajouter un Vehicule" : "Devenir Partenaire" : "vide"}
                                </Button>
                                <Dialog open={open} onClose={handleClose}>
                                       <DialogTitle> Enregistrez un Véhicule </DialogTitle>
                                       <DialogContent>
-                                                    
+                                                   <DialogContentText>
+                                                                 Nous vous conterons le plutot possible pour lesn dernieres formalités
+                                                    </DialogContentText>
                                                       <FormVehicule />
                                       </DialogContent>
                                                     <DialogActions>

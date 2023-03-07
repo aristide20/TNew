@@ -90,8 +90,6 @@ const handleSubmit = (e) => {
 
 
 return (
-    <Paper elevation={20} sx={{paddingTop:"20px", borderRadius:"15px", paddingBottom:"20px"}}>
-           <Container>
            <form autoComplete="off" 
                  noValidate 
                  onSubmit={handleSubmit} >
@@ -203,8 +201,6 @@ return (
                                      </Box>}
                  </Stack>
                </form>  
-           </Container>
-    </Paper>
 )
 }
 
