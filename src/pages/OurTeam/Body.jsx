@@ -10,7 +10,7 @@ import DG from "../../assets/Nouveau dossier/DG.png";
 import DAF from "../../assets/Nouveau dossier/DAF.png";
 import DE from "../../assets/Nouveau dossier/DC.png";
 import DC from "../../assets/Nouveau dossier/DE.png";
-import DPI from "../../assets/Nouveau dossier/DPI.padding";
+import DPI from "../../assets/Nouveau dossier/DPI.png";
 
 
 const Body = () => {
