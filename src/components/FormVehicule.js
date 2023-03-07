@@ -75,7 +75,8 @@ const handleSubmit = (e) => {
                   }
                   }).catch((err) => {
                             setClicked(false);
-                            console.log(err.name)
+                            console.log(err.name);
+                            console.log(err);
                             setError(-1);
               }) 
         } catch (error) {
