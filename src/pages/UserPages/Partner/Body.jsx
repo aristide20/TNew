@@ -45,7 +45,7 @@ const Body = () => {
                   if(resp.status === 200) {
                         setStatut(1);
                         console.log(statut);
-                        setBrutData(resp.data.vehicules);
+                        setBrutData(resp.data);
                         setFilterData( brutData.filter((item) => { return item.Proprietaire === user.fullName }) ) 
                         console.log(brutData);
                         console.log(filterData);
