@@ -148,7 +148,7 @@ const Body = () => {
                                       <DialogTitle> Enregistrez un Véhicule </DialogTitle>
                                       <DialogContent>
                                                    <DialogContentText>
-                                                                 Nous vous conterons le plutot possible pour lesn dernieres formalités
+                                                                 Nous vous contacterons le plutot possible pour les dernieres formalités
                                                     </DialogContentText>
                                                       <FormVehicule />
                                       </DialogContent>
@@ -171,7 +171,7 @@ const Body = () => {
                    <Grid item xs={12}>  </Grid>
                    <Grid item xs={12}>
                          <Typography variant="h4" sx={{color:color2, fontWeight:"bold"}}>
-                                   Tableau de Bord de vos commandes
+                                   Tableau de Bord de vos Vehicules
                          </Typography>
                    </Grid>
                    <Grid item xs={12}>
@@ -184,9 +184,19 @@ const Body = () => {
                                 { display && <CircularProgress /> }
                                 { statut === 1 && filterData.length === 0 &&
                                   <Container>
-                                            <Typography sx={{color:color2}}>
-                                                    Aucun Véhicule Enregistré
-                                            </Typography>
+                                             <Accordion sx={{width:"90%"}}>
+                                                       <AccordionSummary   expandIcon={<ExpandMoreIcon /> }
+                                                 aria-controls="panel1a-content"
+                                                 id="panel1a-header"
+       >
+                                                <Typography sx={{color:"black"}}> Aucun Vehicule Enregistré!!!!! </Typography>
+                                                <IconButton sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
+                                                                     item.isEnCours ? "orange" : "gray"}}> 
+                                                  { item.isDone ? <CheckIcon /> : 
+                                                               item.isAvorted ? <HighlightOffIcon /> : 
+                                                               item.isEnCours ? <StartIcon /> : <HourglassTopIcon /> } </IconButton>
+                                                    </AccordionSummary>
+                                                  </Accordion>
                                     </Container>}
                                     { statut === 1 && filterData.length > 0 &&
                                          tabDisplay }
