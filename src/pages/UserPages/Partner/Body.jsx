@@ -190,11 +190,7 @@ const Body = () => {
                                                  id="panel1a-header"
        >
                                                 <Typography sx={{color:"black"}}> Aucun Vehicule Enregistré!!!!! </Typography>
-                                                <IconButton sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
-                                                                     item.isEnCours ? "orange" : "gray"}}> 
-                                                  { item.isDone ? <CheckIcon /> : 
-                                                               item.isAvorted ? <HighlightOffIcon /> : 
-                                                               item.isEnCours ? <StartIcon /> : <HourglassTopIcon /> } </IconButton>
+
                                                     </AccordionSummary>
                                                   </Accordion>
                                     </Container>}

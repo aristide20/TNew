@@ -247,19 +247,15 @@ const Body = () => {
                                 { statut === 1 && filterData.length === 0 &&
                                   <Container>
                                              <Accordion sx={{width:"90%"}}>
-                             <AccordionSummary   expandIcon={<ExpandMoreIcon /> }
+                                            <AccordionSummary   expandIcon={<ExpandMoreIcon /> }
                                                  aria-controls="panel1a-content"
                                                  id="panel1a-header"
        >
                                                 <Typography sx={{color:"black"}}> Aucune Commande Enregistrée </Typography>
-                                                <IconButton sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
-                                                                     item.isEnCours ? "orange" : "gray"}}> 
-                                                  { item.isDone ? <CheckIcon /> : 
-                                                               item.isAvorted ? <HighlightOffIcon /> : 
-                                                               item.isEnCours ? <StartIcon /> : <HourglassTopIcon /> } </IconButton>
-                              </AccordionSummary>
+                         
+                                             </AccordionSummary>
                                      
-                   </Accordion>
+                                             </Accordion>
                                     </Container>}
                                     { statut === 1 && filterData.length > 0 &&
                                          tabDisplay }
