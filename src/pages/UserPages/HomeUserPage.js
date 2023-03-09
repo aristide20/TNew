@@ -9,6 +9,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
 //import { useDispatch } from "react-redux";
 //import Form from "../../components/Form2";
 //import { useNavigate } from 'react-router-dom';
@@ -132,11 +133,16 @@ const Body = () => {
                                                  id="panel1a-header"
        >
                                                 <Typography sx={{color:"black"}}> Commande : {item._id} </Typography>
-                                                <IconButton sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
-                                                                     item.isEnCours ? "orange" : "gray"}}> 
-                                                  { item.isDone ? <CheckIcon /> : 
-                                                               item.isAvorted ? <HighlightOffIcon /> : 
-                                                               item.isEnCours ? <StartIcon /> : <HourglassTopIcon /> } </IconButton>
+                                                <IconButton sx={{color: item.Statut === "isDone" ? "green" : 
+                                                                        item.Statut === "isAvorted" ? "red" :
+                                                                        item.Statut === "isEnCours" ? "blue" :
+                                                                        item.Statut === "isConfirm" ? "yellow" : "gray"}}> 
+                                                  { item.Statut === "isDone" ? <CheckIcon /> : 
+                                                               item.Statut === "isAvorted" ? <HighlightOffIcon /> : 
+                                                               item.Statut === "isEnCours" ? <StartIcon /> :
+                                                               item.Statut === "isConfirm" ? <FactCheckIcon /> :
+                                                                <HourglassTopIcon /> 
+                                                                 } </IconButton>
                               </AccordionSummary>
                                      <AccordionDetails>
                                              <Typography sx={{color:"black"}}>
@@ -151,11 +157,14 @@ const Body = () => {
                                              <Typography sx={{color:"black"}}>
                                                   Jour d'éxecution de la commande: {item.jourDepart}
                                              </Typography>
-                                             <Typography sx={{color: item.isDone ? "green" : item.isAvorted ? "red" :
-                                                                     item.isEnCours ? "orange" : "gray"}}>
-                                                  Statut de la Commande: {item.isDone ? "Exécutée avec succes" : 
-                                                                          item.isAvorted ? "Annulée" : 
-                                                                          item.isEnCours ? "En cours d'exécution..." :
+                                             <Typography sx={{color: item.Statut === "isDone" ? "green" : 
+                                                                        item.Statut === "isAvorted" ? "red" :
+                                                                        item.Statut === "isEnCours" ? "blue" :
+                                                                        item.Statut === "isConfirm" ? "yellow" : "gray"}}>
+                                                  Statut de la Commande: {item.Statut === "isDone" ? "Exécutée avec succes" : 
+                                                                          item.Statut === "isAvorted" ? "Annulée" : 
+                                                                          item.Statut === "isEnCours" ? "En cours d'exécution..." :
+                                                                          item.Statut === "isConfirm" ? "Confirmée et attente d'execution" :
                                                                           "En Attente de confirmation..."}
                                              </Typography>
                             </AccordionDetails>
