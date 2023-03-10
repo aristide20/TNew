@@ -256,7 +256,7 @@ const Body = () => {
                      <CamionList />
                 </Box>
                 <Box position="absolute" sx={{zIndex:10, right:isScreenBig ? "50px": "20%", 
-                                                         top:isScreenToBig ? "35%" : "55%"}}>
+                                                         top:isScreenToBig ? "35%" : isScreenBig ? "75%" : "63%"}}>
                      <ContactBox1 />
                 </Box>
                 <Box position="absolute" sx={{top:isScreenBig ? "50%" : "430%", 

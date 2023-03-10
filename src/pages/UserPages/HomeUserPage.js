@@ -198,7 +198,7 @@ const Body = () => {
     // <img src={isNonMobile2 ? fond01 : fond02 } alt="logo"  width="100%"  />
 
     return (
-        <Box position="static" sx={{minHeight:"700px", width:"100%", marginTop:"20px",
+        <Box position="static" sx={{minHeight:"700px", width:"100%", marginTop:"90px",
               padding:isNonMobile ? "50px" : isNonMobile2 ? "25px" : "10px", marginBottom:"50px"  }}>
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
                    <Grid item xs={ isNonMobile ? 3 : 0}>  </Grid>

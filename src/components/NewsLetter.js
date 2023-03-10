@@ -11,6 +11,8 @@ import Fab from '@mui/material/Fab';
 import CheckIcon from '@mui/icons-material/Check';
 import SaveIcon from '@mui/icons-material/Save';
 import CloseIcon from '@mui/icons-material/Close';
+import { validEmail } from './Regex';
+import { motion } from "framer-motion";
 
 const NewsLetter = () => {
 
@@ -22,6 +24,7 @@ const NewsLetter = () => {
     const [newsLetterEmail, setNewsLetterEmail] = useState({email:"", hasAccount:false});
     const [error, setError] = useState(0);
     const dispatch = useDispatch();
+    const [emailError, setEmailError] = useState(false);
 
 // CIRCULAR INTEGRETED BUTTON PROGRESS
 const [loading, setLoading] = useState(false);
@@ -65,38 +68,40 @@ useEffect(() => {
 };*/
 // fin
 
+useEffect(function(){
+  if(emailError){
+      let cleanup = setTimeout(()=>{console.log("enter timeout"); setEmailError(false)}, 6000);
+      console.log("remove dialog")
+      return () => {
+          clearInterval(cleanup)
+      }
+  } 
+});
+
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        setLoading(true);
-
-        /*
-        if (!loading) {
-            setSuccess(false);
-            setLoading(true);
-            timer.current = window.setTimeout(() => {
-              setSuccess(true);
+        if(validEmail.test(newsLetterEmail)) {
+          setLoading(true);
+          setEmailError(false)
+          try {
+              api.addEmailNewsletter(newsLetterEmail).then((resp) => {
+                  setLoading(false);
+                  console.log(resp.data, resp.status);
+                  setError(1);
+                  dispatch(addEmail(newsLetterEmail));
+              }).catch((err) => { console.log(err.messageg, err.name, err.status);
+                       setLoading(false);
+                       setError(-1);}) 
+          } catch (error) {
               setLoading(false);
-            }, 2000);
+              console.log(error.msg, error.status, error.name)
+              setError(-2)
+          }
         }
-        */
-
-        try {
-            api.addEmailNewsletter(newsLetterEmail).then((resp) => {
-                setLoading(false);
-                console.log(resp.data, resp.status);
-                setError(1);
-                dispatch(addEmail(newsLetterEmail));
-            }).catch((err) => { console.log(err.messageg, err.name, err.status);
-                     setLoading(false);
-                     setError(-1);}) 
-        } catch (error) {
-            setLoading(false);
-            console.log(error.msg, error.status, error.name)
-            setError(-2)
-        }
+        else { setEmailError(true) }
        
     }
 
@@ -127,7 +132,13 @@ useEffect(() => {
                                    </Typography>
 
              </Container>
-
+             { emailError && <motion.div initial={{opacity:0}}
+                                                      animate={{opacity:1,  transition:{duration: 1, ease: "easeInOut"}}}
+                                                      exit={{opacity:0,  transition:{duration: 1, ease: "easeInOut"}}} > 
+                                                     <Alert severity="error">
+                                                            Your adresse email is invalid 
+                                                    </Alert> 
+                                        </motion.div> }
              <Container sx={{ backgroundColor: color1,
                               width:"70%",
                               borderStyle: "groove",

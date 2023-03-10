@@ -27,6 +27,7 @@ const Body = () => {
 
   const color2 = color.white.niveau0;
   const color1 = color.blue.niveau100;
+  const color3 = color.gray.niveau100;
   const navigate = useNavigate();
  
     const isSmallScreen = useMediaQuery("(min-width: 1000px)");
@@ -41,7 +42,8 @@ const Body = () => {
                    <Box>
                         <img src={isSmallScreen2 ? fond : fond2} alt="fond" width="100%" zindex={-10} />
                    </Box>
-                   <Box position="absolute" sx={{marginTop:"-10px", top:"100px", right: isSmallScreen2 ? "50px" : "35px"}}>
+                   <Box position="absolute" sx={{marginTop:"-10px", top: isSmallScreen ? "100px" : isSmallScreen2 ? "60px" : "90px", 
+                                                right: isSmallScreen2 ? "50px" : "35px"}}>
                         <Grid container spacing={4} justifyContent="center" alignItems="center">
                               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 0}></Grid>
                               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12}>
@@ -148,7 +150,7 @@ const Body = () => {
                 </Box>
                 <Box sx={{ width:"100%", display:"flex", flexDirection:"column", bgcolor:color1, padding:"20px", 
                                                    justifyContent:"center", alignItems:"center" }}>
-                         <Paper elevation={10} sx={{padding:"20px", textAlign:"justify", bgcolor:color1, 
+                         <Paper elevation={10} sx={{padding:"20px", textAlign:"justify", bgcolor:color3, 
                                                      width:isSmallScreen2 ? "60%" : "90%", marginTop:"40px" }}>
                                 <Typography variant="paragraph" sx={{ color:color2, textAlign:"justify", 
                                             fontSize:isSmallScreen2 ?"20px" : "16px"}}>

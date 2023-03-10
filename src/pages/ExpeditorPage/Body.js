@@ -35,7 +35,7 @@ const Body = () => {
         return(
           <Box position="static" sx={{backgroundColor:"white", width:"100%", paddingBottom:"100px", marginTop:"90px"}} >
               <CssBaseline />
-               <Box sx={{backgroundColor: color1, width:"100%", padding:isSmallScreen ? "50px" : "5%"}}>
+               <Box sx={{backgroundColor: color1, width:"100%", padding:isSmallScreen ? "50px" : "15px"}}>
                     <Grid container justifyContent="center" alignItems="center" spacing={2}>
                                 <Grid item xs={isSmallScreen ? 1 : 0}></Grid>
                                 <Grid item xs={isSmallScreen ? 6 : isSmallScreen2 ? 7 : 12}>
