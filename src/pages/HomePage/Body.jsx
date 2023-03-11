@@ -56,7 +56,9 @@ return(
  <Box position="relative" sx={{ width:"100%", flexGrow:1, marginTop:"70px"}} >
  <CssBaseline />
  <div className='hometop' >
- <Box position="static" sx={{ width:"100%", padding:isSmallScreen2 ? "3rem" : "0.5rem"}}>
+ <Box position="static" sx={{ width:"100%", padding:isSmallScreen2 ? "3rem" : "0.5rem",
+                              paddingLeft:isSmallScreen2 ? "2.5rem" : "0.5rem",
+                              paddingTop:isSmallScreen2 ? "3rem" : "0.5rem" }}>
           <Grid container spacing={4} justifyContent="center" alignItems="center" >
                <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12}>
                       <img src={phone} alt="phone" width={isSmallScreen ? "70%" : isSmallScreen2 ? "60%" : "40%"} />

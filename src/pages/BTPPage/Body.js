@@ -8,7 +8,7 @@ import SatisfiedClients02 from "../../components/SatisfiedClients02";
 import BTPEngineList from "../../components/BTPEnginesList";
 import CommandEnginsBox from "../../components/CommandEnginsBox";
 import ContactBox1 from "../../components/ContactBox1";
-import image1 from "../../assets/Truck01.png";
+//import image1 from "../../assets/Truck01.png";
 import "./body.css";
 
 

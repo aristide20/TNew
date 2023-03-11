@@ -132,11 +132,11 @@ const Body = () => {
                                                  aria-controls="panel1a-content"
                                                  id="panel1a-header"
        >
-                                                <Typography sx={{color:"black"}}> Commande : {item._id} </Typography>
+                                                <Typography sx={{color:"black"}}> Commande du : {item.jourDepart} </Typography>
                                                 <IconButton sx={{color: item.Statut === "isDone" ? "green" : 
                                                                         item.Statut === "isAvorted" ? "red" :
                                                                         item.Statut === "isEnCours" ? "blue" :
-                                                                        item.Statut === "isConfirm" ? "yellow" : "gray"}}> 
+                                                                        item.Statut === "isConfirm" ? "brown" : "gray"}}> 
                                                   { item.Statut === "isDone" ? <CheckIcon /> : 
                                                                item.Statut === "isAvorted" ? <HighlightOffIcon /> : 
                                                                item.Statut === "isEnCours" ? <StartIcon /> :
@@ -147,6 +147,9 @@ const Body = () => {
                                      <AccordionDetails>
                                              <Typography sx={{color:"black"}}>
                                                   Commanditaire: {item.commanditaire}
+                                             </Typography>
+                                             <Typography sx={{color:"black"}}>
+                                                  id: {item._id}
                                              </Typography>
                                              <Typography sx={{color:"black"}}>
                                                   Ville de départ: {item.villeDepart}
