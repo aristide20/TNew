@@ -58,7 +58,7 @@ return(
  <div className='hometop' >
  <Box position="static" sx={{ width:"100%", padding:isSmallScreen2 ? "3rem" : "0.5rem",
                               paddingLeft:isSmallScreen2 ? "2.5rem" : "0.5rem",
-                              paddingTop:isSmallScreen2 ? "5rem" : "0.5rem" }}>
+                              paddingTop:isSmallScreen2 ? "10rem" : "0.5rem" }}>
           <Grid container spacing={4} justifyContent="center" alignItems="center" >
                <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12} >
                       <img src={phone} alt="phone" width={isSmallScreen ? "70%" : isSmallScreen2 ? "60%" : "40%"} />
@@ -165,7 +165,7 @@ return(
                 color: "black"}}>
                 <NewsLetter />
      </Box>
-     <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "15%" : "4%", 
+     <Box position="absolute" sx={{width:"20%", top: isSmallScreen2 ? "20%" : "4%", 
                                                 left: isSmallScreen2 ? "80%" : "55%"}}>
           <img src={image1} alt="" width= {isSmallScreen2 ? "60%" : "120%"} />
       </Box>
