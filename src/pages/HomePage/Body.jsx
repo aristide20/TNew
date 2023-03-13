@@ -60,7 +60,7 @@ return(
                               paddingLeft:isSmallScreen2 ? "2.5rem" : "0.5rem",
                               paddingTop:isSmallScreen2 ? "3rem" : "0.5rem" }}>
           <Grid container spacing={4} justifyContent="center" alignItems="center" >
-               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12} sx={{paddingTop: isSmallScreen2 ? "50px" : "0px" }} >
+               <Grid item xs={isSmallScreen ? 4 : isSmallScreen2 ? 6 : 12} sx={{paddingTop: isSmallScreen2 ? "150px" : "0px" }} >
                       <img src={phone} alt="phone" width={isSmallScreen ? "70%" : isSmallScreen2 ? "60%" : "40%"} />
               </Grid>
               <Grid item xs={isSmallScreen2 ? 7 : 12}>
