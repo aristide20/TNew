@@ -1,5 +1,5 @@
 import { Stack, Box, Grid, useMediaQuery, Typography, Paper, Avatar,  } from '@mui/material';
-import fond1 from "../../assets/fondTeam01b.png";
+import fond1 from "../../assets/fondTeam01.png";
 import fond2 from "../../assets/fondTeam02.png";
 import { deepOrange, deepPurple } from '@mui/material/colors';
 import { color } from "../../theme";
