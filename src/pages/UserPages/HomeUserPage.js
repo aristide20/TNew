@@ -172,7 +172,13 @@ const Body = () => {
                                              </Typography>
                             </AccordionDetails>
                    </Accordion>)
-           })
+           });
+
+           const long = tabDisplay.length();
+           var orderedTab = Array(long)
+           for(let i=long - 1; i >= 0; i--) {
+                 orderedTab[long - 1 - i] = tabDisplay[i];
+           }
      }
           
 
@@ -270,7 +276,7 @@ const Body = () => {
                                              </Accordion>
                                     </Container>}
                                     { statut === 1 && filterData.length > 0 &&
-                                         tabDisplay }
+                                         orderedTab }
                                     { statut === -1 && 
                                   <Container>
                                           <Alert severity="error"> 
