@@ -174,7 +174,7 @@ const Body = () => {
                    </Accordion>)
            });
 
-           const long = tabDisplay.length();
+           const long = tabDisplay.length;
            var orderedTab = Array(long)
            for(let i=long - 1; i >= 0; i--) {
                  orderedTab[long - 1 - i] = tabDisplay[i];
@@ -207,13 +207,12 @@ const Body = () => {
     // <img src={isNonMobile2 ? fond01 : fond02 } alt="logo"  width="100%"  />
 
     return (
-        <Box position="static" sx={{minHeight:"700px", width:"100%", marginTop:"90px",
+        <Box position="static" sx={{minHeight:"700px", width:"98%", marginTop:"90px",
               padding:isNonMobile ? "50px" : isNonMobile2 ? "25px" : "10px", marginBottom:"50px"  }}>
              <Grid container justifyContent="center" alignItems="center" spacing={2}>
-                   <Grid item xs={ isNonMobile ? 3 : 0}>  </Grid>
-                   <Grid item xs={ isNonMobile ? 3 : 2}>
-                   </Grid>
-                   <Grid item xs={isNonMobile ? 3 : 8}>
+                   <Grid item xs={ isNonMobile ? 3 : 2}>  </Grid>
+                   <Grid item xs={ isNonMobile ? 3 : 2}>  </Grid>
+                   <Grid item xs={isNonMobile ? 3 : 6}>
                         <Paper elevation={5} sx={{ display:"flex", justifyContent:"center",
                                                    alignItems:"center", bgcolor:color2}}>
                                <Button variant="text"
