@@ -83,7 +83,7 @@ useEffect(function(){
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        if(validEmail.test(newsLetterEmail)) {
+        if(validEmail.test(newsLetterEmail.email)) {
           setLoading(true);
           setEmailError(false)
           try {
@@ -92,7 +92,7 @@ useEffect(function(){
                   console.log(resp.data, resp.status);
                   setError(1);
                   dispatch(addEmail(newsLetterEmail));
-              }).catch((err) => { console.log(err.messageg, err.name, err.status);
+              }).catch((err) => { console.log(err.message, err.name, err.status);
                        setLoading(false);
                        setError(-1);}) 
           } catch (error) {

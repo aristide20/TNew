@@ -256,7 +256,7 @@ const Form2 = () => {
         if(isLogin) {
 
             if(validEmail.test(user.email)) {
-                setNumberError(false);
+                setEmailError(false);
                 setClicked(true);
                 try { 
                       api.loginUser(userLogin).then((Response) => {
