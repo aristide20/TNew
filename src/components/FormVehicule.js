@@ -1,5 +1,5 @@
-import { Typography, TextField, Alert,
-    Paper, Button, Container, Stack, Box,
+import { Typography, TextField, Alert, Autocomplete,
+    Paper, Button, Stack, Box,
     FormControl, Select, MenuItem, InputLabel} from "@mui/material";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import {  AddVehicule } from "../state/UserSlice";
 import CircularProgress from '@mui/material/CircularProgress';
 import * as api from "../api/index";
+import { ListVilles } from "./ListVilles";
 
 
 const initialValues = { Immatriculation:"", 
@@ -108,14 +109,17 @@ return (
                                                   dispatch(testValidation(infoVehicule));}}
                                 value={infoVehicule.Immatriculation}
                                 name="Immatriculation" />
-                      <TextField placeholder="Ville du vehicule"
-                                type="text" 
-                                fullWidth={true}
-                                onChange={(e) => {setInfoVehicule({...infoVehicule, localisation:e.target.value,
-                                                                                    Proprietaire: user.fullName});
-                                                  dispatch(testValidation(infoVehicule));}}
-                                value={infoVehicule.localisation}
-                                name="Immatriculation" />
+                         <Autocomplete disablePortal
+                                                    id="localisation"
+                                                    options={ListVilles}
+                                                    value={vehicule.localisation}
+                                                    onChange={(e) => {setVehicule({...vehicule, localisation:e.target.value,
+                                                        Proprietaire: user.fullName});
+                                                         isRegister ? dispatch(testRegister({user, vehicule})) :
+                                                         dispatch(testLogin(userLogin))}}
+                                                    fullWidth={true}
+                                                    renderInput={(params) => <TextField {...params} label="Ville du Vehicule" />}
+                                                  />
                      <FormControl fullWidth>
                          <InputLabel id="demo-simple-select-label">Type de Camion</InputLabel>
                                <Select
@@ -215,3 +219,20 @@ return (
 }
 
 export default FormVehicule;
+
+
+
+/**
+ * 
+ 
+  <TextField placeholder="Ville du vehicule"
+                                type="text" 
+                                fullWidth={true}
+                                onChange={(e) => {setInfoVehicule({...infoVehicule, localisation:e.target.value,
+                                                                                    Proprietaire: user.fullName});
+                                                  dispatch(testValidation(infoVehicule));}}
+                                value={infoVehicule.localisation}
+                                name="Immatriculation" />
+
+
+ */

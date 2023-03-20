@@ -1,5 +1,5 @@
 import { Button, Typography, Paper, TextField, useMediaQuery, Box, Grid,
-            Select, MenuItem, InputLabel,
+            Select, MenuItem, InputLabel, Autocomplete,
          Alert} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin, loginSuccess, loginError, setLoggedIn, testLogin,  testRegister, loginStatut, setLogout } from "../state/UserSlice";
@@ -19,7 +19,7 @@ import { getCommands } from '../state/UserSlice';
 import { validEmail, validPhoneNumber } from './Regex';
 import { motion } from "framer-motion";
 import CircularProgress from '@mui/material/CircularProgress';
-//import jwt from 'jwt-decode';
+import { ListVilles } from "./ListVilles";
 
 
 const initialValuesRegister = {
@@ -525,15 +525,18 @@ const Form2 = () => {
                                  </Grid>}
                                  { isRegister && isPartenaire && 
                                  <Grid item xs={isNonMobile ? 6 : 12} >
-                                     <TextField placeholder="Ville du Vehicule"
-                                                type="text" 
-                                                fullWidth={true}
-                                                onChange={(e) => {setVehicule({...vehicule, localisation:e.target.value,
-                                                                                           Proprietaire: user.fullName});
-                                                                 isRegister ? dispatch(testRegister({user, vehicule})) :
-                                                                              dispatch(testLogin(userLogin))}}
-                                                value={vehicule.localisation}
-                                                name="Immatriculation" />
+                                     
+                                      <Autocomplete disablePortal
+                                                    id="localisation"
+                                                    options={ListVilles}
+                                                    value={vehicule.localisation}
+                                                    onChange={(e) => {setVehicule({...vehicule, localisation:e.target.value,
+                                                        Proprietaire: user.fullName});
+                                                         isRegister ? dispatch(testRegister({user, vehicule})) :
+                                                         dispatch(testLogin(userLogin))}}
+                                                    fullWidth={true}
+                                                    renderInput={(params) => <TextField {...params} label="Ville du Vehicule" />}
+                                                  />
                                  </Grid>}
                                 
                     </Grid>
@@ -587,3 +590,18 @@ const Form2 = () => {
 }
 
 export default Form2;
+
+
+/**
+ 
+<TextField placeholder="Ville du Vehicule"
+                                                type="text" 
+                                                fullWidth={true}
+                                                onChange={(e) => {setVehicule({...vehicule, localisation:e.target.value,
+                                                                                           Proprietaire: user.fullName});
+                                                                 isRegister ? dispatch(testRegister({user, vehicule})) :
+                                                                              dispatch(testLogin(userLogin))}}
+                                                value={vehicule.localisation}
+                                                name="Immatriculation" />
+
+ */
