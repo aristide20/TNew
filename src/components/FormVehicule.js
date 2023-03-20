@@ -112,11 +112,10 @@ return (
                          <Autocomplete disablePortal
                                                     id="localisation"
                                                     options={ListVilles}
-                                                    value={vehicule.localisation}
-                                                    onChange={(e) => {setVehicule({...vehicule, localisation:e.target.value,
+                                                    onChange={(e) => {setInfoVehicule({...infoVehicule, localisation:e.target.value,
                                                         Proprietaire: user.fullName});
-                                                         isRegister ? dispatch(testRegister({user, vehicule})) :
-                                                         dispatch(testLogin(userLogin))}}
+                                                         dispatch(testValidation(infoVehicule));}}
+                                                    value={infoVehicule.localisation}
                                                     fullWidth={true}
                                                     renderInput={(params) => <TextField {...params} label="Ville du Vehicule" />}
                                                   />
@@ -225,14 +224,14 @@ export default FormVehicule;
 /**
  * 
  
-  <TextField placeholder="Ville du vehicule"
+ <TextField placeholder="Ville du vehicule"
                                 type="text" 
                                 fullWidth={true}
                                 onChange={(e) => {setInfoVehicule({...infoVehicule, localisation:e.target.value,
                                                                                     Proprietaire: user.fullName});
                                                   dispatch(testValidation(infoVehicule));}}
                                 value={infoVehicule.localisation}
-                                name="Immatriculation" />
+                                name="ville" />
 
 
  */
