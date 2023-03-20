@@ -43,6 +43,7 @@ const initialValueVehicule = {
   TypeVehicule:"",
   NomVehicule:"",
   Proprietaire: "",
+  localisation: "",
   isReadytowork: true,
   courses:[]
 }
@@ -520,6 +521,18 @@ const Form2 = () => {
                                                                  isRegister ? dispatch(testRegister({user, vehicule})) :
                                                                               dispatch(testLogin(userLogin))}}
                                                 value={vehicule.Immatriculation}
+                                                name="Immatriculation" />
+                                 </Grid>}
+                                 { isRegister && isPartenaire && 
+                                 <Grid item xs={isNonMobile ? 6 : 12} >
+                                     <TextField placeholder="Ville du Vehicule"
+                                                type="text" 
+                                                fullWidth={true}
+                                                onChange={(e) => {setVehicule({...vehicule, localisation:e.target.value,
+                                                                                           Proprietaire: user.fullName});
+                                                                 isRegister ? dispatch(testRegister({user, vehicule})) :
+                                                                              dispatch(testLogin(userLogin))}}
+                                                value={vehicule.localisation}
                                                 name="Immatriculation" />
                                  </Grid>}
                                 

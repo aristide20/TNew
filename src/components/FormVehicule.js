@@ -15,6 +15,7 @@ const initialValues = { Immatriculation:"",
                         TypeVehicule:"",
                         NomVehicule:"",
                         Proprietaire: "",
+                        localisation: "",
                         isReadytowork: true,
                         courses:[] }
 
@@ -106,6 +107,14 @@ return (
                                                                                     Proprietaire: user.fullName});
                                                   dispatch(testValidation(infoVehicule));}}
                                 value={infoVehicule.Immatriculation}
+                                name="Immatriculation" />
+                      <TextField placeholder="Ville du vehicule"
+                                type="text" 
+                                fullWidth={true}
+                                onChange={(e) => {setInfoVehicule({...infoVehicule, localisation:e.target.value,
+                                                                                    Proprietaire: user.fullName});
+                                                  dispatch(testValidation(infoVehicule));}}
+                                value={infoVehicule.localisation}
                                 name="Immatriculation" />
                      <FormControl fullWidth>
                          <InputLabel id="demo-simple-select-label">Type de Camion</InputLabel>

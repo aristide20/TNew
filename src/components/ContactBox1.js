@@ -61,8 +61,7 @@ export default function ContactBox1() {
                                                                        <FormCommand />
                                       </DialogContent>
                                                     <DialogActions>
-                                                                   <Button onClick={handleClose}>Annuler</Button>
-                                                                   <Button onClick={handleClose}>Confirmer</Button>
+                                                                   <Button onClick={handleClose}>Fermer</Button>
                                                     </DialogActions>
                                 </Dialog>
                     </Stack>

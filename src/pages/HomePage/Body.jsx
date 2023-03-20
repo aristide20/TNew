@@ -98,8 +98,7 @@ return(
                                                              <FormCommand />
                                                       </DialogContent>
                                           <DialogActions>
-                                                         <Button onClick={handleClose}>Annuler</Button>
-                                                         <Button onClick={handleClose}>Confirmer</Button>
+                                                         <Button onClick={handleClose}>Fermer</Button>
                                           </DialogActions>
                       </Dialog>
                                          </Grid> 
