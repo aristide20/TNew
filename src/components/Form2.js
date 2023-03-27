@@ -70,6 +70,7 @@ const Form2 = () => {
     const [vehicule, setVehicule] = useState(initialValueVehicule);
     const [error, setError] = useState(0);
     const [clicked, setClicked] = useState(false);
+    const [localisationValue, setLocalisationValue] = useState(ListVilles[0]);
 
     const isLogin = pageType === "login";
     const isRegister = pageType === "register";
@@ -529,13 +530,19 @@ const Form2 = () => {
                                       <Autocomplete disablePortal
                                                     id="localisation"
                                                     options={ListVilles}
-                                                    value={vehicule.localisation}
-                                                    onChange={(e) => {setVehicule({...vehicule, localisation:e.target.value,
+
+                                                    value={localisationValue}
+                                                    onChange={(event, newValue) => { setLocalisationValue(newValue) }}
+                                                    
+                                                    inputValue={vehicule.localisation}
+                                                    onInputChange={(event, newInputValue) => {
+                                                        setVehicule({...vehicule, localisation: newInputValue,
                                                         Proprietaire: user.fullName});
                                                          isRegister ? dispatch(testRegister({user, vehicule})) :
                                                          dispatch(testLogin(userLogin))}}
+
                                                     fullWidth={true}
-                                                    renderInput={(params) => <TextField {...params} label="Ville du Vehicule" />}
+                                                    renderInput={(params) => <TextField {...params} label="Localité du Véhicule" />}
                                                   />
                                  </Grid>}
                                 
