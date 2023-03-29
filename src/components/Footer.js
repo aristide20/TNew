@@ -128,7 +128,7 @@ const Footer= ()=>{
                                               </Grid>
                                               <Grid  >
                                                    <Button variant="text"
-                                                           onClick={() => navigate('/Contact')}  
+                                                           onClick={() => navigate('/Recrutement')}  
                                                            startIcon={FooterData.entreprise.carreerIcon} 
                                                            sx={{textTransform:"lowercase", color:"white"}}>
                                                            {FooterData.entreprise.lienCarrieres}

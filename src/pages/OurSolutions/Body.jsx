@@ -18,7 +18,7 @@ const Body = () => {
                                       justifyContent:"center", 
                                       alignItems:"center",
                                       padding:isNonMobile ? "100px" : "5px",
-                                      paddingTop:"100px", paddingBottom:"100px"}} >
+                                      paddingTop:"100px", paddingBottom:"100px"}}marginTop="70px">
             <Typography variant={isNonMobile ? "h2" : "h4"} sx={{fontWeight:"bold", paddingBottom:"50px"}}>
                         NOS SOLUTIONS
             </Typography>

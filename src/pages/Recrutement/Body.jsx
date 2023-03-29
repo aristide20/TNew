@@ -35,7 +35,7 @@ const Body = () => {
 //backgroundColor: color1
 
     return(
-      <Box position="relative" sx={{ width:"100%", flexGrow:1, minWidth:"300px"}} >
+      <Box position="relative" marginTop="70px" sx={{ width:"100%", flexGrow:1, minWidth:"300px"}} >
            <CssBaseline />
            <Box sx={{backgroundColor:color.gray.niveau20, width:"100%"}}>
                <img src={logo} alt="logo" width="100%" height={isSmallScreen2 ? "100%" : "700px"} />
