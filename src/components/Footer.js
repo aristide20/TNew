@@ -79,6 +79,7 @@ const Footer= ()=>{
                                                    <Grid  >
                                                          <Button variant="text" 
                                                                  startIcon={FooterData.contacts.logoMail} 
+                                                                 onClick={() => navigate("/Contact")}
                                                                  sx={{textTransform:"lowercase", color:"white"}}>
                                                                  {FooterData.contacts.contactEmail}
                                                          </Button>   
@@ -86,6 +87,7 @@ const Footer= ()=>{
                                                    <Grid   >
                                                          <Button variant="text" 
                                                                  startIcon={FooterData.contacts.logoFacebook} 
+                                                                 onClick={() => openInNewTab('https://www.facebook.com/groupetransaf/')}
                                                                  sx={{textTransform:"lowercase", color:"white"}}>
                                                                  {FooterData.contacts.facebookPage}
                                                          </Button>   
@@ -126,7 +128,7 @@ const Footer= ()=>{
                                               </Grid>
                                               <Grid  >
                                                    <Button variant="text"
-                                                           onClick={() => navigate('/Ourteam')}  
+                                                           onClick={() => navigate('/Contact')}  
                                                            startIcon={FooterData.entreprise.carreerIcon} 
                                                            sx={{textTransform:"lowercase", color:"white"}}>
                                                            {FooterData.entreprise.lienCarrieres}
